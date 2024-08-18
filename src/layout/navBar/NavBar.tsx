@@ -7,14 +7,14 @@ export const NavBar = () => {
     <StyledNav>
       <ul>
         <li>
-          <StyledBtn>
+          <StyledBtnIcon>
             <Icon
               iconSrc={"darkLightNavSvg"}
               width="25"
               height="25"
               viewBox="0 0 25 25"
             />
-          </StyledBtn>
+          </StyledBtnIcon>
         </li>
         <li>
           <a href="#!">
@@ -139,7 +139,7 @@ const StyledNav = styled.nav`
   }
 `;
 
-const StyledBtn = styled.button`
+const StyledBtnIcon = styled.button`
   display: flex;
   border-radius: 50%;
   border: none;

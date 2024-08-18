@@ -22,11 +22,11 @@ export const Icon = (props: IconPropsType) => {
       viewBox={props.viewBox || "0 0 38 38"}
       fillStart={props.fillStart}
     >
-      <use xlinkHref={`${sprite}#${props}`} x="0" y="0" />
+      <use xlinkHref={`${sprite}#${props.iconSrc}`} x="0" y="0" />
     </StyledSvg>
   );
 };
-
+debugger;
 const StyledSvg = styled.svg<StyledSvgPropsType>`
   fill: ${(props) => props.fillStart || "#767676"};
   @media (hover: hover) {
