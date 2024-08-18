@@ -16,7 +16,11 @@ export default function InfoBar() {
       align="center"
       justify="space-between"
     >
-      <FlexWrapper direction="column" align="center">
+      <FlexWrapper
+        direction="column"
+        align="center"
+        style={{ marginBottom: "15px" }}
+      >
         <PositionElementOnline>
           <ProfileImg src={smallPhoto} alt="Rayan Adlardard Face" />
           <CircleOnline></CircleOnline>
@@ -24,57 +28,59 @@ export default function InfoBar() {
         <StyledPrimaryText style={{ marginBottom: "15px" }}>
           Rayan Adlardard
         </StyledPrimaryText>
-        <StyledSecondaryText>Font-end Developer</StyledSecondaryText>
+        <StyledSecondaryText style={{ marginBottom: "15px" }}>
+          Font-end Developer
+        </StyledSecondaryText>
       </FlexWrapper>
-      <FlexWrapper as={"ul"} style={{ listStyle: "none" }}>
-        <li>
+      <FlexWrapper as={"ul"} style={{ listStyle: "none" }} gap="15px">
+        <StyledLi>
           <Icon
-            iconSrc={"iconFbSvg"}
-            width="18"
-            height="18"
-            viewBox="0 0 18 18"
+            iconSrc={"FbLogoSvg"}
+            width="7"
+            height="12"
+            viewBox="0 0 7 12"
           />
-        </li>
-        <li>
+        </StyledLi>
+        <StyledLi>
           <Icon
-            iconSrc={"iconInstaSvg"}
-            width="14"
-            height="14"
-            viewBox="0 0 14 14"
+            iconSrc={"InstaLogoSvg"}
+            width="12"
+            height="12"
+            viewBox="0 0 12 12"
           />
-        </li>
-        <li>
+        </StyledLi>
+        <StyledLi>
           <Icon
-            iconSrc={"iconTwSvg"}
-            width="14"
-            height="14"
-            viewBox="0 0 14 14"
+            iconSrc={"TwLogoSvg"}
+            width="12"
+            height="10"
+            viewBox="0 0 12 10"
           />
-        </li>
-        <li>
+        </StyledLi>
+        <StyledLi>
           <Icon
-            iconSrc={"iconLndSvg"}
-            width="14"
-            height="14"
-            viewBox="0 0 14 14"
+            iconSrc={"LdLogoSvg"}
+            width="12"
+            height="12"
+            viewBox="0 0 12 12"
           />
-        </li>
-        <li>
+        </StyledLi>
+        <StyledLi>
           <Icon
-            iconSrc={"iconYtSvg"}
-            width="14"
-            height="14"
-            viewBox="0 0 14 14"
+            iconSrc={"YtLogoSvg"}
+            width="12"
+            height="10"
+            viewBox="0 0 12 10"
           />
-        </li>
-        <li>
+        </StyledLi>
+        <StyledLi>
           <Icon
-            iconSrc={"adPopUpSvg"}
-            width="14"
-            height="14"
-            viewBox="0 0 14 14"
+            iconSrc={"DrLogoSvg"}
+            width="12"
+            height="12"
+            viewBox="0 0 12 12"
           />
-        </li>
+        </StyledLi>
       </FlexWrapper>
       <StyledHr />
       <FlexWrapper gap="9px" direction="column">
@@ -175,6 +181,16 @@ export default function InfoBar() {
   );
 }
 
+const StyledLi = styled.li`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  background-color: #ffb400;
+  border-radius: 50%;
+`;
+
 const StyledHr = styled.hr`
   border: 1.5px solid #f0f0f6;
   width: 100%;
@@ -189,6 +205,7 @@ const BorderClrText = styled(StyledSecondaryText)`
 const PositionElementOnline = styled.div`
   position: relative;
   margin-bottom: 31px;
+  display: flex;
 `;
 
 const CircleOnline = styled.span`
@@ -198,17 +215,36 @@ const CircleOnline = styled.span`
   box-shadow: 0px 4px 10px 0px #00000026;
   border-radius: 50%;
   position: absolute;
-  bottom: 22px;
+  bottom: 18px;
   right: 10px;
 `;
 
 const StyledAside = styled.aside`
+  height: fit-content;
   padding: 50px 45px 25px 40px;
-  max-width: 305px;
   background-color: #ffffff;
-  /* position: fixed;
-  top: 0;
-  left: 0; */
+  position: fixed;
+  width: 305px;
+  height: 100vh;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #c0bfbf;
+    border-radius: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #888;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #ffffff;
+    border-radius: 6px;
+  }
 `;
 
 const ProfileImg = styled.img`

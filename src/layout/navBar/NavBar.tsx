@@ -84,12 +84,10 @@ export const NavBar = () => {
 const StyledNav = styled.nav`
   background-color: #fafafa;
   position: fixed;
-  height: 100%;
   top: 0;
   right: 0;
-  min-width: fit-content;
-  max-width: 108px;
-  width: 5%;
+  padding: 0 34px;
+  height: 100%;
 
   ul {
     display: flex;
