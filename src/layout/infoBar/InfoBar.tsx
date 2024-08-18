@@ -7,6 +7,7 @@ import { StyledBtn } from "../../components/StyledBtn.styled";
 import { StyledPrimaryText } from "../../components/PrimaryText.styled";
 import { StyledSecondaryText } from "../../components/SecondaryText.styled";
 import { FlexWrapper } from "../../components/FlexWrapper";
+import { ItemDesign } from "../../components/ItemDesign";
 
 export default function InfoBar() {
   return (
@@ -23,7 +24,12 @@ export default function InfoBar() {
       >
         <PositionElementOnline>
           <ProfileImg src={smallPhoto} alt="Rayan Adlardard Face" />
-          <CircleOnline></CircleOnline>
+          <ItemDesign
+            bgc="#7eb942"
+            bShadow="0px 4px 10px 0px #00000026"
+            bot="18px"
+            right="10px"
+          />
         </PositionElementOnline>
         <StyledPrimaryText style={{ marginBottom: "15px" }}>
           Rayan Adlardard
@@ -168,13 +174,22 @@ export default function InfoBar() {
         </FlexWrapper>
       </FlexWrapper>
       <StyledHr />
-      <StyledBtn gap="19px">
-        <StyledTextBtn>Download cv</StyledTextBtn>
+      <StyledBtn gap="19px" padding="10px 40px" newIdIcon="newId">
+        <StyledPrimaryText
+          isHover
+          as={"p"}
+          size="14px"
+          Lheight="16.94px"
+          weight="600"
+        >
+          Download cv
+        </StyledPrimaryText>
         <Icon
           iconSrc={"BtnCvLoadSvg"}
           width="12"
           height="13"
           viewBox="0 0 12 13"
+          fillStart="#2B2B2B"
         />
       </StyledBtn>
     </StyledAside>
@@ -189,6 +204,7 @@ const StyledLi = styled.li`
   height: 24px;
   background-color: #ffb400;
   border-radius: 50%;
+  cursor: pointer;
 `;
 
 const StyledHr = styled.hr`
@@ -225,7 +241,7 @@ const StyledAside = styled.aside`
   background-color: #ffffff;
   position: fixed;
   width: 305px;
-  height: 100vh;
+  height: 100%;
   overflow-y: auto;
 
   &::-webkit-scrollbar {
@@ -251,13 +267,4 @@ const ProfileImg = styled.img`
   width: 150px;
   height: 150px;
   border-radius: 50%;
-`;
-
-const StyledTextBtn = styled.p`
-  font-family: Inter;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 16.94px;
-  text-align: left;
-  color: #2b2b2b;
 `;

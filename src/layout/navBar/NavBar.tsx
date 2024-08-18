@@ -82,6 +82,7 @@ export const NavBar = () => {
 };
 
 const StyledNav = styled.nav`
+  z-index: 1;
   background-color: #fafafa;
   position: fixed;
   top: 0;

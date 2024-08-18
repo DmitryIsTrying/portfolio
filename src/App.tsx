@@ -3,7 +3,6 @@ import "./App.css";
 import InfoBar from "./layout/infoBar/InfoBar";
 import { NavBar } from "./layout/navBar/NavBar";
 import { Header } from "./layout/sections/header/Header";
-import { FlexWrapper } from "./components/FlexWrapper";
 
 function App() {
   return (
@@ -20,6 +19,7 @@ function App() {
         <section
           style={{ height: "100vh", backgroundColor: "yellowgreen" }}
         ></section>
+        <footer></footer>
       </Main>
       <NavBar />
     </div>
@@ -27,7 +27,7 @@ function App() {
 }
 
 const Main = styled.main`
-  min-width: 480px;
+  min-width: 650px;
   margin: 0 135px 0 335px;
 `;
 

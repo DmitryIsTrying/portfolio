@@ -1,11 +1,19 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const StyledPrimaryText = styled.h3`
+type StyledPrimaryTextPropsType = {
+  size?: string;
+  Lheight?: string;
+  weight?: string;
+  isHover?: boolean;
+};
+
+export const StyledPrimaryText = styled.h3<StyledPrimaryTextPropsType>`
   font-family: Inter;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 22.25px;
+  font-size: ${(props) => props.size || "18px"};
+  font-weight: ${(props) => props.weight || "500"};
+  line-height: ${(props) => props.Lheight || "22.25px"};
   text-align: left;
   color: #2b2b2b;
+  transition: 0.5s ease;
 `;
