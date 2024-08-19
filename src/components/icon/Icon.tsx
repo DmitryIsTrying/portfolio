@@ -26,7 +26,7 @@ export const Icon = (props: IconPropsType) => {
     </StyledSvg>
   );
 };
-debugger;
+
 const StyledSvg = styled.svg<StyledSvgPropsType>`
   fill: ${(props) => props.fillStart || "#767676"};
   @media (hover: hover) {

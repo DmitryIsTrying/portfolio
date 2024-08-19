@@ -7,6 +7,7 @@ type StyledBtnPropsType = {
   padding: string;
   WFit?: boolean;
   newIdIcon?: string;
+  color?: string;
 };
 
 export const StyledBtn = styled.button<StyledBtnPropsType>`
@@ -19,7 +20,7 @@ export const StyledBtn = styled.button<StyledBtnPropsType>`
   width: ${(props) => (props.WFit ? "fit-content" : "100%")};
   border: none;
   gap: ${(props) => props.gap || 0};
-  background-color: #ffb400;
+  background-color: ${(props) => props.color || "#ffb400"};
   cursor: pointer;
 
   @media (hover: hover) {

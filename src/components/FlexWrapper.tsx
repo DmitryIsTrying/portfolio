@@ -7,13 +7,17 @@ type FlexWrapperPropsType = {
   align?: string;
   wrap?: string;
   gap?: string;
+  color?: string;
+  padding?: string;
+  fitHeight?: boolean;
 };
 
 export const FlexWrapper = styled.div<FlexWrapperPropsType>`
   display: flex;
   width: 100%;
-  height: fit-content;
-  background-color: #ffffff;
+  height: ${(props) => (props.fitHeight ? "fit-content" : "100%")};
+  padding: ${(props) => props.padding || "0"};
+  background-color: ${(props) => props.color || "#ffffff"};
   flex-direction: ${(props) => props.direction || "row"};
   justify-content: ${(props) => props.justify || "flex-start"};
   align-items: ${(props) => props.align || "stretch"};

@@ -16,6 +16,7 @@ export default function InfoBar() {
       direction="column"
       align="center"
       justify="space-between"
+      style={{ zIndex: "3" }}
     >
       <FlexWrapper
         direction="column"
@@ -175,13 +176,7 @@ export default function InfoBar() {
       </FlexWrapper>
       <StyledHr />
       <StyledBtn gap="19px" padding="10px 40px" newIdIcon="newId">
-        <StyledPrimaryText
-          isHover
-          as={"p"}
-          size="14px"
-          Lheight="16.94px"
-          weight="600"
-        >
+        <StyledPrimaryText as={"p"} size="14px" Lheight="16.94px" weight="600">
           Download cv
         </StyledPrimaryText>
         <Icon

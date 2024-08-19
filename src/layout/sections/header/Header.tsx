@@ -6,8 +6,8 @@ import { StyledPrimaryText } from "../../../components/PrimaryText.styled";
 import { StyledSecondaryText } from "../../../components/SecondaryText.styled";
 import { StyledBtn } from "../../../components/StyledBtn.styled";
 import { ItemDesign } from "../../../components/ItemDesign";
-import { relative } from "path";
 import styled from "styled-components";
+import { StyledTitleText } from "../../../components/TitleText.styled";
 
 export const Header = () => {
   return (
@@ -22,16 +22,15 @@ export const Header = () => {
         align="flex-end"
       >
         <FlexWrapper direction="column" style={{ width: "fit-content" }}>
-          <StyledPrimaryText
-            as="h2"
+          <StyledTitleText
             size="48px"
             Lheight="59.33px"
             weight="700"
             style={{ width: "fit-content", marginTop: "93px" }}
           >
             I’m Rayan Adlrdard
-          </StyledPrimaryText>
-          <StyledPrimaryText
+          </StyledTitleText>
+          <StyledTitleText
             as="h1"
             size="48px"
             Lheight="59.33px"
@@ -39,7 +38,7 @@ export const Header = () => {
             style={{ marginBottom: "18px", width: "fit-content" }}
           >
             <span style={{ color: "#FFB400" }}>Front-end</span> Developer
-          </StyledPrimaryText>
+          </StyledTitleText>
           <StyledSecondaryText
             size="16px"
             style={{ marginBottom: "25px", maxWidth: "424px", zIndex: "1" }}
