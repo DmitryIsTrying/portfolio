@@ -6,6 +6,7 @@ import { Header } from "./layout/sections/header/Header";
 import { SectionService } from "./layout/sections/sectionService/SectionService";
 import { FlexWrapper } from "./components/FlexWrapper";
 import { SectionPrice } from "./layout/sections/sectionPrice/SectionPrice";
+import { SectionRecommend } from "./layout/sections/sectionRecommend/SectionRecommend";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <FlexWrapper gap="70px" direction="column" color="transparent">
           <SectionService />
           <SectionPrice />
-          <SectionService />
+          <SectionRecommend />
           <footer></footer>
         </FlexWrapper>
       </Main>

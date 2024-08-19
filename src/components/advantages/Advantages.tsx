@@ -8,11 +8,8 @@ interface AdvantagesPropsType {
   isDisabled?: boolean;
 }
 
-export const Advantages: React.FC<AdvantagesPropsType> = ({
-  children,
-  isDisabled,
-}) => {
-  if (!isDisabled) {
+export const Advantages = (props: AdvantagesPropsType) => {
+  if (!props.isDisabled) {
     return (
       <FlexWrapper gap="18px" align="center">
         <Icon
@@ -21,7 +18,9 @@ export const Advantages: React.FC<AdvantagesPropsType> = ({
           height="13"
           viewBox="0 0 19 13"
         />
-        <StyledSecondaryText color="#2B2B2B">{children}</StyledSecondaryText>
+        <StyledSecondaryText color="#2B2B2B">
+          {props.children}
+        </StyledSecondaryText>
       </FlexWrapper>
     );
   } else {
@@ -33,7 +32,7 @@ export const Advantages: React.FC<AdvantagesPropsType> = ({
           height="14"
           viewBox="0 0 15 14"
         />
-        <StyledSecondaryText>{children}</StyledSecondaryText>
+        <StyledSecondaryText>{props.children}</StyledSecondaryText>
       </FlexWrapper>
     );
   }
