@@ -94,13 +94,15 @@ export const SectionService = () => {
             portrait, product photography
           </StyledSecondaryText>
         </FlexWrapper>
-        <FlexWrapper direction="column" align="center" justify="flex-end">
-          <StyledPrimaryText style={{ marginBottom: "22px" }}>
+        <FlexWrapper direction="column" align="center" justify="flex-start">
+          <StyledPrimaryText
+            style={{ marginBottom: "22px", marginTop: "31px" }}
+          >
             advertising
           </StyledPrimaryText>
           <StyledSecondaryText
             TAlign="center"
-            style={{ padding: "0 25px", marginBottom: "27px" }}
+            style={{ padding: "0 25px", marginBottom: "18px" }}
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla
             diam in ac dictum a urna viverra morbi.
