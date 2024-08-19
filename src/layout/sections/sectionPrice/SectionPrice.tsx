@@ -14,7 +14,7 @@ export const SectionPrice = () => {
       <StyledTitleText style={{ marginBottom: "25px" }}>
         Price plans
       </StyledTitleText>
-      <FlexWrapper color="#F0F0F6" justify="center">
+      <FlexWrapper fitHeight color="#F0F0F6" justify="center">
         <StyledSecondaryText
           style={{ marginBottom: "50px" }}
           Mwidth

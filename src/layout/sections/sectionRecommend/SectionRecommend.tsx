@@ -12,11 +12,11 @@ import styled from "styled-components";
 
 export const SectionRecommend = () => {
   return (
-    <FlexWrapper color="#F0F0F6" direction="column" align="center">
+    <FlexWrapper fitHeight color="#F0F0F6" direction="column" align="center">
       <StyledTitleText style={{ marginBottom: "25px" }}>
         Recommendations
       </StyledTitleText>
-      <FlexWrapper color="#F0F0F6" justify="center">
+      <FlexWrapper fitHeight color="#F0F0F6" justify="center">
         <StyledSecondaryText
           style={{ marginBottom: "50px" }}
           Mwidth
@@ -94,6 +94,16 @@ export const SectionRecommend = () => {
           </FlexWrapper>
         </FlexWrapper>
       </GridWrapper>
+      <FlexWrapper
+        color="#F0F0F6"
+        gap="10px"
+        justify="center"
+        style={{ marginTop: "50px" }}
+      >
+        <OrangeCircle />
+        <OrangeCircle />
+        <OrangeCircle />
+      </FlexWrapper>
     </FlexWrapper>
   );
 };
@@ -102,4 +112,11 @@ const StyledAvatar = styled.img`
   border-radius: 50%;
   width: 80px;
   height: 80px;
+`;
+
+const OrangeCircle = styled.span`
+  width: 10px;
+  height: 10px;
+  background-color: #ffb400;
+  border-radius: 50%;
 `;

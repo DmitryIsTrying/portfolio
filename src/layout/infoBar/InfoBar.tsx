@@ -8,6 +8,7 @@ import { StyledPrimaryText } from "../../components/PrimaryText.styled";
 import { StyledSecondaryText } from "../../components/SecondaryText.styled";
 import { FlexWrapper } from "../../components/FlexWrapper";
 import { ItemDesign } from "../../components/ItemDesign";
+import { StyledHr } from "../../components/StyledHr";
 
 export default function InfoBar() {
   return (
@@ -89,7 +90,7 @@ export default function InfoBar() {
           />
         </StyledLi>
       </FlexWrapper>
-      <StyledHr />
+      <StyledHr margin="25px 0" />
       <FlexWrapper gap="9px" direction="column">
         <FlexWrapper justify="space-between">
           <BorderClrText color="#2B2B2B">Age:</BorderClrText>
@@ -110,7 +111,7 @@ export default function InfoBar() {
           </StyledSecondaryText>
         </FlexWrapper>
       </FlexWrapper>
-      <StyledHr />
+      <StyledHr margin="25px 0" />
       <FlexWrapper direction="column" align="flex-start">
         <StyledPrimaryText style={{ marginBottom: "15px" }}>
           Languages
@@ -119,7 +120,7 @@ export default function InfoBar() {
         <ProgressBar nameSKill={"English"} lvlSkill={"80%"} />
         <ProgressBar nameSKill={"Spanish"} lvlSkill={"60%"} />
       </FlexWrapper>
-      <StyledHr />
+      <StyledHr margin="25px 0" />
       <FlexWrapper direction="column" align="flex-start">
         <StyledPrimaryText style={{ marginBottom: "15px" }}>
           Skills
@@ -130,7 +131,7 @@ export default function InfoBar() {
         <ProgressBar nameSKill={"PHP"} lvlSkill={"75%"} />
         <ProgressBar nameSKill={"WordPress"} lvlSkill={"85%"} />
       </FlexWrapper>
-      <StyledHr />
+      <StyledHr margin="25px 0" />
       <FlexWrapper direction="column" align="flex-start">
         <StyledPrimaryText style={{ marginBottom: "15px" }}>
           Extra Skills
@@ -174,7 +175,7 @@ export default function InfoBar() {
           </FlexWrapper>
         </FlexWrapper>
       </FlexWrapper>
-      <StyledHr />
+      <StyledHr margin="25px 0" />
       <StyledBtn gap="19px" padding="10px 40px" newIdIcon="newId">
         <StyledPrimaryText as={"p"} size="14px" Lheight="16.94px" weight="600">
           Download cv
@@ -202,12 +203,6 @@ const StyledLi = styled.li`
   cursor: pointer;
 `;
 
-const StyledHr = styled.hr`
-  border: 1.5px solid #f0f0f6;
-  width: 100%;
-  margin: 25px 0;
-`;
-
 const BorderClrText = styled(StyledSecondaryText)`
   background-color: #ffb400;
   padding: 0px 7px 0px 5px;
@@ -219,21 +214,11 @@ const PositionElementOnline = styled.div`
   display: flex;
 `;
 
-const CircleOnline = styled.span`
-  width: 16px;
-  height: 16px;
-  background-color: #7eb942;
-  box-shadow: 0px 4px 10px 0px #00000026;
-  border-radius: 50%;
-  position: absolute;
-  bottom: 18px;
-  right: 10px;
-`;
-
 const StyledAside = styled.aside`
   height: fit-content;
   padding: 50px 45px 25px 40px;
   background-color: #ffffff;
+  width: 305px;
   position: fixed;
   width: 305px;
   height: 100%;

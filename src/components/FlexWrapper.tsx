@@ -10,11 +10,12 @@ type FlexWrapperPropsType = {
   color?: string;
   padding?: string;
   fitHeight?: boolean;
+  fitWidth?: boolean;
 };
 
 export const FlexWrapper = styled.div<FlexWrapperPropsType>`
   display: flex;
-  width: 100%;
+  width: ${(props) => (props.fitWidth ? "fit-content" : "100%")};
   height: ${(props) => (props.fitHeight ? "fit-content" : "100%")};
   padding: ${(props) => props.padding || "0"};
   background-color: ${(props) => props.color || "#ffffff"};

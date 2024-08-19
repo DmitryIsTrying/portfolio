@@ -13,11 +13,7 @@ type ItemDesignPropsType = {
   transform?: number;
 };
 
-export const ItemDesign = (props: ItemDesignPropsType) => {
-  return <Item {...props} />;
-};
-
-const Item = styled.span<ItemDesignPropsType>`
+export const ItemDesign = styled.span<ItemDesignPropsType>`
   position: absolute;
   width: 16px;
   height: 16px;

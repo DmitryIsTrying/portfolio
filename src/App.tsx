@@ -7,31 +7,47 @@ import { SectionService } from "./layout/sections/sectionService/SectionService"
 import { FlexWrapper } from "./components/FlexWrapper";
 import { SectionPrice } from "./layout/sections/sectionPrice/SectionPrice";
 import { SectionRecommend } from "./layout/sections/sectionRecommend/SectionRecommend";
+import { SectionEducation } from "./layout/sections/sectionEducation/SectionEducation";
+import { SectionWHistory } from "./layout/sections/sectionWHistory/SectionWHistory";
 
 function App() {
   return (
     <div className="App">
-      <InfoBar />
-      <Main>
-        <Header />
-        <FlexWrapper gap="70px" direction="column" color="transparent">
-          <SectionService />
-          <SectionPrice />
-          <SectionRecommend />
-          <footer></footer>
-        </FlexWrapper>
-      </Main>
-      <NavBar />
+      <GridWrapperMain>
+        <InfoBar />
+        <Main>
+          <Header />
+          <FlexWrapper
+            style={{ maxWidth: "970px" }}
+            gap="70px"
+            direction="column"
+            color="transparent"
+          >
+            <SectionService />
+            <SectionPrice />
+            <SectionRecommend />
+            <SectionEducation />
+            <SectionWHistory />
+            <footer></footer>
+          </FlexWrapper>
+        </Main>
+        <NavBar />
+      </GridWrapperMain>
     </div>
   );
 }
 
+const GridWrapperMain = styled.div`
+  display: grid;
+  grid-template-columns: 305px auto 108px;
+`;
+
 const Main = styled.main`
-  min-width: 970px;
-  margin: 0 235px 0 435px;
-  @media (max-width: 1440px) {
-    margin: 0 135px 0 335px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-column: 2;
+  margin: 0 27px 0 30px;
 `;
 
 export default App;

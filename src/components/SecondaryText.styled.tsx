@@ -5,9 +5,10 @@ type StyledSecondaryTextPropsType = {
   color?: string;
   TAlign?: string;
   size?: string;
-  Mwidth?: boolean;
   lHeight?: string;
   fWeight?: string;
+  Mwidth?: boolean;
+  MWE?: boolean;
 };
 
 export const StyledSecondaryText = styled.p<StyledSecondaryTextPropsType>`
@@ -21,5 +22,10 @@ export const StyledSecondaryText = styled.p<StyledSecondaryTextPropsType>`
     props.Mwidth &&
     css`
       max-width: 378px;
+    `}
+  ${(props) =>
+    props.MWE &&
+    css`
+      max-width: 536px;
     `}
 `;

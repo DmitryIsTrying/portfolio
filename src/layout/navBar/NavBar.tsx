@@ -89,6 +89,7 @@ const StyledNav = styled.nav`
   right: 0;
   padding: 0 34px;
   height: 100%;
+  width: 108px;
 
   ul {
     display: flex;
