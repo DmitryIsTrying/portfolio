@@ -27,8 +27,11 @@ function App() {
 }
 
 const Main = styled.main`
-  min-width: 650px;
+  min-width: 970px;
   margin: 0 235px 0 435px;
+  @media (max-width: 1440px) {
+    margin: 0 135px 0 335px;
+  }
 `;
 
 export default App;
