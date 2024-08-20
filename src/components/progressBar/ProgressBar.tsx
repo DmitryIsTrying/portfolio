@@ -14,7 +14,7 @@ export const ProgressBar = (props: ProgressBarPropsType) => {
         <StyledLvlText as={"p"}>{props.lvlSkill + "%"}</StyledLvlText>
       </StyledWrapperText>
       <FullSkillBar>
-        <MySkillBar id="progress" value={props.lvlSkill} max="100" />
+        <MySkillBar id={props.nameSkill} value={props.lvlSkill} max="100" />
       </FullSkillBar>
     </StyledWrapperSkill>
   );
