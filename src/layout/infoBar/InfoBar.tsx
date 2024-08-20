@@ -13,7 +13,7 @@ import { StyledHr } from "../../components/StyledHr";
 export default function InfoBar() {
   return (
     <StyledAside
-      as={FlexWrapper}
+      as={"aside"}
       direction="column"
       align="center"
       justify="space-between"
@@ -116,20 +116,20 @@ export default function InfoBar() {
         <StyledPrimaryText style={{ marginBottom: "15px" }}>
           Languages
         </StyledPrimaryText>
-        <ProgressBar nameSKill={"Bangla"} lvlSkill={"100%"} />
-        <ProgressBar nameSKill={"English"} lvlSkill={"80%"} />
-        <ProgressBar nameSKill={"Spanish"} lvlSkill={"60%"} />
+        <ProgressBar nameSkill={"Bangla"} lvlSkill={100} />
+        <ProgressBar nameSkill={"English"} lvlSkill={80} />
+        <ProgressBar nameSkill={"Spanish"} lvlSkill={60} />
       </FlexWrapper>
       <StyledHr margin="25px 0" />
       <FlexWrapper direction="column" align="flex-start">
         <StyledPrimaryText style={{ marginBottom: "15px" }}>
           Skills
         </StyledPrimaryText>
-        <ProgressBar nameSKill={"Html"} lvlSkill={"90%"} />
-        <ProgressBar nameSKill={"CSS"} lvlSkill={"85%"} />
-        <ProgressBar nameSKill={"Js"} lvlSkill={"80%"} />
-        <ProgressBar nameSKill={"PHP"} lvlSkill={"75%"} />
-        <ProgressBar nameSKill={"WordPress"} lvlSkill={"85%"} />
+        <ProgressBar nameSkill={"Html"} lvlSkill={90} />
+        <ProgressBar nameSkill={"CSS"} lvlSkill={85} />
+        <ProgressBar nameSkill={"Js"} lvlSkill={80} />
+        <ProgressBar nameSkill={"PHP"} lvlSkill={75} />
+        <ProgressBar nameSkill={"WordPress"} lvlSkill={85} />
       </FlexWrapper>
       <StyledHr margin="25px 0" />
       <FlexWrapper direction="column" align="flex-start">
@@ -214,7 +214,7 @@ const PositionElementOnline = styled.div`
   display: flex;
 `;
 
-const StyledAside = styled.aside`
+const StyledAside = styled(FlexWrapper)`
   height: fit-content;
   padding: 50px 45px 25px 40px;
   background-color: #ffffff;

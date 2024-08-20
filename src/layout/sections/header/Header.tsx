@@ -21,6 +21,7 @@ export const Header = () => {
       }}
       align="flex-end"
       fitHeight
+      as={"header"}
     >
       <FlexWrapper direction="column" fitWidth>
         <StyledTitleText

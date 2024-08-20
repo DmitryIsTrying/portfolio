@@ -6,6 +6,7 @@ type StyledPrimaryTextPropsType = {
   Lheight?: string;
   weight?: string;
   TAlign?: string;
+  color?: string;
 };
 
 export const StyledPrimaryText = styled.h3<StyledPrimaryTextPropsType>`
@@ -14,6 +15,11 @@ export const StyledPrimaryText = styled.h3<StyledPrimaryTextPropsType>`
   font-weight: ${(props) => props.weight || "500"};
   line-height: ${(props) => props.Lheight || "22.25px"};
   text-align: ${(props) => props.TAlign || "left"};
-  color: #2b2b2b;
-  transition: 0.5s ease;
+  color: ${(props) => props.color || "#2b2b2b"};
+  @media (hover: hover) {
+    transition: 0.5s ease;
+  }
+  @media (hover: none) {
+    transition: 0.1s ease;
+  }
 `;

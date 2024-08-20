@@ -2,23 +2,19 @@ import React from "react";
 import styled from "styled-components";
 
 type ProgressBarPropsType = {
-  nameSKill: string;
-  lvlSkill: string;
-};
-
-type MySkillBarPropsType = {
-  lvlSkill: string;
+  nameSkill: string;
+  lvlSkill: number;
 };
 
 export const ProgressBar = (props: ProgressBarPropsType) => {
   return (
     <StyledWrapperSkill>
-      <StyledWrapperText as={StyledWrapperSkill}>
-        <StyledNameSkill>{props.nameSKill}</StyledNameSkill>
-        <StyledLvlText as={StyledNameSkill}>{props.lvlSkill}</StyledLvlText>
+      <StyledWrapperText htmlFor="progress">
+        <StyledNameSkill>{props.nameSkill}</StyledNameSkill>
+        <StyledLvlText as={"p"}>{props.lvlSkill + "%"}</StyledLvlText>
       </StyledWrapperText>
       <FullSkillBar>
-        <MySkillBar lvlSkill={props.lvlSkill} />
+        <MySkillBar id="progress" value={props.lvlSkill} max="100" />
       </FullSkillBar>
     </StyledWrapperSkill>
   );
@@ -34,13 +30,14 @@ const StyledWrapperSkill = styled.div`
   }
 `;
 
-const StyledWrapperText = styled.div`
+const StyledWrapperText = styled.label`
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 5px;
 `;
 
-const StyledNameSkill = styled.h3`
+const StyledNameSkill = styled.h4`
   color: #767676;
   font-family: Inter;
   font-size: 15px;
@@ -49,7 +46,7 @@ const StyledNameSkill = styled.h3`
   text-align: left;
 `;
 
-const StyledLvlText = styled.span``;
+const StyledLvlText = styled(StyledNameSkill)``;
 
 const FullSkillBar = styled.div`
   display: flex;
@@ -58,12 +55,26 @@ const FullSkillBar = styled.div`
   background-color: transparent;
   border: 0.5px solid #ffb400;
   border-radius: 30px;
+  padding: 1px;
 `;
 
-const MySkillBar = styled.div<MySkillBarPropsType>`
-  margin: 1px;
-  width: ${(props) => props.lvlSkill};
+const MySkillBar = styled.progress`
+  width: 100%;
   height: 2px;
-  background-color: #ffb400;
-  border-radius: 30px;
+  appearance: none;
+
+  &::-webkit-progress-bar {
+    background-color: transparent;
+    border-radius: 30px;
+  }
+
+  &::-webkit-progress-value {
+    background-color: #ffb400;
+    border-radius: 30px;
+  }
+
+  &::-moz-progress-bar {
+    background-color: #ffb400;
+    border-radius: 30px;
+  }
 `;

@@ -9,11 +9,14 @@ import { SectionPrice } from "./layout/sections/sectionPrice/SectionPrice";
 import { SectionRecommend } from "./layout/sections/sectionRecommend/SectionRecommend";
 import { SectionEducation } from "./layout/sections/sectionEducation/SectionEducation";
 import { SectionWHistory } from "./layout/sections/sectionWHistory/SectionWHistory";
+import { SectionPortfolio } from "./layout/sections/sectionPortfolio/SectionPortfolio";
+import { SectionBlog } from "./layout/sections/sectionBlog/SectionBlog";
+import { GridWrapper } from "./components/GridWrapper";
 
 function App() {
   return (
     <div className="App">
-      <GridWrapperMain>
+      <GridWrapper NoGap NRColumns="330px auto 135px">
         <InfoBar />
         <Main>
           <Header />
@@ -28,26 +31,22 @@ function App() {
             <SectionRecommend />
             <SectionEducation />
             <SectionWHistory />
+            <SectionPortfolio />
+            <SectionBlog />
             <footer></footer>
           </FlexWrapper>
         </Main>
         <NavBar />
-      </GridWrapperMain>
+      </GridWrapper>
     </div>
   );
 }
-
-const GridWrapperMain = styled.div`
-  display: grid;
-  grid-template-columns: 305px auto 108px;
-`;
 
 const Main = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
   grid-column: 2;
-  margin: 0 27px 0 30px;
 `;
 
 export default App;

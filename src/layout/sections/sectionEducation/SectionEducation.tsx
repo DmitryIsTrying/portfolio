@@ -7,7 +7,12 @@ import { StyledHr } from "../../../components/StyledHr";
 
 export const SectionEducation = () => {
   return (
-    <FlexWrapper color="#F0F0F6" direction="column" align="center">
+    <FlexWrapper
+      as={"section"}
+      color="#F0F0F6"
+      direction="column"
+      align="center"
+    >
       <StyledTitleText style={{ marginBottom: "25px" }}>
         Education
       </StyledTitleText>

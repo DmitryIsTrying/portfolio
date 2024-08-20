@@ -10,7 +10,12 @@ import styled from "styled-components";
 
 export const SectionPrice = () => {
   return (
-    <FlexWrapper color="#F0F0F6" direction="column" align="center">
+    <FlexWrapper
+      as={"section"}
+      color="#F0F0F6"
+      direction="column"
+      align="center"
+    >
       <StyledTitleText style={{ marginBottom: "25px" }}>
         Price plans
       </StyledTitleText>

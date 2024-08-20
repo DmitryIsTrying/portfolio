@@ -8,6 +8,7 @@ type StyledBtnPropsType = {
   WFit?: boolean;
   newIdIcon?: string;
   color?: string;
+  noHover?: boolean;
 };
 
 export const StyledBtn = styled.button<StyledBtnPropsType>`
@@ -23,27 +24,29 @@ export const StyledBtn = styled.button<StyledBtnPropsType>`
   background-color: ${(props) => props.color || "#ffb400"};
   cursor: pointer;
 
-  @media (hover: hover) {
-    transition: 0.5s ease;
-    &:hover {
-      ${StyledPrimaryText} {
-        color: #ffffff;
+  ${(props) =>
+    !props.noHover &&
+    css`
+      @media (hover: hover) {
+        &:hover {
+          ${StyledPrimaryText} {
+            color: #ffffff;
+          }
+          svg {
+            fill: #ffffff;
+          }
+        }
       }
-      svg {
-        fill: #ffffff;
-      }
-    }
-  }
 
-  @media (hover: none) {
-    transition: 0.5s ease;
-    &:active {
-      ${StyledPrimaryText} {
-        color: #ffffff;
+      @media (hover: none) {
+        &:active {
+          ${StyledPrimaryText} {
+            color: #ffffff;
+          }
+          svg {
+            fill: #ffffff;
+          }
+        }
       }
-      svg {
-        fill: #ffffff;
-      }
-    }
-  }
+    `}
 `;

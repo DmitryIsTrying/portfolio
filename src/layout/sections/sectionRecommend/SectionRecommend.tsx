@@ -12,7 +12,13 @@ import styled from "styled-components";
 
 export const SectionRecommend = () => {
   return (
-    <FlexWrapper fitHeight color="#F0F0F6" direction="column" align="center">
+    <FlexWrapper
+      as={"section"}
+      fitHeight
+      color="#F0F0F6"
+      direction="column"
+      align="center"
+    >
       <StyledTitleText style={{ marginBottom: "25px" }}>
         Recommendations
       </StyledTitleText>
