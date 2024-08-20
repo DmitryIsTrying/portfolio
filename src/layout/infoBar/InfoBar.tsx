@@ -42,7 +42,7 @@ export default function InfoBar() {
       </FlexWrapper>
       <FlexWrapper as={"ul"} style={{ listStyle: "none" }} gap="15px">
         <StyledLi>
-          <StyledLink href="#!Facebook">
+          <StyledLink aria-label="Facebook Link Profile" href="#!Facebook">
             <Icon
               iconSrc={"FbLogoSvg"}
               width="7"
@@ -52,7 +52,7 @@ export default function InfoBar() {
           </StyledLink>
         </StyledLi>
         <StyledLi>
-          <StyledLink href="#!Instagram">
+          <StyledLink aria-label="Instagram Link Profile" href="#!Instagram">
             <Icon
               iconSrc={"InstaLogoSvg"}
               width="12"
@@ -62,7 +62,7 @@ export default function InfoBar() {
           </StyledLink>
         </StyledLi>
         <StyledLi>
-          <StyledLink href="#!Twitter">
+          <StyledLink aria-label="Twitter Link Profile" href="#!Twitter">
             <Icon
               iconSrc={"TwLogoSvg"}
               width="12"
@@ -72,7 +72,7 @@ export default function InfoBar() {
           </StyledLink>
         </StyledLi>
         <StyledLi>
-          <StyledLink href="#!LinkedIn">
+          <StyledLink aria-label="LinkedIn Link Profile" href="#!LinkedIn">
             <Icon
               iconSrc={"LdLogoSvg"}
               width="12"
@@ -82,7 +82,7 @@ export default function InfoBar() {
           </StyledLink>
         </StyledLi>
         <StyledLi>
-          <StyledLink href="#!Youtube">
+          <StyledLink aria-label="Youtube Link Profile" href="#!Youtube">
             <Icon
               iconSrc={"YtLogoSvg"}
               width="12"
@@ -92,7 +92,7 @@ export default function InfoBar() {
           </StyledLink>
         </StyledLi>
         <StyledLi>
-          <StyledLink href="#!Dr">
+          <StyledLink aria-label="Dribble Link Profile" href="#!Dr">
             <Icon
               iconSrc={"DrLogoSvg"}
               width="12"

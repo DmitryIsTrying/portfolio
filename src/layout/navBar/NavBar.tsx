@@ -7,7 +7,7 @@ export const NavBar = () => {
     <StyledNav>
       <ul>
         <li>
-          <StyledBtnIcon>
+          <StyledBtnIcon aria-label="Change Site Theme">
             <Icon
               iconSrc={"darkLightNavSvg"}
               width="25"
@@ -17,7 +17,7 @@ export const NavBar = () => {
           </StyledBtnIcon>
         </li>
         <li>
-          <a href="#!">
+          <a aria-label="Home section" href="#homeSection">
             <Icon
               iconSrc={"homeNavSvg"}
               width="18"
@@ -27,7 +27,7 @@ export const NavBar = () => {
           </a>
         </li>
         <li>
-          <a href="#!">
+          <a aria-label="Price section" href="#priceSection">
             <Icon
               iconSrc={"serviceNavSvg"}
               width="16.5"
@@ -37,7 +37,7 @@ export const NavBar = () => {
           </a>
         </li>
         <li>
-          <a href="#!">
+          <a aria-label="Education Section" href="#educationSection">
             <Icon
               iconSrc={"cvNavSvg"}
               width="17"
@@ -47,7 +47,7 @@ export const NavBar = () => {
           </a>
         </li>
         <li>
-          <a href="#!">
+          <a aria-label="Work History Section" href="#workHistorySection">
             <Icon
               iconSrc={"portfolioNavSvg"}
               width="16"
@@ -57,7 +57,7 @@ export const NavBar = () => {
           </a>
         </li>
         <li>
-          <a href="#!">
+          <a aria-label="Portfolio Section" href="#portfolioSection">
             <Icon
               iconSrc={"iconDribbbleNavSvg"}
               width="14"
@@ -67,7 +67,7 @@ export const NavBar = () => {
           </a>
         </li>
         <li>
-          <a href="#!">
+          <a aria-label="Submit message" href="#messageSection">
             <Icon
               iconSrc={"messageNavSvg"}
               width="16"

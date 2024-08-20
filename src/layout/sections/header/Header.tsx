@@ -12,6 +12,7 @@ import { StyledTitleText } from "../../../components/TitleText.styled";
 export const Header = () => {
   return (
     <FlexWrapper
+      id="homeSection"
       justify="space-around"
       style={{
         marginBottom: "138px",

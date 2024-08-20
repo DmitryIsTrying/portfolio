@@ -18,9 +18,7 @@ export const SectionBlog = () => {
       direction="column"
       align="center"
     >
-      <StyledTitleText style={{ marginBottom: "25px" }}>
-        Portfolio
-      </StyledTitleText>
+      <StyledTitleText style={{ marginBottom: "25px" }}>Blog</StyledTitleText>
       <FlexWrapper color="#F0F0F6" justify="center">
         <StyledSecondaryText
           style={{ marginBottom: "50px" }}

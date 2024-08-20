@@ -11,6 +11,7 @@ import styled from "styled-components";
 export const SectionPrice = () => {
   return (
     <FlexWrapper
+      id="priceSection"
       as={"section"}
       color="#F0F0F6"
       direction="column"

@@ -8,6 +8,7 @@ import { StyledHr } from "../../../components/StyledHr";
 export const SectionEducation = () => {
   return (
     <FlexWrapper
+      id="educationSection"
       as={"section"}
       color="#F0F0F6"
       direction="column"

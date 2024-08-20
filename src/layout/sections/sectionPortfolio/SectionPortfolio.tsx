@@ -20,6 +20,7 @@ import Port9 from "../../../assets/images/Port9.webp";
 export const SectionPortfolio = () => {
   return (
     <FlexWrapper
+      id="portfolioSection"
       as={"section"}
       color="#F0F0F6"
       direction="column"
@@ -71,8 +72,12 @@ export const SectionPortfolio = () => {
             justify="center"
             align="center"
           >
-            <StyledBtn padding="0" color="transparent" WFit>
-              {" "}
+            <StyledBtn
+              aria-label="More examples"
+              padding="0"
+              color="transparent"
+              WFit
+            >
               <Icon
                 iconSrc="CrossSvg"
                 width="32"

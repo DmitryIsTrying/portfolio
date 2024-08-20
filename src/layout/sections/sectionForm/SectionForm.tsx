@@ -11,6 +11,7 @@ import { Icon } from "../../../components/icon/Icon";
 export const SectionForm = () => {
   return (
     <GridWrapper
+      id="messageSection"
       as={"section"}
       gap={30}
       NRColumns="570px 370px"
