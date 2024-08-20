@@ -146,4 +146,7 @@ const StyledBtnIcon = styled.button`
   border: none;
   background-color: transparent;
   cursor: pointer;
+  &:focus-visible {
+    outline: 2px solid #ff8800;
+  }
 `;
