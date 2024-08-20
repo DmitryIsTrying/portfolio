@@ -42,52 +42,64 @@ export default function InfoBar() {
       </FlexWrapper>
       <FlexWrapper as={"ul"} style={{ listStyle: "none" }} gap="15px">
         <StyledLi>
-          <Icon
-            iconSrc={"FbLogoSvg"}
-            width="7"
-            height="12"
-            viewBox="0 0 7 12"
-          />
+          <StyledLink href="#!Facebook">
+            <Icon
+              iconSrc={"FbLogoSvg"}
+              width="7"
+              height="12"
+              viewBox="0 0 7 12"
+            />
+          </StyledLink>
         </StyledLi>
         <StyledLi>
-          <Icon
-            iconSrc={"InstaLogoSvg"}
-            width="12"
-            height="12"
-            viewBox="0 0 12 12"
-          />
+          <StyledLink href="#!Instagram">
+            <Icon
+              iconSrc={"InstaLogoSvg"}
+              width="12"
+              height="12"
+              viewBox="0 0 12 12"
+            />
+          </StyledLink>
         </StyledLi>
         <StyledLi>
-          <Icon
-            iconSrc={"TwLogoSvg"}
-            width="12"
-            height="10"
-            viewBox="0 0 12 10"
-          />
+          <StyledLink href="#!Twitter">
+            <Icon
+              iconSrc={"TwLogoSvg"}
+              width="12"
+              height="10"
+              viewBox="0 0 12 10"
+            />
+          </StyledLink>
         </StyledLi>
         <StyledLi>
-          <Icon
-            iconSrc={"LdLogoSvg"}
-            width="12"
-            height="12"
-            viewBox="0 0 12 12"
-          />
+          <StyledLink href="#!LinkedIn">
+            <Icon
+              iconSrc={"LdLogoSvg"}
+              width="12"
+              height="12"
+              viewBox="0 0 12 12"
+            />
+          </StyledLink>
         </StyledLi>
         <StyledLi>
-          <Icon
-            iconSrc={"YtLogoSvg"}
-            width="12"
-            height="10"
-            viewBox="0 0 12 10"
-          />
+          <StyledLink href="#!Youtube">
+            <Icon
+              iconSrc={"YtLogoSvg"}
+              width="12"
+              height="10"
+              viewBox="0 0 12 10"
+            />
+          </StyledLink>
         </StyledLi>
         <StyledLi>
-          <Icon
-            iconSrc={"DrLogoSvg"}
-            width="12"
-            height="12"
-            viewBox="0 0 12 12"
-          />
+          <StyledLink href="#!Dr">
+            <Icon
+              iconSrc={"DrLogoSvg"}
+              width="12"
+              height="12"
+              viewBox="0 0 12 12"
+            />
+          </StyledLink>
         </StyledLi>
       </FlexWrapper>
       <StyledHr margin="25px 0" />
@@ -191,6 +203,15 @@ export default function InfoBar() {
     </StyledAside>
   );
 }
+
+const StyledLink = styled.a`
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+`;
 
 const StyledLi = styled.li`
   display: flex;

@@ -12,6 +12,10 @@ import { SectionWHistory } from "./layout/sections/sectionWHistory/SectionWHisto
 import { SectionPortfolio } from "./layout/sections/sectionPortfolio/SectionPortfolio";
 import { SectionBlog } from "./layout/sections/sectionBlog/SectionBlog";
 import { GridWrapper } from "./components/GridWrapper";
+import { SectionForm } from "./layout/sections/sectionForm/SectionForm";
+import { SectionMap } from "./layout/sections/sectionMap/SectionMap";
+import { SectionLogos } from "./layout/sections/sectionLogos/SectionLogos";
+import { Footer } from "./layout/sections/footer/Footer";
 
 function App() {
   return (
@@ -33,7 +37,10 @@ function App() {
             <SectionWHistory />
             <SectionPortfolio />
             <SectionBlog />
-            <footer></footer>
+            <SectionForm />
+            <SectionMap />
+            <SectionLogos />
+            <Footer />
           </FlexWrapper>
         </Main>
         <NavBar />
