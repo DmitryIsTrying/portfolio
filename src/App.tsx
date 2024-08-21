@@ -4,14 +4,12 @@ import InfoBar from "./layout/infoBar/InfoBar";
 import { NavBar } from "./layout/navBar/NavBar";
 import { Header } from "./layout/sections/header/Header";
 import { SectionService } from "./layout/sections/sectionService/SectionService";
-import { FlexWrapper } from "./components/FlexWrapper";
 import { SectionPrice } from "./layout/sections/sectionPrice/SectionPrice";
 import { SectionRecommend } from "./layout/sections/sectionRecommend/SectionRecommend";
 import { SectionEducation } from "./layout/sections/sectionEducation/SectionEducation";
 import { SectionWHistory } from "./layout/sections/sectionWHistory/SectionWHistory";
 import { SectionPortfolio } from "./layout/sections/sectionPortfolio/SectionPortfolio";
 import { SectionBlog } from "./layout/sections/sectionBlog/SectionBlog";
-import { GridWrapper } from "./components/GridWrapper";
 import { SectionForm } from "./layout/sections/sectionForm/SectionForm";
 import { SectionMap } from "./layout/sections/sectionMap/SectionMap";
 import { SectionLogos } from "./layout/sections/sectionLogos/SectionLogos";
@@ -20,40 +18,37 @@ import { Footer } from "./layout/sections/footer/Footer";
 function App() {
   return (
     <div className="App">
-      <GridWrapper NoGap NRColumns="330px auto 135px">
-        <InfoBar />
-        <Main>
+      <InfoBar />
+      <Main>
+        <Container>
           <Header />
-          <FlexWrapper
-            style={{ maxWidth: "970px" }}
-            gap="70px"
-            direction="column"
-            color="transparent"
-          >
-            <SectionService />
-            <SectionPrice />
-            <SectionRecommend />
-            <SectionEducation />
-            <SectionWHistory />
-            <SectionPortfolio />
-            <SectionBlog />
-            <SectionForm />
-            <SectionMap />
-            <SectionLogos />
-            <Footer />
-          </FlexWrapper>
-        </Main>
-        <NavBar />
-      </GridWrapper>
+          <SectionService />
+          <SectionPrice />
+          <SectionRecommend />
+          <SectionEducation />
+          <SectionWHistory />
+          <SectionPortfolio />
+          <SectionBlog />
+          <SectionForm />
+          <SectionMap />
+          <SectionLogos />
+          <Footer />
+        </Container>
+      </Main>
+      <NavBar />
     </div>
   );
 }
 
+export default App;
+
 const Main = styled.main`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  grid-column: 2;
+  padding: 0 105px 0 305px;
 `;
 
-export default App;
+const Container = styled.div`
+  max-width: 1030px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+`;

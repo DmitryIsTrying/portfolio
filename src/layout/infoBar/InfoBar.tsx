@@ -1,249 +1,47 @@
 import React from "react";
-import smallPhoto from "../../assets/images/Photo-small.webp";
-import { Icon } from "../../components/icon/Icon";
-import { ProgressBar } from "../../components/progressBar/ProgressBar";
 import styled from "styled-components";
-import { StyledBtn } from "../../components/StyledBtn.styled";
-import { StyledPrimaryText } from "../../components/PrimaryText.styled";
-import { StyledSecondaryText } from "../../components/SecondaryText.styled";
-import { FlexWrapper } from "../../components/FlexWrapper";
-import { ItemDesign } from "../../components/ItemDesign";
-import { StyledHr } from "../../components/StyledHr";
+import { MainInfo } from "../../components/info/mainInfo/MainInfo";
+import { SecondaryInfo } from "../../components/info/secondaryInfo/SecondaryInfo";
+import { SkillsInfo } from "../../components/info/skillsInfo/SkillsInfo";
+import { Extra } from "../../components/info/extra/Extra";
+import { LoadBtn } from "../../components/info/loadBtn/LoadBtn";
+
+const Languages = [
+  { nameSkill: "Bangla", lvlSkill: 100 },
+  { nameSkill: "English", lvlSkill: 80 },
+  { nameSkill: "Spanish", lvlSkill: 60 },
+];
+
+const HardSkills = [
+  { nameSkill: "Html", lvlSkill: 90 },
+  { nameSkill: "CSS", lvlSkill: 85 },
+  { nameSkill: "Js", lvlSkill: 80 },
+  { nameSkill: "PHP", lvlSkill: 75 },
+  { nameSkill: "WordPress", lvlSkill: 85 },
+];
 
 export default function InfoBar() {
   return (
-    <StyledAside
-      as={"aside"}
-      direction="column"
-      align="center"
-      justify="space-between"
-      style={{ zIndex: "3" }}
-    >
-      <FlexWrapper
-        direction="column"
-        align="center"
-        style={{ marginBottom: "15px" }}
-      >
-        <PositionElementOnline>
-          <ProfileImg src={smallPhoto} alt="Rayan Adlardard Face" />
-          <ItemDesign
-            bgc="#7eb942"
-            bShadow="0px 4px 10px 0px #00000026"
-            bot="18px"
-            right="10px"
-          />
-        </PositionElementOnline>
-        <StyledPrimaryText style={{ marginBottom: "15px" }}>
-          Rayan Adlardard
-        </StyledPrimaryText>
-        <StyledSecondaryText style={{ marginBottom: "15px" }}>
-          Font-end Developer
-        </StyledSecondaryText>
-      </FlexWrapper>
-      <FlexWrapper as={"ul"} style={{ listStyle: "none" }} gap="15px">
-        <StyledLi>
-          <StyledLink aria-label="Facebook Link Profile" href="#!Facebook">
-            <Icon
-              iconSrc={"FbLogoSvg"}
-              width="7"
-              height="12"
-              viewBox="0 0 7 12"
-            />
-          </StyledLink>
-        </StyledLi>
-        <StyledLi>
-          <StyledLink aria-label="Instagram Link Profile" href="#!Instagram">
-            <Icon
-              iconSrc={"InstaLogoSvg"}
-              width="12"
-              height="12"
-              viewBox="0 0 12 12"
-            />
-          </StyledLink>
-        </StyledLi>
-        <StyledLi>
-          <StyledLink aria-label="Twitter Link Profile" href="#!Twitter">
-            <Icon
-              iconSrc={"TwLogoSvg"}
-              width="12"
-              height="10"
-              viewBox="0 0 12 10"
-            />
-          </StyledLink>
-        </StyledLi>
-        <StyledLi>
-          <StyledLink aria-label="LinkedIn Link Profile" href="#!LinkedIn">
-            <Icon
-              iconSrc={"LdLogoSvg"}
-              width="12"
-              height="12"
-              viewBox="0 0 12 12"
-            />
-          </StyledLink>
-        </StyledLi>
-        <StyledLi>
-          <StyledLink aria-label="Youtube Link Profile" href="#!Youtube">
-            <Icon
-              iconSrc={"YtLogoSvg"}
-              width="12"
-              height="10"
-              viewBox="0 0 12 10"
-            />
-          </StyledLink>
-        </StyledLi>
-        <StyledLi>
-          <StyledLink aria-label="Dribble Link Profile" href="#!Dr">
-            <Icon
-              iconSrc={"DrLogoSvg"}
-              width="12"
-              height="12"
-              viewBox="0 0 12 12"
-            />
-          </StyledLink>
-        </StyledLi>
-      </FlexWrapper>
-      <StyledHr margin="25px 0" />
-      <FlexWrapper gap="9px" direction="column">
-        <FlexWrapper justify="space-between">
-          <BorderClrText color="#2B2B2B">Age:</BorderClrText>
-          <StyledSecondaryText color="#2B2B2B">24</StyledSecondaryText>
-        </FlexWrapper>
-        <FlexWrapper justify="space-between">
-          <BorderClrText color="#2B2B2B">Residence:</BorderClrText>
-          <StyledSecondaryText color="#2B2B2B">BD</StyledSecondaryText>
-        </FlexWrapper>
-        <FlexWrapper justify="space-between">
-          <BorderClrText color="#2B2B2B">Freelance:</BorderClrText>
-          <StyledSecondaryText color="#7EB942">Available</StyledSecondaryText>
-        </FlexWrapper>
-        <FlexWrapper justify="space-between">
-          <BorderClrText color="#2B2B2B">Address:</BorderClrText>
-          <StyledSecondaryText color="#2B2B2B">
-            Dhaka,Bangladesh
-          </StyledSecondaryText>
-        </FlexWrapper>
-      </FlexWrapper>
-      <StyledHr margin="25px 0" />
-      <FlexWrapper direction="column" align="flex-start">
-        <StyledPrimaryText style={{ marginBottom: "15px" }}>
-          Languages
-        </StyledPrimaryText>
-        <ProgressBar nameSkill={"Bangla"} lvlSkill={100} />
-        <ProgressBar nameSkill={"English"} lvlSkill={80} />
-        <ProgressBar nameSkill={"Spanish"} lvlSkill={60} />
-      </FlexWrapper>
-      <StyledHr margin="25px 0" />
-      <FlexWrapper direction="column" align="flex-start">
-        <StyledPrimaryText style={{ marginBottom: "15px" }}>
-          Skills
-        </StyledPrimaryText>
-        <ProgressBar nameSkill={"Html"} lvlSkill={90} />
-        <ProgressBar nameSkill={"CSS"} lvlSkill={85} />
-        <ProgressBar nameSkill={"Js"} lvlSkill={80} />
-        <ProgressBar nameSkill={"PHP"} lvlSkill={75} />
-        <ProgressBar nameSkill={"WordPress"} lvlSkill={85} />
-      </FlexWrapper>
-      <StyledHr margin="25px 0" />
-      <FlexWrapper direction="column" align="flex-start">
-        <StyledPrimaryText style={{ marginBottom: "15px" }}>
-          Extra Skills
-        </StyledPrimaryText>
-        <FlexWrapper direction="column" gap="5px">
-          <FlexWrapper gap="15px" align="center">
-            <Icon
-              iconSrc={"ExtraSkillsSvg"}
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-            />
-            <StyledSecondaryText>Bootstrap, Materialize</StyledSecondaryText>
-          </FlexWrapper>
-          <FlexWrapper gap="15px" align="center">
-            <Icon
-              iconSrc={"ExtraSkillsSvg"}
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-            />
-            <StyledSecondaryText>Stylus, Sass, Less</StyledSecondaryText>
-          </FlexWrapper>
-          <FlexWrapper gap="15px" align="center">
-            <Icon
-              iconSrc={"ExtraSkillsSvg"}
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-            />
-            <StyledSecondaryText>Gulp, Webpack, Grunt</StyledSecondaryText>
-          </FlexWrapper>
-          <FlexWrapper gap="15px" align="center">
-            <Icon
-              iconSrc={"ExtraSkillsSvg"}
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-            />
-            <StyledSecondaryText>GIT Knowledge</StyledSecondaryText>
-          </FlexWrapper>
-        </FlexWrapper>
-      </FlexWrapper>
-      <StyledHr margin="25px 0" />
-      <StyledBtn gap="19px" padding="10px 40px" newIdIcon="newId">
-        <StyledPrimaryText as={"p"} size="14px" Lheight="16.94px" weight="600">
-          Download cv
-        </StyledPrimaryText>
-        <Icon
-          iconSrc={"BtnCvLoadSvg"}
-          width="12"
-          height="13"
-          viewBox="0 0 12 13"
-          fillStart="#2B2B2B"
-        />
-      </StyledBtn>
+    <StyledAside>
+      <MainInfo />
+      <SecondaryInfo />
+      <SkillsInfo title="Languages" skills={Languages} />
+      <SkillsInfo title="Skills" skills={HardSkills} />
+      <Extra />
+      <LoadBtn />
     </StyledAside>
   );
 }
 
-const StyledLink = styled.a`
-  display: flex;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-`;
-
-const StyledLi = styled.li`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 24px;
-  height: 24px;
-  background-color: #ffb400;
-  border-radius: 50%;
-  cursor: pointer;
-`;
-
-const BorderClrText = styled(StyledSecondaryText)`
-  background-color: #ffb400;
-  padding: 0px 7px 0px 5px;
-`;
-
-const PositionElementOnline = styled.div`
-  position: relative;
-  margin-bottom: 31px;
-  display: flex;
-`;
-
-const StyledAside = styled(FlexWrapper)`
-  height: fit-content;
-  padding: 50px 45px 25px 40px;
+const StyledAside = styled.aside`
+  padding: 50px 40px 25px;
   background-color: #ffffff;
-  width: 305px;
   position: fixed;
-  width: 305px;
-  height: 100%;
   overflow-y: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 
   &::-webkit-scrollbar {
     width: 5px;
@@ -262,10 +60,4 @@ const StyledAside = styled(FlexWrapper)`
     background-color: #ffffff;
     border-radius: 6px;
   }
-`;
-
-const ProfileImg = styled.img`
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
 `;

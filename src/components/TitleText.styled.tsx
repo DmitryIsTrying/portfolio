@@ -17,4 +17,5 @@ export const StyledTitleText = styled.h2<StyledTitleTextPropsType>`
   text-align: ${(props) => props.TAlign || "center"};
   color: #2b2b2b;
   height: fit-content;
+  width: fit-content;
 `;

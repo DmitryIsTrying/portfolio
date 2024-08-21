@@ -1,5 +1,5 @@
 import React from "react";
-import { GridWrapper } from "../../../components/GridWrapper";
+import { FLexSectionsWrapper } from "../../../components/FLexSectionsWrapper";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { StyledTitleText } from "../../../components/TitleText.styled";
 import { StyledPrimaryText } from "../../../components/PrimaryText.styled";
@@ -10,7 +10,7 @@ import { Icon } from "../../../components/icon/Icon";
 
 export const SectionForm = () => {
   return (
-    <GridWrapper
+    <FLexSectionsWrapper
       id="messageSection"
       as={"section"}
       gap={30}
@@ -21,7 +21,7 @@ export const SectionForm = () => {
         <StyledTitleText style={{ marginBottom: "50px" }} TAlign="left">
           Leave us your info
         </StyledTitleText>
-        <FlexWrapper padding="25px 24px 21px 25px">
+        <FlexWrapper>
           <form action="#!">
             <label htmlFor="name">
               <StyledPrimaryText
@@ -102,16 +102,9 @@ export const SectionForm = () => {
         <StyledTitleText style={{ marginBottom: "50px" }} TAlign="left">
           Contact information
         </StyledTitleText>
-        <GridWrapper gap={18} columns="1, 370px" rows="3, 210px">
-          <FlexWrapper
-            padding="25px 25px 0 25px"
-            align="center"
-            direction="column"
-          >
+        <FLexSectionsWrapper gap={18} columns="1, 370px" rows="3, 210px">
+          <FlexWrapper align="center" direction="column">
             <FlexWrapper
-              fitHeight
-              fitWidth
-              padding="12.5px"
               style={{ borderRadius: "50%", marginBottom: "30px" }}
               color="#FFB400"
               align="center"
@@ -126,7 +119,6 @@ export const SectionForm = () => {
             </FlexWrapper>
             <FlexWrapper
               style={{ marginBottom: "14px" }}
-              fitHeight
               justify="space-between"
             >
               <StyledPrimaryText color="#767676" as={"p"}>
@@ -138,7 +130,6 @@ export const SectionForm = () => {
             </FlexWrapper>
             <FlexWrapper
               style={{ marginBottom: "14px" }}
-              fitHeight
               justify="space-between"
             >
               <StyledPrimaryText color="#767676" as={"p"}>
@@ -146,7 +137,7 @@ export const SectionForm = () => {
               </StyledPrimaryText>
               <StyledSecondaryText color="#767676">Dhaka</StyledSecondaryText>
             </FlexWrapper>
-            <FlexWrapper fitHeight justify="space-between">
+            <FlexWrapper justify="space-between">
               <StyledPrimaryText color="#767676" as={"p"}>
                 Streat:
               </StyledPrimaryText>
@@ -155,15 +146,8 @@ export const SectionForm = () => {
               </StyledSecondaryText>
             </FlexWrapper>
           </FlexWrapper>
-          <FlexWrapper
-            padding="25px 25px 0 25px"
-            align="center"
-            direction="column"
-          >
+          <FlexWrapper align="center" direction="column">
             <FlexWrapper
-              fitHeight
-              fitWidth
-              padding="12.5px"
               style={{ borderRadius: "50%", marginBottom: "30px" }}
               color="#FFB400"
               align="center"
@@ -178,7 +162,6 @@ export const SectionForm = () => {
             </FlexWrapper>
             <FlexWrapper
               style={{ marginBottom: "14px" }}
-              fitHeight
               justify="space-between"
             >
               <StyledPrimaryText color="#767676" as={"p"}>
@@ -190,7 +173,6 @@ export const SectionForm = () => {
             </FlexWrapper>
             <FlexWrapper
               style={{ marginBottom: "14px" }}
-              fitHeight
               justify="space-between"
             >
               <StyledPrimaryText color="#767676" as={"p"}>
@@ -200,7 +182,7 @@ export const SectionForm = () => {
                 @yourusername
               </StyledSecondaryText>
             </FlexWrapper>
-            <FlexWrapper fitHeight justify="space-between">
+            <FlexWrapper justify="space-between">
               <StyledPrimaryText color="#767676" as={"p"}>
                 Telegram:
               </StyledPrimaryText>
@@ -209,15 +191,8 @@ export const SectionForm = () => {
               </StyledSecondaryText>
             </FlexWrapper>
           </FlexWrapper>
-          <FlexWrapper
-            padding="25px 25px 0 25px"
-            align="center"
-            direction="column"
-          >
+          <FlexWrapper align="center" direction="column">
             <FlexWrapper
-              fitHeight
-              fitWidth
-              padding="12.5px"
               style={{ borderRadius: "50%", marginBottom: "30px" }}
               color="#FFB400"
               align="center"
@@ -232,7 +207,6 @@ export const SectionForm = () => {
             </FlexWrapper>
             <FlexWrapper
               style={{ marginBottom: "14px" }}
-              fitHeight
               justify="space-between"
             >
               <StyledPrimaryText color="#767676" as={"p"}>
@@ -242,7 +216,6 @@ export const SectionForm = () => {
             </FlexWrapper>
             <FlexWrapper
               style={{ marginBottom: "14px" }}
-              fitHeight
               justify="space-between"
             >
               <StyledPrimaryText color="#767676" as={"p"}>
@@ -252,7 +225,7 @@ export const SectionForm = () => {
                 +58 (021)356 587 235
               </StyledSecondaryText>
             </FlexWrapper>
-            <FlexWrapper fitHeight justify="space-between">
+            <FlexWrapper justify="space-between">
               <StyledPrimaryText color="#767676" as={"p"}>
                 Personal:
               </StyledPrimaryText>
@@ -261,9 +234,9 @@ export const SectionForm = () => {
               </StyledSecondaryText>
             </FlexWrapper>
           </FlexWrapper>
-        </GridWrapper>
+        </FLexSectionsWrapper>
       </FlexWrapper>
-    </GridWrapper>
+    </FLexSectionsWrapper>
   );
 };
 

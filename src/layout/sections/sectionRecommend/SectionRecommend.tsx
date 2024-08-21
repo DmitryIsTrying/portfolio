@@ -2,7 +2,7 @@ import React from "react";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { StyledSecondaryText } from "../../../components/SecondaryText.styled";
 import { StyledTitleText } from "../../../components/TitleText.styled";
-import { GridWrapper } from "../../../components/GridWrapper";
+import { FLexSectionsWrapper } from "../../../components/FLexSectionsWrapper";
 import { Stars } from "../../../components/stars/Stars";
 import { StyledPrimaryText } from "../../../components/PrimaryText.styled";
 import RecPhotoLeft from "../../../assets/images/Rec-person-left.webp";
@@ -32,7 +32,7 @@ export const SectionRecommend = () => {
           sint. Velit officia consequat duis enim velit mollit. lorem ipsum
         </StyledSecondaryText>
       </FlexWrapper>
-      <GridWrapper columns="3, 310px" rows="1, 323px">
+      <FLexSectionsWrapper columns="3, 310px" rows="1, 323px">
         <FlexWrapper
           padding="25px"
           direction="column"
@@ -99,7 +99,7 @@ export const SectionRecommend = () => {
             </FlexWrapper>
           </FlexWrapper>
         </FlexWrapper>
-      </GridWrapper>
+      </FLexSectionsWrapper>
       <FlexWrapper
         color="#F0F0F6"
         gap="10px"

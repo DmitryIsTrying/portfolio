@@ -2,7 +2,7 @@ import React from "react";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { StyledTitleText } from "../../../components/TitleText.styled";
 import { StyledSecondaryText } from "../../../components/SecondaryText.styled";
-import { GridWrapper } from "../../../components/GridWrapper";
+import { FLexSectionsWrapper } from "../../../components/FLexSectionsWrapper";
 import { StyledImage } from "../../../components/StyledImage";
 import Port1 from "../../../assets/images/Port1-blog.webp";
 import Port2 from "../../../assets/images/Port2-blog.webp";
@@ -12,12 +12,7 @@ import { Icon } from "../../../components/icon/Icon";
 
 export const SectionBlog = () => {
   return (
-    <FlexWrapper
-      as={"section"}
-      color="#F0F0F6"
-      direction="column"
-      align="center"
-    >
+    <FlexWrapper as={"section"} direction="column" align="center">
       <StyledTitleText style={{ marginBottom: "25px" }}>Blog</StyledTitleText>
       <FlexWrapper color="#F0F0F6" justify="center">
         <StyledSecondaryText
@@ -29,18 +24,14 @@ export const SectionBlog = () => {
           sint. Velit officia consequat duis enim velit mollit. lorem ipsum
         </StyledSecondaryText>
       </FlexWrapper>
-      <GridWrapper columns="3, 310px" rows="1, 474px">
+      <FLexSectionsWrapper columns="3, 310px" rows="1, 474px">
         <FlexWrapper
           direction="column"
           justify="flex-end"
           style={{ position: "relative" }}
         >
           <StyledImage path={Port1} alt="Port1" />
-          <FlexWrapper
-            fitHeight
-            direction="column"
-            padding="25px 17px 18px 25px"
-          >
+          <FlexWrapper direction="column">
             <StyledPrimaryText style={{ marginBottom: "8px" }}>
               How to make web tempates
             </StyledPrimaryText>
@@ -48,7 +39,7 @@ export const SectionBlog = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
               nulla diam in ac dictum a urna
             </StyledSecondaryText>
-            <FlexWrapper gap="8px" fitHeight align="baseline">
+            <FlexWrapper gap="8px" align="baseline">
               <StyledPrimaryText color="#FFB400">Learn more</StyledPrimaryText>
               <Icon
                 iconSrc="ServiceArrowRightSvg"
@@ -65,11 +56,7 @@ export const SectionBlog = () => {
           style={{ position: "relative", overflow: "hidden" }}
         >
           <StyledImage path={Port2} alt="Port2" />
-          <FlexWrapper
-            fitHeight
-            direction="column"
-            padding="25px 17px 18px 25px"
-          >
+          <FlexWrapper direction="column">
             <StyledPrimaryText style={{ marginBottom: "8px" }}>
               make Business card
             </StyledPrimaryText>
@@ -77,7 +64,7 @@ export const SectionBlog = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
               nulla diam in ac dictum a urna
             </StyledSecondaryText>
-            <FlexWrapper gap="8px" fitHeight align="baseline">
+            <FlexWrapper gap="8px" align="baseline">
               <StyledPrimaryText color="#FFB400">Learn more</StyledPrimaryText>
               <Icon
                 iconSrc="ServiceArrowRightSvg"
@@ -94,11 +81,7 @@ export const SectionBlog = () => {
           style={{ position: "relative" }}
         >
           <StyledImage path={Port3} alt="Port3" />
-          <FlexWrapper
-            fitHeight
-            direction="column"
-            padding="25px 17px 18px 25px"
-          >
+          <FlexWrapper direction="column">
             <StyledPrimaryText style={{ marginBottom: "8px" }}>
               How to make Flyer Design
             </StyledPrimaryText>
@@ -106,7 +89,7 @@ export const SectionBlog = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
               nulla diam in ac dictum a urna
             </StyledSecondaryText>
-            <FlexWrapper gap="8px" fitHeight align="baseline">
+            <FlexWrapper gap="8px" align="baseline">
               <StyledPrimaryText color="#FFB400">Learn more</StyledPrimaryText>
               <Icon
                 iconSrc="ServiceArrowRightSvg"
@@ -117,7 +100,7 @@ export const SectionBlog = () => {
             </FlexWrapper>
           </FlexWrapper>
         </FlexWrapper>
-      </GridWrapper>
+      </FLexSectionsWrapper>
     </FlexWrapper>
   );
 };

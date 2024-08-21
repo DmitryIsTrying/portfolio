@@ -2,7 +2,7 @@ import React from "react";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { StyledTitleText } from "../../../components/TitleText.styled";
 import { StyledSecondaryText } from "../../../components/SecondaryText.styled";
-import { GridWrapper } from "../../../components/GridWrapper";
+import { FLexSectionsWrapper } from "../../../components/FLexSectionsWrapper";
 import { StyledPrimaryText } from "../../../components/PrimaryText.styled";
 import { Advantages } from "../../../components/advantages/Advantages";
 import { StyledPricePartBtn } from "../../../components/StyledPricePartBtn";
@@ -30,7 +30,7 @@ export const SectionPrice = () => {
           sint. Velit officia consequat duis enim velit mollit. lorem ipsum
         </StyledSecondaryText>
       </FlexWrapper>
-      <GridWrapper columns="3, 310px" rows="1, 609px">
+      <FLexSectionsWrapper columns="3, 310px" rows="1, 609px">
         <FlexWrapper direction="column" align="center" justify="flex-start">
           <StyledPrimaryText
             weight="600"
@@ -195,7 +195,7 @@ export const SectionPrice = () => {
             </StyledSecondaryText>
           </StyledPricePartBtn>
         </FlexWrapper>
-      </GridWrapper>
+      </FLexSectionsWrapper>
     </FlexWrapper>
   );
 };

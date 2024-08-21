@@ -3,7 +3,6 @@ import { FlexWrapper } from "../../../components/FlexWrapper";
 import { StyledSecondaryText } from "../../../components/SecondaryText.styled";
 import { StyledTitleText } from "../../../components/TitleText.styled";
 import { StyledPrimaryText } from "../../../components/PrimaryText.styled";
-import { StyledHr } from "../../../components/StyledHr";
 
 export const SectionWHistory = () => {
   return (
@@ -58,7 +57,6 @@ export const SectionWHistory = () => {
             </StyledSecondaryText>
           </FlexWrapper>
         </FlexWrapper>
-        <StyledHr color="#FAFAFA" margin="11px 0 28px" />
         <FlexWrapper justify="space-between">
           <FlexWrapper fitWidth direction="column">
             <StyledPrimaryText style={{ marginBottom: "28px" }} as={"p"}>
@@ -89,7 +87,6 @@ export const SectionWHistory = () => {
             </StyledSecondaryText>
           </FlexWrapper>
         </FlexWrapper>
-        <StyledHr color="#FAFAFA" margin="30px 0 28px" />
         <FlexWrapper justify="space-between">
           <FlexWrapper fitWidth direction="column">
             <StyledPrimaryText style={{ marginBottom: "28px" }} as={"p"}>
