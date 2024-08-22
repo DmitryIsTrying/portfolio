@@ -23,5 +23,4 @@ export const FlexWrapper = styled.div<FlexWrapperPropsType>`
   align-items: ${(props) => props.align || "stretch"};
   gap: ${(props) => props.gap || "0"};
   margin: ${(props) => props.margin || "0"};
-  background-color: #f0f0f6;
 `;

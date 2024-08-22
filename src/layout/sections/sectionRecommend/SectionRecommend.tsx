@@ -9,6 +9,7 @@ import RecPhotoLeft from "../../../assets/images/Rec-person-left.webp";
 import RecPhotoMiddle from "../../../assets/images/Rec-person-middle.webp";
 import RecPhotoRight from "../../../assets/images/Rec-person-right.webp";
 import styled from "styled-components";
+import { TitleSections } from "../../../components/titleSections/TitleSections";
 
 export const SectionRecommend = () => {
   return (
@@ -19,6 +20,15 @@ export const SectionRecommend = () => {
       direction="column"
       align="center"
     >
+      <StyledSection>
+        <FlexWrapper direction="column" align="center">
+          <TitleSections
+            title="Recommendations"
+            description="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum"
+          />
+          <FLexSectionsWrapper></FLexSectionsWrapper>
+        </FlexWrapper>
+      </StyledSection>
       <StyledTitleText style={{ marginBottom: "25px" }}>
         Recommendations
       </StyledTitleText>
@@ -113,6 +123,10 @@ export const SectionRecommend = () => {
     </FlexWrapper>
   );
 };
+
+const StyledSection = styled.section`
+  padding: 35px 0;
+`;
 
 const StyledAvatar = styled.img`
   border-radius: 50%;

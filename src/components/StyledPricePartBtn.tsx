@@ -12,4 +12,5 @@ export const StyledPricePartBtn = styled.button<StyledPricePartBtnPropsType>`
   border-radius: 30px;
   border: none;
   cursor: pointer;
+  width: fit-content;
 `;

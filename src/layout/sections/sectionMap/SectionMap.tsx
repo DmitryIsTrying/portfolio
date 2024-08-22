@@ -5,7 +5,7 @@ import MapPhoto from "../../../assets/images/Map.webp";
 
 export const SectionMap = () => {
   return (
-    <FlexWrapper as={"section"}>
+    <FlexWrapper justify="center" style={{ overflow: "hidden" }} as={"section"}>
       <StyledImage path={MapPhoto} alt="My location" />
     </FlexWrapper>
   );

@@ -12,7 +12,6 @@ export const StyledImage = (props: StyledImagePropsType) => {
 
 const Image = styled.img`
   display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: auto;
+  height: 300px;
 `;

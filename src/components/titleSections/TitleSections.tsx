@@ -7,7 +7,7 @@ import { StyledTitleText } from "../TitleText.styled";
 type TitleSectionsPropsType = {
   title: string;
   description: string;
-  pdt: number;
+  pdt?: number;
 };
 
 export const TitleSections: React.FC<TitleSectionsPropsType> = ({
@@ -25,8 +25,8 @@ export const TitleSections: React.FC<TitleSectionsPropsType> = ({
   );
 };
 
-const StyledTitle = styled(StyledTitleText)<{ pdt: number }>`
-  padding-top: ${(props) => props.pdt || 70}px;
+const StyledTitle = styled(StyledTitleText)<{ pdt: number | undefined }>`
+  padding-top: ${(props) => props.pdt || 0}px;
 `;
 
 const StyledSecondary = styled(StyledSecondaryText)`
