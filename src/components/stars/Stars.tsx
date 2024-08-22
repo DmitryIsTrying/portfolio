@@ -8,7 +8,7 @@ type StarsPropsType = {
 
 export const Stars = (props: StarsPropsType) => {
   return (
-    <FlexWrapper gap="10px" style={{ marginBottom: "17px" }}>
+    <FlexWrapper gap="10px">
       {Array.from({ length: props.starsCount }, (_, index) => (
         <Icon
           key={index}

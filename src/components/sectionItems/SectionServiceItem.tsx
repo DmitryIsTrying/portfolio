@@ -16,8 +16,8 @@ type IconData = {
 
 type SectionItemPropsType = {
   iconData: IconData[];
-  width: 310;
-  height: 225;
+  width: number;
+  height: number;
 };
 
 export const SectionServiceItem: React.FC<SectionItemPropsType> = ({
