@@ -1,10 +1,6 @@
 import React from "react";
 import { FlexWrapper } from "../../../components/FlexWrapper";
-import { StyledSecondaryText } from "../../../components/SecondaryText.styled";
-import { StyledTitleText } from "../../../components/TitleText.styled";
 import { FLexSectionsWrapper } from "../../../components/FLexSectionsWrapper";
-import { Stars } from "../../../components/stars/Stars";
-import { StyledPrimaryText } from "../../../components/PrimaryText.styled";
 import RecPhotoLeft from "../../../assets/images/Rec-person-left.webp";
 import RecPhotoMiddle from "../../../assets/images/Rec-person-middle.webp";
 import RecPhotoRight from "../../../assets/images/Rec-person-right.webp";

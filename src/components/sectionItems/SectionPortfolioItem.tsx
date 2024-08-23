@@ -1,6 +1,5 @@
 import React from "react";
 import { SectionWrapperItem } from "../SectionWrapperItem";
-import { StyledImage } from "../StyledImage";
 import styled from "styled-components";
 import { FlexWrapper } from "../FlexWrapper";
 import { StyledBtn } from "../StyledBtn.styled";

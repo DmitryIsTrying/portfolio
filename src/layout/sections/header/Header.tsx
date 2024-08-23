@@ -1,12 +1,7 @@
 import React from "react";
-import { Icon } from "../../../components/icon/Icon";
 import photoUrl from "../../../assets/images/Photo.webp";
-import { FlexWrapper } from "../../../components/FlexWrapper";
-import { StyledPrimaryText } from "../../../components/PrimaryText.styled";
-import { StyledBtn } from "../../../components/StyledBtn.styled";
 import styled from "styled-components";
 import { ItemsDesign } from "../../../components/itemsDesign/ItemsDesign";
-import { StyledImage } from "../../../components/StyledImage";
 import { TitleCheer } from "../../../components/titleCheer/TitleCheer";
 
 export const Header = () => {

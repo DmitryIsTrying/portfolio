@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 export const Footer = () => {
   return (
-    <footer>
+    <StyledFooter>
       <StyledFlexWrapper gap="15px" align="center" justify="center">
         <Icon
           iconSrc="CopyRightSvg"
@@ -20,9 +20,13 @@ export const Footer = () => {
           </StyledSecondaryText>
         </small>
       </StyledFlexWrapper>
-    </footer>
+    </StyledFooter>
   );
 };
+
+const StyledFooter = styled.footer`
+  padding: 35px 0 0 0;
+`;
 
 const StyledFlexWrapper = styled(FlexWrapper)`
   background-color: #ffffff;

@@ -1,5 +1,4 @@
 import React from "react";
-import { FlexWrapper } from "../FlexWrapper";
 import { StyledSecondaryText } from "../SecondaryText.styled";
 import styled from "styled-components";
 import { StyledTitleText } from "../TitleText.styled";

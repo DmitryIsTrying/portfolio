@@ -1,12 +1,8 @@
 import React from "react";
 import { FlexWrapper } from "../../../components/FlexWrapper";
-import { StyledTitleText } from "../../../components/TitleText.styled";
-import { StyledSecondaryText } from "../../../components/SecondaryText.styled";
 import { FLexSectionsWrapper } from "../../../components/FLexSectionsWrapper";
 import { StyledPrimaryText } from "../../../components/PrimaryText.styled";
 import { StyledBtn } from "../../../components/StyledBtn.styled";
-import { StyledImage } from "../../../components/StyledImage";
-import { Icon } from "../../../components/icon/Icon";
 import Port1 from "../../../assets/images/Port1-blog.webp";
 import Port2 from "../../../assets/images/Port2-blog.webp";
 import Port3 from "../../../assets/images/Port3-blog.webp";

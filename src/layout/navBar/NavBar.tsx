@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { Icon } from "../../components/icon/Icon";
 import { ListItems } from "../../components/listItems/ListItems";
-import { FlexWrapper } from "../../components/FlexWrapper";
 
 const anchorLinks = [
   {

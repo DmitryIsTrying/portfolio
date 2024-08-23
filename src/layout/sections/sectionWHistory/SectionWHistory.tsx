@@ -2,7 +2,6 @@ import React from "react";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { StyledSecondaryText } from "../../../components/SecondaryText.styled";
 import { StyledTitleText } from "../../../components/TitleText.styled";
-import { StyledPrimaryText } from "../../../components/PrimaryText.styled";
 import { SectionEducationItem } from "../../../components/sectionItems/SectionEducationItem";
 import { FLexSectionsWrapper } from "../../../components/FLexSectionsWrapper";
 import styled from "styled-components";
