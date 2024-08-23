@@ -24,6 +24,7 @@ export const Form = () => {
           type="text"
           name="name"
           required
+          autoComplete="name"
         />
         <label htmlFor="email">
           <StyledPrimaryText style={{ marginBottom: "8px" }} color="#767676">
@@ -36,6 +37,7 @@ export const Form = () => {
           type="email"
           name="email"
           required
+          autoComplete="email"
         />
         <label htmlFor="subj">
           <StyledPrimaryText style={{ marginBottom: "8px" }} color="#767676">

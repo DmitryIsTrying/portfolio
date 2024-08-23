@@ -9,9 +9,9 @@ type ProgressBarPropsType = {
 export const ProgressBar = (props: ProgressBarPropsType) => {
   return (
     <StyledWrapperSkill>
-      <StyledWrapperText htmlFor="progress">
+      <StyledWrapperText htmlFor={props.nameSkill}>
         <StyledNameSkill>{props.nameSkill}</StyledNameSkill>
-        <StyledLvlText as={"p"}>{props.lvlSkill + "%"}</StyledLvlText>
+        <StyledNameSkill as={"p"}>{props.lvlSkill + "%"}</StyledNameSkill>
       </StyledWrapperText>
       <FullSkillBar>
         <MySkillBar id={props.nameSkill} value={props.lvlSkill} max="100" />
@@ -45,8 +45,6 @@ const StyledNameSkill = styled.h4`
   line-height: 24px;
   text-align: left;
 `;
-
-const StyledLvlText = styled(StyledNameSkill)``;
 
 const FullSkillBar = styled.div`
   display: flex;

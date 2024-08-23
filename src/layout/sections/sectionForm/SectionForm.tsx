@@ -2,7 +2,6 @@ import React from "react";
 import { FLexSectionsWrapper } from "../../../components/FLexSectionsWrapper";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { StyledTitleText } from "../../../components/TitleText.styled";
-import { StyledSecondaryText } from "../../../components/SecondaryText.styled";
 import styled from "styled-components";
 import { Form } from "../../../components/form/Form";
 import { SectionFormItem } from "../../../components/sectionItems/SectionFormItem";
@@ -65,7 +64,7 @@ const StyledFlexWrapper = styled(FlexWrapper)`
 
 const StyledFLexSectionsWrapper = styled(FLexSectionsWrapper)`
   gap: 30px;
-  justify-content: flex-start;
+  justify-content: center;
 `;
 
 const StyledSection = styled.section`
