@@ -56,7 +56,7 @@ const items = [
 
 export const SectionPrice = () => {
   return (
-    <StyledSection>
+    <StyledSection id="priceSection">
       <FlexWrapper direction="column" align="center">
         <TitleSections
           title="Price Plans"

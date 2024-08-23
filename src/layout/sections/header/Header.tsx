@@ -15,7 +15,7 @@ export const Header = () => {
       <MediaWrapper>
         <TitleCheer />
         <ImageWrapper>
-          <StyledImage path={photoUrl} alt="Rayan Adlardard Face" />
+          <img src={photoUrl} alt="Rayan Adlardard Face" />
         </ImageWrapper>
       </MediaWrapper>
       <ItemsDesign />

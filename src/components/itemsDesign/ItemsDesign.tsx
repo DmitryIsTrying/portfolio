@@ -5,24 +5,24 @@ import styled from "styled-components";
 export const ItemsDesign = () => {
   return (
     <>
-      <ItemDesign border="2px solid #FFB400CC" top="30px" left="40px" />
-      <ItemDesign border="2px solid #05FF00CC" top="52px" right="434px" />
+      <ItemDesign border="2px solid #FFB400CC" top="5%" left="5%" />
+      <ItemDesign border="2px solid #05FF00CC" top="10%" right="40%" />
       <ItemDesign
         border="2px solid #FFB400CC"
         radius="0"
-        top="70px"
-        right="54px"
+        top="15%"
+        right="5%"
         transform={26.05}
       />
-      <ItemDesign border="2px solid #05FF00CC" bot="29px" left="88px" />
+      <ItemDesign border="2px solid #05FF00CC" bot="8%" left="10%" />
       <ItemDesign
         border="2px solid #0047FFCC"
         radius="0"
-        top="333px"
-        left="373px"
+        top="75%"
+        left="38%"
         transform={26.05}
       />
-      <ItemDesign border="2px solid #FFB400CC" bot="71px" left="557px" />
+      <ItemDesign border="2px solid #FFB400CC" bot="15%" left="55%" />
       <ContainerTriangle>
         <Triangle />
       </ContainerTriangle>
@@ -33,8 +33,8 @@ export const ItemsDesign = () => {
 const ContainerTriangle = styled.span`
   position: absolute;
   margin: auto;
-  bottom: 24px;
-  right: 33px;
+  bottom: 5%;
+  right: 3%;
   width: 16px;
   height: 16px;
   border-bottom: 2px solid #e74c3c;

@@ -30,6 +30,7 @@ export const SectionPortfolioItem: React.FC<SectionPortfolioItemPropsType> = ({
           style={{ overflow: "hidden" }}
           width={width}
           height={height}
+          key={i}
         >
           {e.select ? (
             <YellowGround justify="center" align="center">

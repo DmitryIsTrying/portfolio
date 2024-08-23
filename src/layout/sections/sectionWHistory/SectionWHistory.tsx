@@ -36,8 +36,8 @@ const educationData = [
 
 export const SectionWHistory = () => {
   return (
-    <StyledSection>
-      <FlexWrapper id="educationSection" direction="column" align="center">
+    <StyledSection id="workHistorySection">
+      <FlexWrapper direction="column" align="center">
         <StyledTitleText style={{ marginBottom: "25px" }}>
           Work History
         </StyledTitleText>
