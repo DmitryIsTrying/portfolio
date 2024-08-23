@@ -27,7 +27,7 @@ export const TitleCheer = () => {
         feugiat placerat lobortis. Natoque rutrum semper sed suspendisse nunc
         lectus.
       </StyledTitle>
-      <StyledBtn as="a" href="#!" gap="9px" padding="16px 32px" WFit>
+      <StyledBtn as="a" href="#!" gap="9px" padding="16px 32px" WFit tRotate>
         <StyledPrimaryText as="p" size="16px" Lheight="19.36px">
           HIRE ME
         </StyledPrimaryText>

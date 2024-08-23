@@ -9,6 +9,7 @@ type StyledBtnPropsType = {
   newIdIcon?: string;
   color?: string;
   noHover?: boolean;
+  tRotate?: boolean;
 };
 
 export const StyledBtn = styled.button<StyledBtnPropsType>`
@@ -34,6 +35,10 @@ export const StyledBtn = styled.button<StyledBtnPropsType>`
           }
           svg {
             fill: #ffffff;
+            ${props.tRotate &&
+            css`
+              transform: rotate(-45deg);
+            `}
           }
         }
       }

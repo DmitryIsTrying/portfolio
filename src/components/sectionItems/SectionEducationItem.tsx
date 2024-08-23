@@ -71,13 +71,16 @@ const StyledBorderLine = styled(FlexWrapper)<{ borderBottom: string }>`
 `;
 
 const StyledFlexWrapperLeftPart = styled(FlexWrapper)`
-  min-width: 30%;
+  min-width: 250px;
   width: fit-content;
 `;
 
 const StyledFlexWrapperRightPart = styled(FlexWrapper)`
-  min-width: 50%;
+  max-width: 60%;
   width: fit-content;
+  @media screen and (max-width: 1180px) {
+    max-width: 100%;
+  }
 `;
 
 const StyledSectionWrapperItem = styled(SectionWrapperItem)`

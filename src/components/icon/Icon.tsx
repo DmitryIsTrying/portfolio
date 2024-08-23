@@ -30,9 +30,10 @@ export const Icon = (props: IconPropsType) => {
 const StyledSvg = styled.svg<StyledSvgPropsType>`
   fill: ${(props) => props.fillStart || "#767676"};
   @media (hover: hover) {
-    transition: 0.5s ease;
+    transition: fill 0.5s ease, transform 0.3s ease;
   }
+
   @media (hover: none) {
-    transition: 0.1s ease;
+    transition: fill 0.1s ease, transform 0.1s ease;
   }
 `;
