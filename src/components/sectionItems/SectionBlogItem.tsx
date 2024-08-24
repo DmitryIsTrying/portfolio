@@ -1,7 +1,10 @@
 import React from "react";
 import { SectionWrapperItem } from "../SectionWrapperItem";
 import { FlexWrapper } from "../FlexWrapper";
-import { StyledPrimaryText } from "../PrimaryText.styled";
+import {
+  StyledPrimaryText,
+  StyledPrimaryTextPropsType,
+} from "../PrimaryText.styled";
 import { Icon } from "../icon/Icon";
 import { StyledSecondaryText } from "../SecondaryText.styled";
 import styled from "styled-components";
@@ -59,6 +62,11 @@ export const SectionBlogItem: React.FC<SectionBlogItemPropsType> = ({
   );
 };
 
+const SectionBlogStyledPrimaryText = styled(StyledPrimaryText)<
+  StyledPrimaryTextPropsType & { marginBottom: string }
+>`
+  margin-bottom: ${(props) => props.marginBottom || "0"};
+`;
 const StyledLink = styled.a`
   text-decoration: none;
 `;

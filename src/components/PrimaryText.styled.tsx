@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-type StyledPrimaryTextPropsType = {
+export type StyledPrimaryTextPropsType = {
   size?: string;
   Lheight?: string;
   weight?: string;

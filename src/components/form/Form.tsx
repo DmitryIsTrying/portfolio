@@ -81,7 +81,7 @@ export const Form = () => {
 };
 
 const MediaWrapper = styled(FlexWrapper)`
-  @media screen and (max-width: 1440px) {
+  @media screen and (max-width: 1439px) {
     width: 100%;
   }
 `;
@@ -90,7 +90,7 @@ const StyledForm = styled.form`
   background-color: #ffffff;
   padding: 25px;
   width: 570px;
-  @media screen and (max-width: 1440px) {
+  @media screen and (max-width: 1439px) {
     width: 100%;
   }
 `;

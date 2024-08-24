@@ -78,7 +78,7 @@ const StyledSectionWrapperItem = styled(SectionWrapperItem)`
   justify-content: center;
   width: 100%;
   max-width: 370px;
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1439px) {
     width: 370px;
   }
 `;

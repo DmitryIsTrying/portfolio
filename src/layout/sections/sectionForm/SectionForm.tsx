@@ -56,7 +56,7 @@ export const SectionForm = () => {
 const StyledFlexWrapper = styled(FlexWrapper)`
   width: 100%;
   flex-wrap: wrap;
-  @media screen and (max-width: 1440px) {
+  @media screen and (max-width: 1439px) {
     flex-direction: row;
     justify-content: center;
   }
