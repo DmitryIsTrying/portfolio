@@ -39,19 +39,25 @@ export const SectionForm = () => {
       <FlexWrapper direction="column" align="center">
         <StyledFLexSectionsWrapper>
           <Form />
-          <FlexWrapper fitWidth direction="column">
+          <StyledMediaWrapper direction="column">
             <StyledTitleText style={{ marginBottom: "50px" }}>
               Contact information
             </StyledTitleText>
             <StyledFlexWrapper gap="18px" fitWidth direction="column">
               <SectionFormItem width={370} height={210} items={items} />
             </StyledFlexWrapper>
-          </FlexWrapper>
+          </StyledMediaWrapper>
         </StyledFLexSectionsWrapper>
       </FlexWrapper>
     </StyledSection>
   );
 };
+
+const StyledMediaWrapper = styled(FlexWrapper)`
+  @media screen and (min-width: 1440px) {
+    width: fit-content;
+  }
+`;
 
 const StyledFlexWrapper = styled(FlexWrapper)`
   width: 100%;

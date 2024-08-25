@@ -75,10 +75,10 @@ export const SectionFormItem: React.FC<SectionFormItemPropsType> = ({
 
 const StyledSectionWrapperItem = styled(SectionWrapperItem)`
   padding: 25px 25px 15px 25px;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
   max-width: 370px;
-  @media screen and (min-width: 1439px) {
+  @media screen and (min-width: 1440px) {
     width: 370px;
   }
 `;
