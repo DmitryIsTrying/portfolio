@@ -9,16 +9,14 @@ export const Header = () => {
     <StyledHeader>
       <MediaWrapper>
         <TitleCheer />
-        <ImageWrapper>
-          <img src={profileHeader} alt="Rayan Adlardard Face" />
-        </ImageWrapper>
+        <Image src={profileHeader} alt="Rayan Adlardard Face" />
       </MediaWrapper>
       <ItemsDesign />
     </StyledHeader>
   );
 };
 
-const ImageWrapper = styled.div`
+const Image = styled.img`
   max-width: 325px;
   max-height: 460px;
 `;
