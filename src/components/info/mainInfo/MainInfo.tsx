@@ -4,7 +4,9 @@ import { ItemDesign } from "../../ItemDesign";
 import { StyledPrimaryText } from "../../PrimaryText.styled";
 import { StyledSecondaryText } from "../../SecondaryText.styled";
 import styled from "styled-components";
-import smallPhoto from "../../../assets/images/Photo-small.webp";
+import profile from "../../../assets/images/Profile.webp";
+import profile2x from "../../../assets/images/Profile@2x.webp";
+import profile3x from "../../../assets/images/Profile@3x.webp";
 import { ListItems } from "../../listItems/ListItems";
 
 const socialLinks = [
@@ -62,7 +64,11 @@ export const MainInfo = () => {
   return (
     <FlexWrapper direction="column" align="center">
       <PositionElementOnline>
-        <ProfileImg src={smallPhoto} alt="Rayan Adlardard Face" />
+        <ProfileImg
+          src={profile}
+          srcSet={`${profile2x} 2x, ${profile3x} 3x`}
+          alt="Rayan Adlardard Face"
+        />
         <ItemDesign
           bgc="#7eb942"
           bShadow="0px 4px 10px 0px #00000026"
