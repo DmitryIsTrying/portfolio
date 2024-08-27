@@ -1,5 +1,5 @@
 import React from "react";
-import photoUrl from "../../../assets/images/Photo.webp";
+import profileHeader from "../../../assets/images/Photo.webp";
 import styled from "styled-components";
 import { ItemsDesign } from "../../../components/itemsDesign/ItemsDesign";
 import { TitleCheer } from "../../../components/titleCheer/TitleCheer";
@@ -10,7 +10,7 @@ export const Header = () => {
       <MediaWrapper>
         <TitleCheer />
         <ImageWrapper>
-          <img src={photoUrl} alt="Rayan Adlardard Face" />
+          <img src={profileHeader} alt="Rayan Adlardard Face" />
         </ImageWrapper>
       </MediaWrapper>
       <ItemsDesign />

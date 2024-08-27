@@ -6,7 +6,6 @@ import { StyledSecondaryText } from "../../SecondaryText.styled";
 import styled from "styled-components";
 import profile from "../../../assets/images/Profile.webp";
 import profile2x from "../../../assets/images/Profile@2x.webp";
-import profile3x from "../../../assets/images/Profile@3x.webp";
 import { ListItems } from "../../listItems/ListItems";
 
 const socialLinks = [
@@ -66,7 +65,7 @@ export const MainInfo = () => {
       <PositionElementOnline>
         <ProfileImg
           src={profile}
-          srcSet={`${profile2x} 2x, ${profile3x} 3x`}
+          srcSet={`${profile2x} 2x`}
           alt="Rayan Adlardard Face"
         />
         <ItemDesign
