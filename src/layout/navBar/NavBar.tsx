@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Icon } from "../../components/icon/Icon";
 import { ListItems } from "../../components/listItems/ListItems";
+import { layoutsTheme } from "../../styles/Theme.styled";
 
 const anchorLinks = [
   {
@@ -86,8 +87,18 @@ const StyledNav = styled.nav`
   position: fixed;
   top: 0;
   right: 0;
-  padding: 52px 34px 568px 34px;
   height: 100%;
+  padding: 52px 34px 0;
+
+  @media ${layoutsTheme.media.tablet} {
+    top: unset;
+    bottom: 0;
+    flex-direction: row;
+    width: 100%;
+    height: fit-content;
+    padding: 20px 0 20px 0;
+    justify-content: center;
+  }
 `;
 
 const StyledBtnIcon = styled.button`
@@ -99,5 +110,9 @@ const StyledBtnIcon = styled.button`
   cursor: pointer;
   &:focus-visible {
     outline: 2px solid #ff8800;
+  }
+  @media ${layoutsTheme.media.tablet} {
+    margin-bottom: 0px;
+    margin-right: 27px;
   }
 `;

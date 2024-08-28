@@ -47,7 +47,7 @@ export const SectionPriceItem: React.FC<SectionPriceItemPropsType> = ({
     <>
       {items.map((item, i) => (
         <SectionWrapperItem
-          padding="0 31px 25px 31px"
+          padding="54px 31px 25px 31px"
           width={width}
           height={height}
           key={i}

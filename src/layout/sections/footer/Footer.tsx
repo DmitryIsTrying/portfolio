@@ -3,6 +3,7 @@ import { FlexWrapper } from "../../../components/FlexWrapper";
 import { Icon } from "../../../components/icon/Icon";
 import { StyledSecondaryText } from "../../../components/SecondaryText.styled";
 import styled from "styled-components";
+import { layoutsTheme } from "../../../styles/Theme.styled";
 
 export const Footer = () => {
   return (
@@ -14,11 +15,9 @@ export const Footer = () => {
           height="20"
           viewBox="0 0 20 20"
         />
-        <small>
-          <StyledSecondaryText color="#2B2B2B">
-            2021 All Rights Reserved.Ojjomedia
-          </StyledSecondaryText>
-        </small>
+        <StyledSecondaryText as={"small"} color="#2B2B2B">
+          2021 All Rights Reserved.Ojjomedia
+        </StyledSecondaryText>
       </StyledFlexWrapper>
     </StyledFooter>
   );
@@ -26,6 +25,9 @@ export const Footer = () => {
 
 const StyledFooter = styled.footer`
   padding: 35px 0 0 0;
+  @media ${layoutsTheme.media.tablet} {
+    padding-bottom: 80px;
+  }
 `;
 
 const StyledFlexWrapper = styled(FlexWrapper)`

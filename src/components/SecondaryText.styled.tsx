@@ -18,14 +18,10 @@ export const StyledSecondaryText = styled.p<StyledSecondaryTextPropsType>`
   line-height: ${(props) => props.lHeight || "24px"};
   text-align: ${(props) => props.TAlign || "left"};
   color: ${(props) => props.color || "#767676"};
+  transition: 0.5s ease;
   ${(props) =>
     props.Mwidth &&
     css`
       max-width: 378px;
-    `}
-  ${(props) =>
-    props.MWE &&
-    css`
-      max-width: 536px;
     `}
 `;

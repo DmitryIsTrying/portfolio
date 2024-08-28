@@ -66,31 +66,29 @@ export const SectionPortfolio = () => {
         />
         <StyledUl>
           <li>
-            <StyledBtn noHover padding="0" color="transparent" WFit>
-              <StyledPrimaryText style={{ color: "#FFB400" }}>
-                All categories
-              </StyledPrimaryText>
-            </StyledBtn>
+            <MenuBtn noHover padding="0" color="transparent" WFit>
+              <StyledPrimaryText>All categories</StyledPrimaryText>
+            </MenuBtn>
           </li>
           <li>
-            <StyledBtn noHover padding="0" color="transparent" WFit>
+            <MenuBtn noHover padding="0" color="transparent" WFit>
               <StyledPrimaryText>UI Design</StyledPrimaryText>
-            </StyledBtn>
+            </MenuBtn>
           </li>
           <li>
-            <StyledBtn noHover padding="0" color="transparent" WFit>
+            <MenuBtn noHover padding="0" color="transparent" WFit>
               <StyledPrimaryText>Web Templates</StyledPrimaryText>
-            </StyledBtn>
+            </MenuBtn>
           </li>
           <li>
-            <StyledBtn noHover padding="0" color="transparent" WFit>
+            <MenuBtn noHover padding="0" color="transparent" WFit>
               <StyledPrimaryText>Logo</StyledPrimaryText>
-            </StyledBtn>
+            </MenuBtn>
           </li>
           <li>
-            <StyledBtn noHover padding="0" color="transparent" WFit>
+            <MenuBtn noHover padding="0" color="transparent" WFit>
               <StyledPrimaryText>Branding</StyledPrimaryText>
-            </StyledBtn>
+            </MenuBtn>
           </li>
         </StyledUl>
         <FLexSectionsWrapper>
@@ -100,6 +98,12 @@ export const SectionPortfolio = () => {
     </StyledSection>
   );
 };
+
+const MenuBtn = styled(StyledBtn)`
+  &:hover ${StyledPrimaryText} {
+    color: #ffb400;
+  }
+`;
 
 const StyledSection = styled.section`
   padding: 35px 0;

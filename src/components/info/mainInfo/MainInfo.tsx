@@ -76,7 +76,9 @@ export const MainInfo = () => {
         />
       </PositionElementOnline>
       <FlexWrapper gap="15px" direction="column">
-        <StyledPrimaryText TAlign="center">Rayan Adlardard</StyledPrimaryText>
+        <StyledPrimaryText as={"h2"} TAlign="center">
+          Rayan Adlardard
+        </StyledPrimaryText>
         <StyledSecondaryText TAlign="center">
           Font-end Developer
         </StyledSecondaryText>

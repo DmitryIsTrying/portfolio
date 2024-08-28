@@ -47,7 +47,7 @@ export const SectionFormItem: React.FC<SectionFormItemPropsType> = ({
             <StyledPrimaryText color="#767676" as={"p"}>
               {e.first}
             </StyledPrimaryText>
-            <StyledSecondaryText color="#767676">
+            <StyledSecondaryText as={"h3"} color="#767676">
               {e.dataFirst}
             </StyledSecondaryText>
           </FlexWrapper>
@@ -55,7 +55,7 @@ export const SectionFormItem: React.FC<SectionFormItemPropsType> = ({
             <StyledPrimaryText color="#767676" as={"p"}>
               {e.second}
             </StyledPrimaryText>
-            <StyledSecondaryText color="#767676">
+            <StyledSecondaryText as={"h3"} color="#767676">
               {e.dataSecond}
             </StyledSecondaryText>
           </FlexWrapper>
@@ -63,7 +63,7 @@ export const SectionFormItem: React.FC<SectionFormItemPropsType> = ({
             <StyledPrimaryText color="#767676" as={"p"}>
               {e.third}
             </StyledPrimaryText>
-            <StyledSecondaryText color="#767676">
+            <StyledSecondaryText as={"h3"} color="#767676">
               {e.dataThird}
             </StyledSecondaryText>
           </FlexWrapper>
@@ -77,10 +77,6 @@ const StyledSectionWrapperItem = styled(SectionWrapperItem)`
   padding: 25px 25px 15px 25px;
   justify-content: flex-start;
   width: 100%;
-  max-width: 370px;
-  @media screen and (min-width: 1440px) {
-    width: 370px;
-  }
 `;
 
 const StyledFlexWrapper = styled(FlexWrapper)`

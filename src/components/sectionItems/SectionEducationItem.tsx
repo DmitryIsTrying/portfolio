@@ -43,7 +43,7 @@ export const SectionEducationItem: React.FC<SectionItemPropsType> = ({
             align="flex-start"
             direction="column"
           >
-            <StyledTitle as={"p"}>{icon.nameUniversity}</StyledTitle>
+            <StyledTitle as={"h3"}>{icon.nameUniversity}</StyledTitle>
             <FlexWrapper gap="21px" align="flex-start">
               <StyledSecondary color="#2B2B2B">{icon.whois}</StyledSecondary>
               <StyledSecondaryOrange
@@ -56,8 +56,8 @@ export const SectionEducationItem: React.FC<SectionItemPropsType> = ({
             </FlexWrapper>
           </StyledFlexWrapperLeftPart>
           <StyledFlexWrapperRightPart direction="column">
-            <StyledPrimary as={"p"}>{icon.nameCertificate}</StyledPrimary>
-            <StyledSecondary MWE>{icon.descriptionCertificate}</StyledSecondary>
+            <StyledPrimary as={"h3"}>{icon.nameCertificate}</StyledPrimary>
+            <StyledSecondary>{icon.descriptionCertificate}</StyledSecondary>
           </StyledFlexWrapperRightPart>
         </StyledBorderLine>
       ))}
@@ -73,14 +73,12 @@ const StyledBorderLine = styled(FlexWrapper)<{ borderBottom: string }>`
 const StyledFlexWrapperLeftPart = styled(FlexWrapper)`
   min-width: 250px;
   width: fit-content;
+  flex: 0 0 auto;
 `;
 
 const StyledFlexWrapperRightPart = styled(FlexWrapper)`
-  max-width: 60%;
-  width: fit-content;
-  @media screen and (max-width: 1180px) {
-    max-width: 100%;
-  }
+  flex: 1 1 0;
+  min-width: 200px;
 `;
 
 const StyledSectionWrapperItem = styled(SectionWrapperItem)`
@@ -90,6 +88,7 @@ const StyledSectionWrapperItem = styled(SectionWrapperItem)`
   flex-wrap: wrap;
   height: fit-content;
   gap: 28px;
+  min-width: unset;
 `;
 
 const StyledSecondary = styled(StyledSecondaryText)`

@@ -25,46 +25,54 @@ export const SectionPortfolioItem: React.FC<SectionPortfolioItemPropsType> = ({
   return (
     <>
       {photos.map((e, i) => (
-        <SectionWrapperItem
+        <ImageSectionWrapperItem
           style={{ overflow: "hidden" }}
           width={width}
           height={height}
           key={i}
+          path={e.path}
         >
-          {e.select ? (
+          <StyledBtn
+            aria-label="More examples"
+            padding="0"
+            color="transparent"
+            WFit
+          >
             <YellowGround justify="center" align="center">
-              <StyledBtn
-                aria-label="More examples"
-                padding="0"
-                color="transparent"
-                WFit
-              >
-                <Icon
-                  iconSrc="CrossSvg"
-                  width="32"
-                  height="32"
-                  viewBox="0 0 32 32"
-                />
-              </StyledBtn>
+              <Icon
+                iconSrc="CrossSvg"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+              />
             </YellowGround>
-          ) : null}
-          <ImagePortfolio src={e.path} alt={e.alt} />
-        </SectionWrapperItem>
+          </StyledBtn>
+        </ImageSectionWrapperItem>
       ))}
     </>
   );
 };
+
 const YellowGround = styled(FlexWrapper)`
+  opacity: 0;
   position: absolute;
   top: 0;
   left: 0;
   background-color: #ffb400f2;
   height: 100%;
+  width: 100%;
+  transition: ease 0.5s;
 `;
 
-const ImagePortfolio = styled.img`
-  display: block;
+const ImageSectionWrapperItem = styled(SectionWrapperItem)<{ path: string }>`
+  position: relative;
+  background: url(${(props) => props.path}) no-repeat center center / cover;
+  width: 310px;
   height: 300px;
-  width: 100%;
-  object-fit: cover;
+  max-width: unset;
+  min-width: unset;
+  flex: unset;
+  &:hover ${YellowGround} {
+    opacity: 1;
+  }
 `;

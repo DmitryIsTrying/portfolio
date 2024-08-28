@@ -36,36 +36,28 @@ const items = [
 export const SectionForm = () => {
   return (
     <StyledSection id="messageSection">
-      <FlexWrapper direction="column" align="center">
-        <StyledFLexSectionsWrapper>
-          <Form />
-          <StyledMediaWrapper direction="column">
-            <StyledTitleText style={{ marginBottom: "50px" }}>
-              Contact information
-            </StyledTitleText>
-            <StyledFlexWrapper gap="18px" fitWidth direction="column">
-              <SectionFormItem width={370} height={210} items={items} />
-            </StyledFlexWrapper>
-          </StyledMediaWrapper>
-        </StyledFLexSectionsWrapper>
-      </FlexWrapper>
+      <StyledFLexSectionsWrapper>
+        <Form />
+        <StyledMediaWrapper direction="column">
+          <StyledTitleText style={{ marginBottom: "50px" }}>
+            Contact information
+          </StyledTitleText>
+          <StyledFlexWrapper gap="18px" fitWidth direction="column">
+            <SectionFormItem width={370} height={210} items={items} />
+          </StyledFlexWrapper>
+        </StyledMediaWrapper>
+      </StyledFLexSectionsWrapper>
     </StyledSection>
   );
 };
 
 const StyledMediaWrapper = styled(FlexWrapper)`
-  @media screen and (min-width: 1440px) {
-    width: fit-content;
-  }
+  flex: 0 1 370px;
 `;
 
 const StyledFlexWrapper = styled(FlexWrapper)`
   width: 100%;
-  flex-wrap: wrap;
-  @media screen and (max-width: 1439px) {
-    flex-direction: row;
-    justify-content: center;
-  }
+  align-items: center;
 `;
 
 const StyledFLexSectionsWrapper = styled(FLexSectionsWrapper)`

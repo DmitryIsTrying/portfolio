@@ -41,7 +41,9 @@ export const SectionServiceItem: React.FC<SectionItemPropsType> = ({
             viewBox={icon.vBox}
           />
           <PaddingText TAlign="center">{icon.title}</PaddingText>
-          <StyledSecondaryText>{icon.description}</StyledSecondaryText>
+          <StyledSecondaryText TAlign="center">
+            {icon.description}
+          </StyledSecondaryText>
         </SectionWrapperItem>
       ))}
     </>

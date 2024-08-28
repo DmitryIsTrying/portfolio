@@ -3,6 +3,7 @@ import profileHeader from "../../../assets/images/Photo.webp";
 import styled from "styled-components";
 import { ItemsDesign } from "../../../components/itemsDesign/ItemsDesign";
 import { TitleCheer } from "../../../components/titleCheer/TitleCheer";
+import { layoutsTheme } from "../../../styles/Theme.styled";
 
 export const Header = () => {
   return (
@@ -12,9 +13,50 @@ export const Header = () => {
         <Image src={profileHeader} alt="Rayan Adlardard Face" />
       </MediaWrapper>
       <ItemsDesign />
+      <BurgerMenu>
+        <span></span>
+      </BurgerMenu>
     </StyledHeader>
   );
 };
+
+const BurgerMenu = styled.button`
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: unset;
+  display: none;
+
+  top: 35px;
+  left: 31px;
+  span {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: #ffb400;
+    &::before {
+      content: "";
+      display: block;
+      transform: translateY(-10px);
+      width: 30px;
+      height: 2px;
+      background-color: #ffb400;
+    }
+    &::after {
+      content: "";
+      display: block;
+      transform: translateY(10px);
+      width: 30px;
+      height: 2px;
+      background-color: #ffb400;
+    }
+  }
+
+  @media ${layoutsTheme.media.tablet} {
+    display: inline-block;
+  }
+`;
 
 const Image = styled.img`
   max-width: 325px;

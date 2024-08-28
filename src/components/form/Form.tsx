@@ -14,7 +14,11 @@ export const Form = () => {
       </StyledTitleText>
       <StyledForm action="#!">
         <label htmlFor="name">
-          <StyledPrimaryText style={{ marginBottom: "8px" }} color="#767676">
+          <StyledPrimaryText
+            as={"p"}
+            style={{ marginBottom: "8px" }}
+            color="#767676"
+          >
             Your Full Name ( Required)
           </StyledPrimaryText>
         </label>
@@ -27,7 +31,11 @@ export const Form = () => {
           autoComplete="name"
         />
         <label htmlFor="email">
-          <StyledPrimaryText style={{ marginBottom: "8px" }} color="#767676">
+          <StyledPrimaryText
+            as={"p"}
+            style={{ marginBottom: "8px" }}
+            color="#767676"
+          >
             Your Email ( Required)
           </StyledPrimaryText>
         </label>
@@ -40,7 +48,11 @@ export const Form = () => {
           autoComplete="email"
         />
         <label htmlFor="subj">
-          <StyledPrimaryText style={{ marginBottom: "8px" }} color="#767676">
+          <StyledPrimaryText
+            as={"p"}
+            style={{ marginBottom: "8px" }}
+            color="#767676"
+          >
             Subject
           </StyledPrimaryText>
         </label>
@@ -51,7 +63,11 @@ export const Form = () => {
           name="subj"
         />
         <label htmlFor="msg">
-          <StyledPrimaryText style={{ marginBottom: "8px" }} color="#767676">
+          <StyledPrimaryText
+            as={"p"}
+            style={{ marginBottom: "8px" }}
+            color="#767676"
+          >
             Your Message
           </StyledPrimaryText>
           <StyledInput
@@ -66,14 +82,14 @@ export const Form = () => {
           />
         </label>
         <StyledBtn type="submit" WFit padding="9px 25px">
-          <StyledSecondaryText
-            color="#2B2B2B"
+          <StyledPrimaryText
+            as={"p"}
             size="14px"
-            lHeight="16.94px"
-            fWeight="600"
+            Lheight="16.94px"
+            weight="600"
           >
             SEND MESSAGE
-          </StyledSecondaryText>
+          </StyledPrimaryText>
         </StyledBtn>
       </StyledForm>
     </MediaWrapper>
@@ -81,18 +97,13 @@ export const Form = () => {
 };
 
 const MediaWrapper = styled(FlexWrapper)`
-  @media screen and (max-width: 1439px) {
-    width: 100%;
-  }
+  flex: 1 1;
+  min-width: 345px;
 `;
 
 const StyledForm = styled.form`
   background-color: #ffffff;
   padding: 25px;
-  width: 570px;
-  @media screen and (max-width: 1439px) {
-    width: 100%;
-  }
 `;
 
 const StyledInput = styled.input`

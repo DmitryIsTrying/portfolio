@@ -5,6 +5,7 @@ import { SecondaryInfo } from "../../components/info/secondaryInfo/SecondaryInfo
 import { SkillsInfo } from "../../components/info/skillsInfo/SkillsInfo";
 import { Extra } from "../../components/info/extra/Extra";
 import { LoadBtn } from "../../components/info/loadBtn/LoadBtn";
+import { layoutsTheme } from "../../styles/Theme.styled";
 
 const Languages = [
   { nameSkill: "Bangla", lvlSkill: 100 },
@@ -59,5 +60,8 @@ const StyledAside = styled.aside`
   &::-webkit-scrollbar-track {
     background-color: #ffffff;
     border-radius: 6px;
+  }
+  @media ${layoutsTheme.media.tablet} {
+    display: none;
   }
 `;

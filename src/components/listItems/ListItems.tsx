@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Icon } from "../icon/Icon";
+import { layoutsTheme } from "../../styles/Theme.styled";
 
 type Links = {
   ariaLabel: string;
@@ -46,12 +47,20 @@ export const ListItems = ({
   );
 };
 
-const StyledUl = styled.ul<{ direction: "row" | "column"; gap: number }>`
+const StyledUl = styled.ul<{
+  direction: "row" | "column";
+  gap: number;
+}>`
   list-style: none;
   display: flex;
   justify-content: space-between;
   gap: ${(props) => props.gap}px;
   flex-direction: ${(props) => props.direction || "row"};
+
+  @media ${layoutsTheme.media.tablet} {
+    flex-direction: row;
+    gap: 10px;
+  }
 `;
 
 const StyledLink = styled.a`
@@ -91,4 +100,9 @@ const StyledLi = styled.li<{ width: number; height: number; color: string }>`
   background-color: ${(props) => props.color};
   border-radius: 50%;
   cursor: pointer;
+  transition: ease 0.5s;
+  &:hover {
+    transform: scale(1.15);
+    box-shadow: 0px 1px 10px 0px #00000026;
+  }
 `;
