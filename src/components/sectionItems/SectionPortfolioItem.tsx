@@ -37,6 +37,10 @@ export const SectionPortfolioItem: React.FC<SectionPortfolioItemPropsType> = ({
             padding="0"
             color="transparent"
             WFit
+            as={"a"}
+            href={"https://www.google.com/"}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <YellowGround justify="center" align="center">
               <Icon
@@ -67,12 +71,15 @@ const YellowGround = styled(FlexWrapper)`
 const ImageSectionWrapperItem = styled(SectionWrapperItem)<{ path: string }>`
   position: relative;
   background: url(${(props) => props.path}) no-repeat center center / cover;
-  width: 310px;
-  height: 300px;
-  max-width: unset;
-  min-width: unset;
-  flex: unset;
-  &:hover ${YellowGround} {
-    opacity: 1;
+  aspect-ratio: 310 / 300;
+  @media (hover: hover) {
+    &:hover ${YellowGround} {
+      opacity: 1;
+    }
+  }
+  @media (hover: none) {
+    &:active ${YellowGround} {
+      opacity: 1;
+    }
   }
 `;

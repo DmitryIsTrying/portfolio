@@ -5,6 +5,7 @@ import { StyledTitleText } from "../../../components/TitleText.styled";
 import styled from "styled-components";
 import { Form } from "../../../components/form/Form";
 import { SectionFormItem } from "../../../components/sectionItems/SectionFormItem";
+import { layoutsTheme } from "../../../styles/Theme.styled";
 
 const items = [
   {
@@ -53,6 +54,9 @@ export const SectionForm = () => {
 
 const StyledMediaWrapper = styled(FlexWrapper)`
   flex: 0 1 370px;
+  @media screen and (min-width: 993px) and (max-width: 1214px) {
+    flex: 1 1 370px;
+  }
 `;
 
 const StyledFlexWrapper = styled(FlexWrapper)`

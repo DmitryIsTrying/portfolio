@@ -37,13 +37,17 @@ export const SectionRecomItem: React.FC<SectionRecomItemPropsType> = ({
           style={{ justifyContent: "space-between" }}
         >
           <Stars starsCount={5} />
-          <StyledPrimaryText TAlign="left" style={{ width: "100%" }} as={"p"}>
+          <StyledPrimaryText
+            TAlign="left"
+            style={{ width: "100%", margin: "17px 0 18px 0" }}
+            as={"p"}
+          >
             {icon.title}
           </StyledPrimaryText>
           <StyledSecondaryText TAlign="left">
             {icon.comment}
           </StyledSecondaryText>
-          <FlexWrapper gap="13px">
+          <FlexWrapper align="center" style={{ marginTop: "30px" }} gap="13px">
             <StyledAvatar src={icon.pathPhoto} alt={icon.altPhoto} />
             <FlexWrapper direction="column" justify="center">
               <StyledPrimaryText style={{ marginBottom: "5px" }} as={"p"}>
