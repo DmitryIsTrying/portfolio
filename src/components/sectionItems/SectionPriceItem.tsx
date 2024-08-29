@@ -7,6 +7,7 @@ import { Advantages } from "../advantages/Advantages";
 import { StyledPricePartBtn } from "../StyledPricePartBtn";
 import styled from "styled-components";
 import { SectionWrapperItem } from "../SectionWrapperItem";
+import { Fade } from "react-awesome-reveal";
 
 type PriceList = {
   nameList: string;
@@ -44,14 +45,18 @@ export const SectionPriceItem: React.FC<SectionPriceItemPropsType> = ({
   items,
 }) => {
   return (
-    <>
+    <SectionWrapperItem
+      padding="54px 31px 25px 31px"
+      width={width}
+      height={height}
+      as={Fade}
+      damping={0.1}
+      direction="up"
+      cascade
+      triggerOnce
+    >
       {items.map((item, i) => (
-        <SectionWrapperItem
-          padding="54px 31px 25px 31px"
-          width={width}
-          height={height}
-          key={i}
-        >
+        <React.Fragment key={i}>
           {item.mostPopular ? (
             <StyledMP>
               <StyledSecondaryText TAlign="center" color="#2B2B2B">
@@ -82,9 +87,9 @@ export const SectionPriceItem: React.FC<SectionPriceItemPropsType> = ({
               </StyledSecondaryText>
             </StyledPricePartBtn>
           </FlexWrapper>
-        </SectionWrapperItem>
+        </React.Fragment>
       ))}
-    </>
+    </SectionWrapperItem>
   );
 };
 

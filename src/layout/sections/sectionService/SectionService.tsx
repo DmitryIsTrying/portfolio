@@ -4,6 +4,7 @@ import { FLexSectionsWrapper } from "../../../components/FLexSectionsWrapper";
 import styled from "styled-components";
 import { TitleSections } from "../../../components/titleSections/TitleSections";
 import { SectionServiceItem } from "../../../components/sectionItems/SectionServiceItem";
+import { Fade } from "react-awesome-reveal";
 
 const sectionItems = [
   {

@@ -5,7 +5,6 @@ import { StyledTitleText } from "../../../components/TitleText.styled";
 import styled from "styled-components";
 import { Form } from "../../../components/form/Form";
 import { SectionFormItem } from "../../../components/sectionItems/SectionFormItem";
-import { layoutsTheme } from "../../../styles/Theme.styled";
 
 const items = [
   {

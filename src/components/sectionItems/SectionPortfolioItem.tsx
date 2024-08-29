@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { FlexWrapper } from "../FlexWrapper";
 import { StyledBtn } from "../StyledBtn.styled";
 import { Icon } from "../icon/Icon";
+import { Fade } from "react-awesome-reveal";
 
 type PhotosArrayPropsType = {
   path: string;
@@ -31,6 +32,11 @@ export const SectionPortfolioItem: React.FC<SectionPortfolioItemPropsType> = ({
           height={height}
           key={i}
           path={e.path}
+          as={Fade}
+          damping={0.1}
+          direction="up"
+          cascade
+          triggerOnce
         >
           <StyledBtn
             aria-label="More examples"

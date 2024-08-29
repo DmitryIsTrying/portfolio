@@ -5,6 +5,7 @@ import { StyledSecondaryText } from "../SecondaryText.styled";
 import styled from "styled-components";
 import { Stars } from "../stars/Stars";
 import { FlexWrapper } from "../FlexWrapper";
+import { Fade } from "react-awesome-reveal";
 
 type RecData = {
   title: string;
@@ -27,15 +28,19 @@ export const SectionRecomItem: React.FC<SectionRecomItemPropsType> = ({
   height,
 }) => {
   return (
-    <>
+    <SectionWrapperItem
+      padding="25px"
+      width={width}
+      height={height}
+      style={{ justifyContent: "space-between" }}
+      as={Fade}
+      damping={0.1}
+      direction="up"
+      cascade
+      triggerOnce
+    >
       {recData.map((icon, i) => (
-        <SectionWrapperItem
-          padding="25px"
-          width={width}
-          height={height}
-          key={i}
-          style={{ justifyContent: "space-between" }}
-        >
+        <React.Fragment key={i}>
           <Stars starsCount={5} />
           <StyledPrimaryText
             TAlign="left"
@@ -56,9 +61,9 @@ export const SectionRecomItem: React.FC<SectionRecomItemPropsType> = ({
               <StyledSecondaryText>{icon.job}</StyledSecondaryText>
             </FlexWrapper>
           </FlexWrapper>
-        </SectionWrapperItem>
+        </React.Fragment>
       ))}
-    </>
+    </SectionWrapperItem>
   );
 };
 

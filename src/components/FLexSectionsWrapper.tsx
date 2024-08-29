@@ -1,5 +1,6 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import { Fade } from "react-awesome-reveal";
+import styled from "styled-components";
 
 type FLexSectionsWrapperPropsType = {
   columns?: string;

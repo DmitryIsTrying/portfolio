@@ -4,6 +4,7 @@ import { StyledPrimaryText } from "../PrimaryText.styled";
 import { StyledSecondaryText } from "../SecondaryText.styled";
 import { FlexWrapper } from "../FlexWrapper";
 import styled from "styled-components";
+import { Fade } from "react-awesome-reveal";
 
 type educationData = {
   nameUniversity: string;
@@ -25,43 +26,47 @@ export const SectionEducationItem: React.FC<SectionItemPropsType> = ({
   height,
 }) => {
   return (
-    <StyledSectionWrapperItem
-      padding="43px 29px 42px 37px"
-      width={width}
-      height={height}
-    >
-      {educationData.map((icon, index) => (
-        <StyledBorderLine
-          key={index}
-          borderBottom={
-            index === educationData.length - 1 ? "none" : "1.5px solid #FAFAFA"
-          }
-          justify="space-between"
-        >
-          <StyledFlexWrapperLeftPart
-            fitWidth
-            align="flex-start"
-            direction="column"
+    <Fade damping={0.1} direction="up" cascade triggerOnce>
+      <StyledSectionWrapperItem
+        padding="43px 29px 42px 37px"
+        width={width}
+        height={height}
+      >
+        {educationData.map((icon, index) => (
+          <StyledBorderLine
+            key={index}
+            borderBottom={
+              index === educationData.length - 1
+                ? "none"
+                : "1.5px solid #FAFAFA"
+            }
+            justify="space-between"
           >
-            <StyledTitle as={"h3"}>{icon.nameUniversity}</StyledTitle>
-            <FlexWrapper gap="21px" align="flex-start">
-              <StyledSecondary color="#2B2B2B">{icon.whois}</StyledSecondary>
-              <StyledSecondaryOrange
-                size="10px"
-                lHeight="10.09px"
-                color="#FFFFFF"
-              >
-                {icon.date}
-              </StyledSecondaryOrange>
-            </FlexWrapper>
-          </StyledFlexWrapperLeftPart>
-          <StyledFlexWrapperRightPart direction="column">
-            <StyledPrimary as={"h3"}>{icon.nameCertificate}</StyledPrimary>
-            <StyledSecondary>{icon.descriptionCertificate}</StyledSecondary>
-          </StyledFlexWrapperRightPart>
-        </StyledBorderLine>
-      ))}
-    </StyledSectionWrapperItem>
+            <StyledFlexWrapperLeftPart
+              fitWidth
+              align="flex-start"
+              direction="column"
+            >
+              <StyledTitle as={"h3"}>{icon.nameUniversity}</StyledTitle>
+              <FlexWrapper gap="21px" align="flex-start">
+                <StyledSecondary color="#2B2B2B">{icon.whois}</StyledSecondary>
+                <StyledSecondaryOrange
+                  size="10px"
+                  lHeight="10.09px"
+                  color="#FFFFFF"
+                >
+                  {icon.date}
+                </StyledSecondaryOrange>
+              </FlexWrapper>
+            </StyledFlexWrapperLeftPart>
+            <StyledFlexWrapperRightPart direction="column">
+              <StyledPrimary as={"h3"}>{icon.nameCertificate}</StyledPrimary>
+              <StyledSecondary>{icon.descriptionCertificate}</StyledSecondary>
+            </StyledFlexWrapperRightPart>
+          </StyledBorderLine>
+        ))}
+      </StyledSectionWrapperItem>
+    </Fade>
   );
 };
 

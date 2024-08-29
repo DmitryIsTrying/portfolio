@@ -3,7 +3,8 @@ import { SectionWrapperItem } from "../SectionWrapperItem";
 import { StyledPrimaryText } from "../PrimaryText.styled";
 import { StyledSecondaryText } from "../SecondaryText.styled";
 import { Icon } from "../icon/Icon";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
+import { Fade } from "react-awesome-reveal";
 
 type IconData = {
   path: string;
@@ -26,14 +27,18 @@ export const SectionServiceItem: React.FC<SectionItemPropsType> = ({
   height,
 }) => {
   return (
-    <>
+    <HoverSectionWrapperItem
+      padding="25px 32px 35px 32px"
+      width={width}
+      height={height}
+      as={Fade}
+      damping={0.1}
+      direction="up"
+      cascade
+      triggerOnce
+    >
       {iconData.map((icon, i) => (
-        <HoverSectionWrapperItem
-          padding="25px 32px 35px 32px"
-          width={width}
-          height={height}
-          key={i}
-        >
+        <React.Fragment key={i}>
           <Icon
             iconSrc={icon.path}
             width={icon.width}
@@ -68,9 +73,9 @@ export const SectionServiceItem: React.FC<SectionItemPropsType> = ({
               />
             </StyledLink>
           </Test>
-        </HoverSectionWrapperItem>
+        </React.Fragment>
       ))}
-    </>
+    </HoverSectionWrapperItem>
   );
 };
 
@@ -109,6 +114,7 @@ const StyleTextLink = styled.span`
 const HoverSectionWrapperItem = styled(SectionWrapperItem)`
   position: relative;
   overflow: hidden;
+  justify-content: space-between;
   &:hover ${Test} {
     top: 0px;
   }
