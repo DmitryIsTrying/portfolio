@@ -108,8 +108,12 @@ const StyledBtnIcon = styled.button`
   margin-bottom: 212px;
   background-color: transparent;
   cursor: pointer;
+  transition: ease 0.3s;
   &:focus-visible {
     outline: 2px solid #ff8800;
+  }
+  &:hover {
+    transform: scale(1.2);
   }
   @media ${layoutsTheme.media.tablet} {
     margin-bottom: 0px;

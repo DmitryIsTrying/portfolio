@@ -5,7 +5,7 @@ import styled from "styled-components";
 export const ItemsDesign = () => {
   return (
     <>
-      <ItemDesign border="2px solid #FFB400CC" top="9%" left="6%" />
+      <ItemDesign border="2px solid #FFB400CC" top="9%" left="11%" />
       <ItemDesign border="2px solid #05FF00CC" top="10%" right="40%" />
       <ItemDesign
         border="2px solid #FFB400CC"

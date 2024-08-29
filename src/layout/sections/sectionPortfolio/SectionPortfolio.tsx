@@ -100,7 +100,7 @@ export const SectionPortfolio = () => {
 };
 
 const MenuBtn = styled(StyledBtn)`
-  &:hover ${StyledPrimaryText} {
+  &:hover ${StyledPrimaryText}, &:focus ${StyledPrimaryText} {
     color: #ffb400;
   }
 `;

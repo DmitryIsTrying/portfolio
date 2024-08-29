@@ -52,7 +52,7 @@ const sectionItems = [
     height: "78",
     vBox: "0 0 72 78",
     title: "Advertising",
-    description: "portrait, product photography",
+    description: "Captivating visuals, Eye-catching",
   },
 ];
 
@@ -79,18 +79,4 @@ export const SectionService = () => {
 
 const StyledSection = styled.section`
   padding: 35px 0;
-`;
-
-const StyledLink = styled.a`
-  text-decoration: none;
-`;
-
-const StyleTextLink = styled.span`
-  font-family: Roboto;
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 14.06px;
-  text-align: left;
-  color: #ffb400;
-  height: fit-content;
 `;
