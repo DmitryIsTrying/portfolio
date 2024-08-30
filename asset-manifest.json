@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.31d6cfe0.css",
-    "main.js": "/portfolio/static/js/main.0e5cadc9.js",
+    "main.css": "/portfolio/static/css/main.4657a686.css",
+    "main.js": "/portfolio/static/js/main.2480f4d4.js",
     "static/js/787.2585d02b.chunk.js": "/portfolio/static/js/787.2585d02b.chunk.js",
-    "static/media/icons-sprite.svg": "/portfolio/static/media/icons-sprite.81d052abdec772430f9c7fe33024c694.svg",
+    "static/media/icons-sprite.svg": "/portfolio/static/media/icons-sprite.260dcd4b2c730fc42bcbc00174f15ef5.svg",
     "static/media/Port7.webp": "/portfolio/static/media/Port7.81a860bf1fe5a51d1483.webp",
     "static/media/Map.webp": "/portfolio/static/media/Map.38f8c28c158cfd786fe9.webp",
     "static/media/Port8.webp": "/portfolio/static/media/Port8.552865c8c238ace98f6f.webp",
     "static/media/Port9.webp": "/portfolio/static/media/Port9.42dcf721d74d12b8630f.webp",
+    "static/media/Profile@2x.webp": "/portfolio/static/media/Profile@2x.6a759a40636bf7870152.webp",
     "static/media/Port5.webp": "/portfolio/static/media/Port5.a699e98d5c0067b3ef09.webp",
     "static/media/Photo.webp": "/portfolio/static/media/Photo.6e3dac78f60fa1f5c136.webp",
     "static/media/Port4.webp": "/portfolio/static/media/Port4.a40dc0e51d053c002c03.webp",
@@ -15,16 +16,17 @@
     "static/media/Port6.webp": "/portfolio/static/media/Port6.3cadeb3b30fe1c680f9c.webp",
     "static/media/Port1-blog.webp": "/portfolio/static/media/Port1-blog.7979b9ef13179d8085ed.webp",
     "static/media/Port2-blog.webp": "/portfolio/static/media/Port2-blog.61ddb97708e939b8541f.webp",
-    "static/media/Photo-small.webp": "/portfolio/static/media/Photo-small.a007eb1652d8bde48db6.webp",
+    "static/media/Profile.webp": "/portfolio/static/media/Profile.a007eb1652d8bde48db6.webp",
     "static/media/Rec-person-right.webp": "/portfolio/static/media/Rec-person-right.668f69edb94521ac82ee.webp",
     "static/media/Rec-person-middle.webp": "/portfolio/static/media/Rec-person-middle.f30cc8134b8d8f4237a3.webp",
     "static/media/Rec-person-left.webp": "/portfolio/static/media/Rec-person-left.b49926b1b2a49a3e095b.webp",
     "index.html": "/portfolio/index.html",
-    "main.0e5cadc9.js.map": "/portfolio/static/js/main.0e5cadc9.js.map",
+    "main.4657a686.css.map": "/portfolio/static/css/main.4657a686.css.map",
+    "main.2480f4d4.js.map": "/portfolio/static/js/main.2480f4d4.js.map",
     "787.2585d02b.chunk.js.map": "/portfolio/static/js/787.2585d02b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.31d6cfe0.css",
-    "static/js/main.0e5cadc9.js"
+    "static/css/main.4657a686.css",
+    "static/js/main.2480f4d4.js"
   ]
 }
