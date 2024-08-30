@@ -4,7 +4,7 @@ import { FLexSectionsWrapper } from "../../../components/FLexSectionsWrapper";
 import styled from "styled-components";
 import { TitleSections } from "../../../components/titleSections/TitleSections";
 import { SectionServiceItem } from "../../../components/sectionItems/SectionServiceItem";
-import { Fade } from "react-awesome-reveal";
+import { useInView } from "react-intersection-observer";
 
 const sectionItems = [
   {
@@ -58,6 +58,10 @@ const sectionItems = [
 ];
 
 export const SectionService = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
   return (
     <StyledSection>
       <FlexWrapper direction="column" align="center">
@@ -66,12 +70,14 @@ export const SectionService = () => {
           title="My Services"
           description="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum"
         />
-        <FLexSectionsWrapper>
-          <SectionServiceItem
-            width={310}
-            height={225}
-            iconData={sectionItems}
-          />
+        <FLexSectionsWrapper ref={ref}>
+          {inView ? (
+            <SectionServiceItem
+              width={310}
+              height={225}
+              iconData={sectionItems}
+            />
+          ) : null}
         </FLexSectionsWrapper>
       </FlexWrapper>
     </StyledSection>

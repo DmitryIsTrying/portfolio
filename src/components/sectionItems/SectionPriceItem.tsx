@@ -7,7 +7,7 @@ import { Advantages } from "../advantages/Advantages";
 import { StyledPricePartBtn } from "../StyledPricePartBtn";
 import styled from "styled-components";
 import { SectionWrapperItem } from "../SectionWrapperItem";
-import { Fade } from "react-awesome-reveal";
+import "animate.css";
 
 type PriceList = {
   nameList: string;
@@ -44,52 +44,58 @@ export const SectionPriceItem: React.FC<SectionPriceItemPropsType> = ({
   height,
   items,
 }) => {
+  let countDelay = 200;
+
   return (
-    <SectionWrapperItem
-      padding="54px 31px 25px 31px"
-      width={width}
-      height={height}
-      as={Fade}
-      damping={0.1}
-      direction="up"
-      cascade
-      triggerOnce
-    >
-      {items.map((item, i) => (
-        <React.Fragment key={i}>
-          {item.mostPopular ? (
-            <StyledMP>
-              <StyledSecondaryText TAlign="center" color="#2B2B2B">
-                Most Popular
+    <>
+      {items.map((item, i) => {
+        const delay = `${countDelay * i}ms`;
+
+        return (
+          <SectionWrapperItem
+            padding="54px 31px 25px 31px"
+            width={width}
+            height={height}
+            style={{ animationDelay: delay }}
+            className="animate__animated animate__fadeInUp"
+            key={i}
+          >
+            {item.mostPopular ? (
+              <StyledMP>
+                <StyledSecondaryText TAlign="center" color="#2B2B2B">
+                  Most Popular
+                </StyledSecondaryText>
+              </StyledMP>
+            ) : null}
+            <StyledTitle weight="600" size="24px" Lheight="29.66px">
+              {item.nameList}
+            </StyledTitle>
+            <FlexWrapper align="baseline" justify="center" gap="10px">
+              <StyledTitleText as={"p"}>${item.price}.00</StyledTitleText>
+              <StyledText color="#2B2B2B">/Hour</StyledText>
+            </FlexWrapper>
+            <FlexWrapper align="center" gap="21px" direction="column">
+              <StyledSecondaryText TAlign="center">
+                {item.description}
               </StyledSecondaryText>
-            </StyledMP>
-          ) : null}
-          <StyledTitle weight="600" size="24px" Lheight="29.66px">
-            {item.nameList}
-          </StyledTitle>
-          <FlexWrapper align="baseline" justify="center" gap="10px">
-            <StyledTitleText as={"p"}>${item.price}.00</StyledTitleText>
-            <StyledText color="#2B2B2B">/Hour</StyledText>
-          </FlexWrapper>
-          <FlexWrapper align="center" gap="21px" direction="column">
-            <StyledSecondaryText TAlign="center">
-              {item.description}
-            </StyledSecondaryText>
-            <ItemList itemList={item.itemList} />
-            <StyledPricePartBtn bgc={item.mostPopular ? "#FFB400" : "#FFFFFF"}>
-              <StyledSecondaryText
-                color="#2B2B2B"
-                size="14px"
-                lHeight="16.94px"
-                fWeight="700"
+              <ItemList itemList={item.itemList} />
+              <StyledPricePartBtn
+                bgc={item.mostPopular ? "#FFB400" : "#FFFFFF"}
               >
-                ORDER NOW
-              </StyledSecondaryText>
-            </StyledPricePartBtn>
-          </FlexWrapper>
-        </React.Fragment>
-      ))}
-    </SectionWrapperItem>
+                <StyledSecondaryText
+                  color="#2B2B2B"
+                  size="14px"
+                  lHeight="16.94px"
+                  fWeight="700"
+                >
+                  ORDER NOW
+                </StyledSecondaryText>
+              </StyledPricePartBtn>
+            </FlexWrapper>
+          </SectionWrapperItem>
+        );
+      })}
+    </>
   );
 };
 

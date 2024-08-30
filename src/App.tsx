@@ -33,7 +33,7 @@ function App() {
           <SectionEducation />
           <SectionWHistory />
           <SectionPortfolio />
-          {/* <SectionBlog /> */}
+          <SectionBlog />
           <SectionForm />
         </Container>
         <Container paddingMedia={0}>

@@ -4,7 +4,8 @@ import { StyledPrimaryText } from "../PrimaryText.styled";
 import { StyledSecondaryText } from "../SecondaryText.styled";
 import { Icon } from "../icon/Icon";
 import styled from "styled-components";
-import { Fade } from "react-awesome-reveal";
+import { InView } from "react-intersection-observer";
+import "animate.css";
 
 type IconData = {
   path: string;
@@ -26,73 +27,62 @@ export const SectionServiceItem: React.FC<SectionItemPropsType> = ({
   width,
   height,
 }) => {
+  let countDelay = 200;
+
   return (
-    <HoverSectionWrapperItem
-      padding="25px 32px 35px 32px"
-      width={width}
-      height={height}
-      as={Fade}
-      damping={0.1}
-      direction="up"
-      cascade
-      triggerOnce
-    >
-      {iconData.map((icon, i) => (
-        <React.Fragment key={i}>
-          <Icon
-            iconSrc={icon.path}
-            width={icon.width}
-            height={icon.height}
-            viewBox={icon.vBox}
-          />
-          <PaddingText margin="26px 0 15px" TAlign="center">
-            {icon.title}
-          </PaddingText>
-          <StyledSecondaryText TAlign="center">
-            {icon.description}
-          </StyledSecondaryText>
-          <Test>
-            <PaddingText margin="0" TAlign="center">
+    <>
+      {iconData.map((icon, i) => {
+        const delay = `${countDelay * i}ms`;
+
+        return (
+          <HoverSectionWrapperItem
+            padding="25px 32px 35px 32px"
+            width={width}
+            height={height}
+            style={{ animationDelay: delay }}
+            className={"animate__animated animate__fadeInUp"}
+            key={i}
+          >
+            <Icon
+              iconSrc={icon.path}
+              width={icon.width}
+              height={icon.height}
+              viewBox={icon.vBox}
+            />
+            <PaddingText margin="26px 0 15px" TAlign="center">
               {icon.title}
             </PaddingText>
             <StyledSecondaryText TAlign="center">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
-              nulla diam in ac dictum a urna viverra morbi.
+              {icon.description}
             </StyledSecondaryText>
-            <StyledLink
-              href="https://www.google.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <StyleTextLink>ORDER NOW</StyleTextLink>
-              <Icon
-                iconSrc={"ServiceArrowRightSvg"}
-                width="6"
-                height="8"
-                viewBox="0 0 6 8"
-              />
-            </StyledLink>
-          </Test>
-        </React.Fragment>
-      ))}
-    </HoverSectionWrapperItem>
+            <Test>
+              <PaddingText margin="0" TAlign="center">
+                {icon.title}
+              </PaddingText>
+              <StyledSecondaryText TAlign="center">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
+                nulla diam in ac dictum a urna viverra morbi.
+              </StyledSecondaryText>
+              <StyledLink
+                href="https://www.google.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <StyleTextLink>ORDER NOW</StyleTextLink>
+                <Icon
+                  iconSrc={"ServiceArrowRightSvg"}
+                  width="6"
+                  height="8"
+                  viewBox="0 0 6 8"
+                />
+              </StyledLink>
+            </Test>
+          </HoverSectionWrapperItem>
+        );
+      })}
+    </>
   );
 };
-
-const Test = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #ffffff;
-  top: -250px;
-  left: 0;
-  transition: top 0.6s ease-in-out;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 31px 25px 25px;
-`;
 
 const StyledLink = styled.a`
   display: flex;
@@ -111,6 +101,25 @@ const StyleTextLink = styled.span`
   height: fit-content;
 `;
 
+const PaddingText = styled(StyledPrimaryText)<{ margin: string }>`
+  margin: ${(props) => props.margin};
+`;
+
+const Test = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  top: -250px;
+  left: 0;
+  transition: top 0.6s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 31px 25px 25px;
+`;
+
 const HoverSectionWrapperItem = styled(SectionWrapperItem)`
   position: relative;
   overflow: hidden;
@@ -118,8 +127,4 @@ const HoverSectionWrapperItem = styled(SectionWrapperItem)`
   &:hover ${Test} {
     top: 0px;
   }
-`;
-
-const PaddingText = styled(StyledPrimaryText)<{ margin: string }>`
-  margin: ${(props) => props.margin};
 `;

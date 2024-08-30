@@ -7,6 +7,7 @@ import RecPhotoRight from "../../../assets/images/Rec-person-right.webp";
 import styled from "styled-components";
 import { TitleSections } from "../../../components/titleSections/TitleSections";
 import { SectionRecomItem } from "../../../components/sectionItems/SectionRecomItem";
+import { useInView } from "react-intersection-observer";
 
 const recData = [
   {
@@ -39,6 +40,10 @@ const recData = [
 ];
 
 export const SectionRecommend = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
   return (
     <StyledSection>
       <FlexWrapper direction="column" align="center">
@@ -46,8 +51,10 @@ export const SectionRecommend = () => {
           title="Recommendations"
           description="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum"
         />
-        <FLexSectionsWrapper>
-          <SectionRecomItem recData={recData} width={310} height={323} />
+        <FLexSectionsWrapper ref={ref}>
+          {inView ? (
+            <SectionRecomItem recData={recData} width={310} height={323} />
+          ) : null}
         </FLexSectionsWrapper>
       </FlexWrapper>
       <WrapperDesignItems justify="center" gap="10px">

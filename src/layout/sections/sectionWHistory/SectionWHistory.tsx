@@ -1,10 +1,10 @@
 import React from "react";
 import { FlexWrapper } from "../../../components/FlexWrapper";
-import { StyledSecondaryText } from "../../../components/SecondaryText.styled";
-import { StyledTitleText } from "../../../components/TitleText.styled";
 import { SectionEducationItem } from "../../../components/sectionItems/SectionEducationItem";
 import { FLexSectionsWrapper } from "../../../components/FLexSectionsWrapper";
 import styled from "styled-components";
+import { TitleSections } from "../../../components/titleSections/TitleSections";
+import { useInView } from "react-intersection-observer";
 
 const educationData = [
   {
@@ -34,29 +34,26 @@ const educationData = [
 ];
 
 export const SectionWHistory = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
   return (
     <StyledSection id="workHistorySection">
       <FlexWrapper direction="column" align="center">
-        <StyledTitleText style={{ marginBottom: "25px" }}>
-          Work History
-        </StyledTitleText>
-        <FlexWrapper color="#F0F0F6" justify="center">
-          <StyledSecondaryText
-            style={{ marginBottom: "50px" }}
-            Mwidth
-            TAlign="center"
-          >
-            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-            sint. Velit officia consequat duis enim velit mollit. lorem ipsum
-          </StyledSecondaryText>
-        </FlexWrapper>
+        <TitleSections
+          title="Work History"
+          description="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum"
+        />
         <FlexWrapper direction="column">
-          <FLexSectionsWrapper>
-            <SectionEducationItem
-              width={970}
-              height={632}
-              educationData={educationData}
-            />
+          <FLexSectionsWrapper ref={ref}>
+            {inView ? (
+              <SectionEducationItem
+                width={970}
+                height={632}
+                educationData={educationData}
+              />
+            ) : null}
           </FLexSectionsWrapper>
         </FlexWrapper>
       </FlexWrapper>

@@ -10,7 +10,13 @@ export const Header = () => {
     <StyledHeader>
       <MediaWrapper>
         <TitleCheer />
-        <Image src={profileHeader} alt="Rayan Adlardard Face" />
+        <Image
+          loading="lazy"
+          src={profileHeader}
+          alt="Rayan Adlardard Face"
+          width={"325"}
+          height={"427"}
+        />
       </MediaWrapper>
       <ItemsDesign />
       <BurgerMenu>

@@ -32,13 +32,23 @@ export const SectionBlogItem: React.FC<SectionBlogItemPropsType> = ({
     <>
       {items.map((e, i) => (
         <Wrapper width={width} height={height} key={i}>
-          <FlexWrapper direction="column">
+          <FlexWrapper
+            style={{ height: "100%" }}
+            justify="space-between"
+            direction="column"
+          >
             <ImageBlogStyled src={e.path} alt={e.alt} />
             <PaddingWrapper direction="column">
-              <StyledPrimaryText style={{ marginBottom: "8px" }}>
+              <StyledPrimaryText
+                TAlign="center"
+                style={{ marginBottom: "8px" }}
+              >
                 {e.title}
               </StyledPrimaryText>
-              <StyledSecondaryText style={{ marginBottom: "9px" }}>
+              <StyledSecondaryText
+                TAlign="center"
+                style={{ marginBottom: "9px" }}
+              >
                 {e.discription}
               </StyledSecondaryText>
               <StyledLink href={e.link}>
@@ -62,11 +72,6 @@ export const SectionBlogItem: React.FC<SectionBlogItemPropsType> = ({
   );
 };
 
-const SectionBlogStyledPrimaryText = styled(StyledPrimaryText)<
-  StyledPrimaryTextPropsType & { marginBottom: string }
->`
-  margin-bottom: ${(props) => props.marginBottom || "0"};
-`;
 const StyledLink = styled.a`
   text-decoration: none;
 `;
@@ -81,7 +86,7 @@ const Wrapper = styled(SectionWrapperItem)`
 
 const ImageBlogStyled = styled.img`
   display: block;
-  width: 310px;
-  height: 300px;
+  width: 100%;
+  aspect-ratio: 310 / 300;
   object-fit: cover;
 `;

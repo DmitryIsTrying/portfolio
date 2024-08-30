@@ -7,7 +7,7 @@ type StyledImagePropsType = {
 };
 
 export const StyledImage = (props: StyledImagePropsType) => {
-  return <Image src={props.path} alt={props.alt} />;
+  return <Image loading="lazy" src={props.path} alt={props.alt} />;
 };
 
 const Image = styled.img`

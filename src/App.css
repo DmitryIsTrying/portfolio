@@ -1,0 +1,7 @@
+:root {
+    --color-primary: #ffb400;
+}
+
+:root.dark {
+    --color-primary: #191b16;
+}

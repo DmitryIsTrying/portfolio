@@ -4,6 +4,7 @@ import { FLexSectionsWrapper } from "../../../components/FLexSectionsWrapper";
 import styled from "styled-components";
 import { TitleSections } from "../../../components/titleSections/TitleSections";
 import { SectionPriceItem } from "../../../components/sectionItems/SectionPriceItem";
+import { useInView } from "react-intersection-observer";
 
 const items = [
   {
@@ -55,6 +56,10 @@ const items = [
 ];
 
 export const SectionPrice = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
   return (
     <StyledSection id="priceSection">
       <FlexWrapper direction="column" align="center">
@@ -62,8 +67,10 @@ export const SectionPrice = () => {
           title="Price Plans"
           description="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum"
         />
-        <FLexSectionsWrapper>
-          <SectionPriceItem width={310} height={609} items={items} />
+        <FLexSectionsWrapper ref={ref}>
+          {inView ? (
+            <SectionPriceItem width={310} height={609} items={items} />
+          ) : null}
         </FLexSectionsWrapper>
       </FlexWrapper>
     </StyledSection>

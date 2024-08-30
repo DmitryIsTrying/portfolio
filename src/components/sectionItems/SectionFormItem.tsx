@@ -26,49 +26,68 @@ export const SectionFormItem: React.FC<SectionFormItemPropsType> = ({
   width,
   height,
 }) => {
+  let countDelay = 200;
   return (
     <>
-      {items.map((e, i) => (
-        <StyledSectionWrapperItem width={width} height={height} key={i}>
-          <StyledFlexWrapper
-            style={{ borderRadius: "50%", marginBottom: "30px" }}
-            color="#FFB400"
-            align="center"
-            justify="center"
+      {items.map((e, i) => {
+        const delay = `${countDelay * i}ms`;
+        return (
+          <StyledSectionWrapperItem
+            style={{ animationDelay: delay }}
+            className="animate__animated animate__fadeInUp"
+            width={width}
+            height={height}
+            key={i}
           >
-            <Icon
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              iconSrc="FormMapSvg"
-            />
-          </StyledFlexWrapper>
-          <FlexWrapper style={{ marginBottom: "14px" }} justify="space-between">
-            <StyledPrimaryText color="#767676" as={"p"}>
-              {e.first}
-            </StyledPrimaryText>
-            <StyledSecondaryText as={"h3"} color="#767676">
-              {e.dataFirst}
-            </StyledSecondaryText>
-          </FlexWrapper>
-          <FlexWrapper style={{ marginBottom: "14px" }} justify="space-between">
-            <StyledPrimaryText color="#767676" as={"p"}>
-              {e.second}
-            </StyledPrimaryText>
-            <StyledSecondaryText as={"h3"} color="#767676">
-              {e.dataSecond}
-            </StyledSecondaryText>
-          </FlexWrapper>
-          <FlexWrapper justify="space-between">
-            <StyledPrimaryText color="#767676" as={"p"}>
-              {e.third}
-            </StyledPrimaryText>
-            <StyledSecondaryText as={"h3"} color="#767676">
-              {e.dataThird}
-            </StyledSecondaryText>
-          </FlexWrapper>
-        </StyledSectionWrapperItem>
-      ))}
+            <StyledFlexWrapper
+              style={{
+                borderRadius: "50%",
+                marginBottom: "30px",
+              }}
+              color="#FFB400"
+              align="center"
+              justify="center"
+            >
+              <Icon
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                iconSrc="FormMapSvg"
+              />
+            </StyledFlexWrapper>
+            <FlexWrapper
+              style={{ marginBottom: "14px" }}
+              justify="space-between"
+            >
+              <StyledPrimaryText color="#767676" as={"p"}>
+                {e.first}
+              </StyledPrimaryText>
+              <StyledSecondaryText as={"h3"} color="#767676">
+                {e.dataFirst}
+              </StyledSecondaryText>
+            </FlexWrapper>
+            <FlexWrapper
+              style={{ marginBottom: "14px" }}
+              justify="space-between"
+            >
+              <StyledPrimaryText color="#767676" as={"p"}>
+                {e.second}
+              </StyledPrimaryText>
+              <StyledSecondaryText as={"h3"} color="#767676">
+                {e.dataSecond}
+              </StyledSecondaryText>
+            </FlexWrapper>
+            <FlexWrapper justify="space-between">
+              <StyledPrimaryText color="#767676" as={"p"}>
+                {e.third}
+              </StyledPrimaryText>
+              <StyledSecondaryText as={"h3"} color="#767676">
+                {e.dataThird}
+              </StyledSecondaryText>
+            </FlexWrapper>
+          </StyledSectionWrapperItem>
+        );
+      })}
     </>
   );
 };

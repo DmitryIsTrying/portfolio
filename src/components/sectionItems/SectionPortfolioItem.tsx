@@ -1,64 +1,77 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { SectionWrapperItem } from "../SectionWrapperItem";
 import styled from "styled-components";
 import { FlexWrapper } from "../FlexWrapper";
 import { StyledBtn } from "../StyledBtn.styled";
 import { Icon } from "../icon/Icon";
-import { Fade } from "react-awesome-reveal";
 
-type PhotosArrayPropsType = {
+export type PhotosArrayPropsType = {
   path: string;
-  alt: string;
-  select?: boolean;
+  type: "All categories" | "UI Design" | "Web Templates" | "Logo" | "Branding";
 };
 
 type SectionPortfolioItemPropsType = {
   photos: PhotosArrayPropsType[];
   width: number;
   height: number;
+  currentFilterStatus: any;
 };
 
 export const SectionPortfolioItem: React.FC<SectionPortfolioItemPropsType> = ({
   photos,
   width,
   height,
+  currentFilterStatus,
 }) => {
+  let filteredWorks = photos;
+  if (currentFilterStatus !== "All categories") {
+    filteredWorks = photos.filter(
+      (photos) => photos.type === currentFilterStatus
+    );
+  }
+  const [animationIndex, setAnimationIndex] = useState(0);
+  useEffect(() => {
+    setAnimationIndex((prev) => prev + 1);
+  }, [photos, currentFilterStatus]);
+
+  let countDelay = 200;
   return (
     <>
-      {photos.map((e, i) => (
-        <ImageSectionWrapperItem
-          style={{ overflow: "hidden" }}
-          width={width}
-          height={height}
-          key={i}
-          path={e.path}
-          as={Fade}
-          damping={0.1}
-          direction="up"
-          cascade
-          triggerOnce
-        >
-          <StyledBtn
-            aria-label="More examples"
-            padding="0"
-            color="transparent"
-            WFit
-            as={"a"}
-            href={"https://www.google.com/"}
-            target="_blank"
-            rel="noopener noreferrer"
+      {filteredWorks.map((e, i) => {
+        const delay = `${countDelay * i}ms`;
+        return (
+          <ImageSectionWrapperItem
+            style={{ overflow: "hidden", animationDelay: delay }}
+            width={width}
+            height={height}
+            key={`${i}-${animationIndex}`}
+            path={e.path}
+            className={`animate__animated ${
+              animationIndex > 1 ? "animate__fadeIn" : "animate__fadeInUp"
+            }`}
           >
-            <YellowGround justify="center" align="center">
-              <Icon
-                iconSrc="CrossSvg"
-                width="32"
-                height="32"
-                viewBox="0 0 32 32"
-              />
-            </YellowGround>
-          </StyledBtn>
-        </ImageSectionWrapperItem>
-      ))}
+            <StyledBtn
+              aria-label="More examples"
+              padding="0"
+              color="transparent"
+              WFit
+              as={"a"}
+              href={"https://www.google.com/"}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <YellowGround justify="center" align="center">
+                <Icon
+                  iconSrc="CrossSvg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                />
+              </YellowGround>
+            </StyledBtn>
+          </ImageSectionWrapperItem>
+        );
+      })}
     </>
   );
 };
@@ -77,7 +90,9 @@ const YellowGround = styled(FlexWrapper)`
 const ImageSectionWrapperItem = styled(SectionWrapperItem)<{ path: string }>`
   position: relative;
   background: url(${(props) => props.path}) no-repeat center center / cover;
-  aspect-ratio: 310 / 300;
+  width: 310px;
+  height: 300px;
+  flex: unset;
   @media (hover: hover) {
     &:hover ${YellowGround} {
       opacity: 1;

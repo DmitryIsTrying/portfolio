@@ -64,6 +64,7 @@ export const MainInfo = () => {
     <FlexWrapper direction="column" align="center">
       <PositionElementOnline>
         <ProfileImg
+          loading="lazy"
           src={profile}
           srcSet={`${profile2x} 2x`}
           alt="Rayan Adlardard Face"

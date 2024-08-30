@@ -5,6 +5,7 @@ import { StyledTitleText } from "../../../components/TitleText.styled";
 import styled from "styled-components";
 import { Form } from "../../../components/form/Form";
 import { SectionFormItem } from "../../../components/sectionItems/SectionFormItem";
+import { useInView } from "react-intersection-observer";
 
 const items = [
   {
@@ -34,6 +35,10 @@ const items = [
 ];
 
 export const SectionForm = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
   return (
     <StyledSection id="messageSection">
       <StyledFLexSectionsWrapper>
@@ -42,8 +47,10 @@ export const SectionForm = () => {
           <StyledTitleText style={{ marginBottom: "50px" }}>
             Contact information
           </StyledTitleText>
-          <StyledFlexWrapper gap="18px" fitWidth direction="column">
-            <SectionFormItem width={370} height={210} items={items} />
+          <StyledFlexWrapper ref={ref} gap="18px" fitWidth direction="column">
+            {inView ? (
+              <SectionFormItem width={370} height={210} items={items} />
+            ) : null}
           </StyledFlexWrapper>
         </StyledMediaWrapper>
       </StyledFLexSectionsWrapper>
