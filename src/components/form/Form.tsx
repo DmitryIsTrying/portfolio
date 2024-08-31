@@ -1,12 +1,34 @@
-import React from "react";
+import React, { ElementRef, useRef } from "react";
 import { FlexWrapper } from "../FlexWrapper";
 import { StyledPrimaryText } from "../PrimaryText.styled";
 import styled from "styled-components";
 import { StyledBtn } from "../StyledBtn.styled";
 import { StyledTitleText } from "../TitleText.styled";
 import { useInView } from "react-intersection-observer";
+import emailjs from "@emailjs/browser";
 
 export const Form = () => {
+  const form = useRef<ElementRef<"form">>(null);
+
+  const sendEmail = (e: any) => {
+    e.preventDefault();
+
+    if (!form.current) return;
+
+    emailjs
+      .sendForm("service_05pcc4v", "template_70tabml", form.current, {
+        publicKey: "HdIXjTURo0gj4bgtE",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+    e.target.reset();
+  };
   const { ref, inView } = useInView({
     threshold: 0.2,
     triggerOnce: true,
@@ -20,7 +42,8 @@ export const Form = () => {
         <StyledForm
           className="animate__animated animate__fadeInUp"
           style={{ animationDelay: "500ms" }}
-          action="#!"
+          ref={form}
+          onSubmit={sendEmail}
         >
           <label htmlFor="name">
             <StyledPrimaryText
@@ -35,7 +58,7 @@ export const Form = () => {
             style={{ marginBottom: "25px" }}
             id="name"
             type="text"
-            name="name"
+            name="user_name"
             required
             autoComplete="name"
           />
@@ -52,7 +75,7 @@ export const Form = () => {
             style={{ marginBottom: "25px" }}
             id="email"
             type="email"
-            name="email"
+            name="user_email"
             required
             autoComplete="email"
           />
@@ -69,7 +92,8 @@ export const Form = () => {
             style={{ marginBottom: "25px" }}
             id="subj"
             type="text"
-            name="subj"
+            name="subject"
+            required
           />
           <label htmlFor="msg">
             <StyledPrimaryText
@@ -86,8 +110,9 @@ export const Form = () => {
                 marginBottom: "25px",
               }}
               as={"textarea"}
-              name="msg"
+              name="message"
               id="msg"
+              required
             />
           </label>
           <StyledBtn type="submit" WFit padding="9px 25px">
