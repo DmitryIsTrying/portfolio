@@ -61,7 +61,4 @@ const StyledAside = styled.aside`
     background-color: #ffffff;
     border-radius: 6px;
   }
-  @media ${layoutsTheme.media.tablet} {
-    display: none;
-  }
 `;

@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import profileHeader from "../../../assets/images/Photo.webp";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ItemsDesign } from "../../../components/itemsDesign/ItemsDesign";
 import { TitleCheer } from "../../../components/titleCheer/TitleCheer";
 import { layoutsTheme } from "../../../styles/Theme.styled";
+import "animate.css";
 
-export const Header = () => {
+type HeaderPropsType = {
+  menuIsOpen: boolean;
+  setMenuIsOpen: (isOpen: boolean) => void;
+};
+
+export const Header: React.FC<HeaderPropsType> = ({
+  menuIsOpen,
+  setMenuIsOpen,
+}) => {
+  const onBurgerBtnClick = () => {
+    setMenuIsOpen(!menuIsOpen);
+  };
   return (
     <StyledHeader>
       <MediaWrapper>
@@ -19,48 +31,50 @@ export const Header = () => {
         />
       </MediaWrapper>
       <ItemsDesign />
-      <BurgerMenu>
+      <BurgerMenu
+        className="animate__animated animate__fadeInLeft"
+        isOpen={menuIsOpen}
+        onClick={onBurgerBtnClick}
+      >
+        <span></span>
+        <span></span>
         <span></span>
       </BurgerMenu>
     </StyledHeader>
   );
 };
 
-const BurgerMenu = styled.button`
+const BurgerMenu = styled.button<{ isOpen: boolean }>`
   position: absolute;
   width: 30px;
   height: 30px;
   border: none;
   background-color: unset;
   display: none;
-
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  cursor: pointer;
   top: 35px;
   left: 31px;
+  z-index: 5;
+
   span {
     display: block;
     width: 30px;
     height: 2px;
     background-color: #ffb400;
-    &::before {
-      content: "";
-      display: block;
-      transform: translateY(-10px);
-      width: 30px;
-      height: 2px;
-      background-color: #ffb400;
-    }
-    &::after {
-      content: "";
-      display: block;
-      transform: translateY(10px);
-      width: 30px;
-      height: 2px;
-      background-color: #ffb400;
-    }
   }
 
   @media ${layoutsTheme.media.tablet} {
-    display: inline-block;
+    display: flex;
+    ${(props) =>
+      props.isOpen &&
+      css`
+        display: none;
+      `}
   }
 `;
 

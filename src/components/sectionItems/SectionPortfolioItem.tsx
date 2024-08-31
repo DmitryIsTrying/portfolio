@@ -90,9 +90,8 @@ const YellowGround = styled(FlexWrapper)`
 const ImageSectionWrapperItem = styled(SectionWrapperItem)<{ path: string }>`
   position: relative;
   background: url(${(props) => props.path}) no-repeat center center / cover;
-  width: 310px;
-  height: 300px;
-  flex: unset;
+  width: 100%;
+  aspect-ratio: 310 / 300;
   @media (hover: hover) {
     &:hover ${YellowGround} {
       opacity: 1;

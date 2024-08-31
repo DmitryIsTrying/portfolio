@@ -67,6 +67,7 @@ export const SectionService = () => {
       <FlexWrapper direction="column" align="center">
         <TitleSections
           pdt={103}
+          first
           title="My Services"
           description="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum"
         />

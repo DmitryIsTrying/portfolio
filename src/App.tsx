@@ -15,18 +15,30 @@ import { SectionMap } from "./layout/sections/sectionMap/SectionMap";
 import { SectionLogos } from "./layout/sections/sectionLogos/SectionLogos";
 import { Footer } from "./layout/sections/footer/Footer";
 import { layoutsTheme } from "./styles/Theme.styled";
+import MobileInfoBar from "./layout/infoBar/MobileInfoBar";
+import { useMenu } from "./hooks/useMenu";
+import { useViewport } from "./hooks/useViewport";
 
 type ContainerPropsType = {
   paddingMedia: number;
 };
 
 function App() {
+  const { width } = useViewport();
+  const { menuIsOpen, onBurgerBtnClick } = useMenu();
   return (
     <div className="App">
-      <InfoBar />
+      {width > 992 ? (
+        <InfoBar />
+      ) : (
+        <MobileInfoBar
+          menuIsOpen={menuIsOpen}
+          setMenuIsOpen={onBurgerBtnClick}
+        />
+      )}
       <Main>
         <Container paddingMedia={15}>
-          <Header />
+          <Header menuIsOpen={menuIsOpen} setMenuIsOpen={onBurgerBtnClick} />
           <SectionService />
           <SectionPrice />
           <SectionRecommend />

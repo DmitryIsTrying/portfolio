@@ -19,6 +19,7 @@ type ListItemsProps = {
   height: number;
   color: string;
   gap: number;
+  justify?: string;
 };
 
 export const ListItems = ({
@@ -28,9 +29,10 @@ export const ListItems = ({
   height = 10,
   color,
   gap,
+  justify,
 }: ListItemsProps) => {
   return (
-    <StyledUl gap={gap} direction={direction}>
+    <StyledUl justify={justify} gap={gap} direction={direction}>
       {Links.map((link, index) => (
         <StyledLi width={width} height={height} color={color} key={index}>
           <StyledLink aria-label={link.ariaLabel} href={link.href}>
@@ -50,10 +52,11 @@ export const ListItems = ({
 const StyledUl = styled.ul<{
   direction: "row" | "column";
   gap: number;
+  justify?: string;
 }>`
   list-style: none;
   display: flex;
-  justify-content: space-between;
+  justify-content: ${(props) => props.justify || "space-between"};
   gap: ${(props) => props.gap}px;
   flex-direction: ${(props) => props.direction || "row"};
 

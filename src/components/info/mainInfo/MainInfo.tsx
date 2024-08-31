@@ -84,6 +84,7 @@ export const MainInfo = () => {
           Font-end Developer
         </StyledSecondaryText>
         <ListItems
+          justify={"center"}
           width={24}
           height={24}
           color="#FFB400"
