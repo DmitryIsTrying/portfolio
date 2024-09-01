@@ -19,7 +19,7 @@ export const TitleSections: React.FC<TitleSectionsPropsType> = ({
 }) => {
   return (
     <>
-      <StyledTitle first pdt={pdt}>
+      <StyledTitle first={first} pdt={pdt}>
         {title}
       </StyledTitle>
       <StyledSecondary Mwidth TAlign="center">
@@ -34,13 +34,14 @@ const StyledTitle = styled(StyledTitleText)<{
   first?: boolean;
 }>`
   padding-top: ${(props) => props.pdt || 0}px;
-  ${(props) =>
-    props.first &&
-    css<{ first?: boolean }>`
-      @media ${layoutsTheme.media.tablet} {
+
+  @media ${layoutsTheme.media.tablet} {
+    ${(props) =>
+      props.first &&
+      css<{ first?: boolean }>`
         padding-top: 52px;
-      }
-    `}
+      `}
+  }
 `;
 
 const StyledSecondary = styled(StyledSecondaryText)`

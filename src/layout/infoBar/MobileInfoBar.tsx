@@ -7,6 +7,7 @@ import { Extra } from "../../components/info/extra/Extra";
 import { LoadBtn } from "../../components/info/loadBtn/LoadBtn";
 import { layoutsTheme } from "../../styles/Theme.styled";
 import "animate.css";
+import { log } from "console";
 
 const Languages = [
   { nameSkill: "Bangla", lvlSkill: 100 },
@@ -31,13 +32,28 @@ export default function MobileInfoBar({
   menuIsOpen,
   setMenuIsOpen,
 }: MobileInfoBarPropsType) {
-  const onBurgerBtnClick = () => {
-    setMenuIsOpen(!menuIsOpen);
+  const onBurgerBtnClick = (e: any) => {
+    console.log(e.target.id);
+    const clickedInsideCloseBtn = e.target.closest("#closeInfoBtn");
+    const clickedOnBlurEffect = e.target.id === "blurEffect";
+
+    if (clickedInsideCloseBtn || clickedOnBlurEffect) {
+      setMenuIsOpen(!menuIsOpen);
+    }
   };
+
   return (
-    <EffectWrapper isOpen={menuIsOpen}>
-      <StyledAside className="animate__animated animate__backInDown">
-        <BurgerMenu onClick={onBurgerBtnClick}>
+    <EffectWrapper
+      id="blurEffect"
+      onClick={onBurgerBtnClick}
+      isOpen={menuIsOpen}
+    >
+      <StyledAside
+        // tabIndex={1}
+        // onBlur={onBurgerBtnClick}
+        className="animate__animated animate__backInDown"
+      >
+        <BurgerMenu id="closeInfoBtn" onClick={onBurgerBtnClick}>
           <span></span>
           <span></span>
         </BurgerMenu>
@@ -100,7 +116,7 @@ const EffectWrapper = styled.div<{ isOpen: boolean }>`
   width: 100%;
   height: 100%;
   backdrop-filter: blur(3px);
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(200, 200, 200, 0.2);
   ${(props) =>
     props.isOpen &&
     css<{ isOpen: boolean }>`

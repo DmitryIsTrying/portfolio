@@ -5,6 +5,8 @@ import styled from "styled-components";
 import { TitleSections } from "../../../components/titleSections/TitleSections";
 import { SectionPriceItem } from "../../../components/sectionItems/SectionPriceItem";
 import { useInView } from "react-intersection-observer";
+import { SliderSectionPriceItem } from "../../../components/sectionItems/SliderSectionPriceItem";
+import { useViewport } from "../../../hooks/useViewport";
 
 const items = [
   {
@@ -60,6 +62,7 @@ export const SectionPrice = () => {
     threshold: 0.2,
     triggerOnce: true,
   });
+  const { width } = useViewport();
   return (
     <StyledSection id="priceSection">
       <FlexWrapper direction="column" align="center">
@@ -69,7 +72,11 @@ export const SectionPrice = () => {
         />
         <FLexSectionsWrapper ref={ref}>
           {inView ? (
-            <SectionPriceItem width={310} height={609} items={items} />
+            (width >= 992 && width < 1290) || width < 850 ? (
+              <SliderSectionPriceItem width={310} height={609} items={items} />
+            ) : (
+              <SectionPriceItem width={310} height={609} items={items} />
+            )
           ) : null}
         </FLexSectionsWrapper>
       </FlexWrapper>
