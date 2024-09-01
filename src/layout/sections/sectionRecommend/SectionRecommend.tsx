@@ -8,6 +8,8 @@ import styled from "styled-components";
 import { TitleSections } from "../../../components/titleSections/TitleSections";
 import { SectionRecomItem } from "../../../components/sectionItems/SectionRecomItem";
 import { useInView } from "react-intersection-observer";
+import { SliderSectionRecomItem } from "../../../components/sectionItems/sliders/SliderSectionRecomItem";
+import { useViewport } from "../../../hooks/useViewport";
 
 const recData = [
   {
@@ -44,6 +46,7 @@ export const SectionRecommend = () => {
     threshold: 0.2,
     triggerOnce: true,
   });
+  const { width } = useViewport();
   return (
     <StyledSection>
       <FlexWrapper direction="column" align="center">
@@ -53,7 +56,15 @@ export const SectionRecommend = () => {
         />
         <FLexSectionsWrapper ref={ref}>
           {inView ? (
-            <SectionRecomItem recData={recData} width={310} height={323} />
+            (width > 992 && width < 1290) || width < 850 ? (
+              <SliderSectionRecomItem
+                recData={recData}
+                width={310}
+                height={323}
+              />
+            ) : (
+              <SectionRecomItem recData={recData} width={310} height={323} />
+            )
           ) : null}
         </FLexSectionsWrapper>
       </FlexWrapper>

@@ -1,16 +1,16 @@
 import React from "react";
-import { FlexWrapper } from "../FlexWrapper";
-import { StyledPrimaryText } from "../PrimaryText.styled";
-import { StyledTitleText } from "../TitleText.styled";
-import { StyledSecondaryText } from "../SecondaryText.styled";
-import { Advantages } from "../advantages/Advantages";
-import { StyledPricePartBtn } from "../StyledPricePartBtn";
+import { FlexWrapper } from "../../FlexWrapper";
+import { StyledPrimaryText } from "../../PrimaryText.styled";
+import { StyledTitleText } from "../../TitleText.styled";
+import { StyledSecondaryText } from "../../SecondaryText.styled";
+import { Advantages } from "../../advantages/Advantages";
+import { StyledPricePartBtn } from "../../StyledPricePartBtn";
 import styled from "styled-components";
-import { SectionWrapperItem } from "../SectionWrapperItem";
+import { SectionWrapperItem } from "../../SectionWrapperItem";
 import "animate.css";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
-import "../../styles/Slider.css";
+import "../../../styles/Slider.css";
 
 const responsive = {
   0: { items: 1 },
@@ -60,7 +60,6 @@ export const SliderSectionPriceItem: React.FC<SectionPriceItemPropsType> = ({
     <AliceCarousel
       autoHeight
       mouseTracking
-      items={items}
       responsive={responsive}
       controlsStrategy="alternate"
       infinite
@@ -120,7 +119,7 @@ export const SliderSectionPriceItem: React.FC<SectionPriceItemPropsType> = ({
 };
 
 const SlidesSectionWrapperItem = styled(SectionWrapperItem)`
-  width: 345px;
+  width: 310px;
   margin: 0 auto;
 `;
 

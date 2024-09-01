@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { TitleSections } from "../../../components/titleSections/TitleSections";
 import { SectionPriceItem } from "../../../components/sectionItems/SectionPriceItem";
 import { useInView } from "react-intersection-observer";
-import { SliderSectionPriceItem } from "../../../components/sectionItems/SliderSectionPriceItem";
+import { SliderSectionPriceItem } from "../../../components/sectionItems/sliders/SliderSectionPriceItem";
 import { useViewport } from "../../../hooks/useViewport";
 
 const items = [
@@ -72,7 +72,7 @@ export const SectionPrice = () => {
         />
         <FLexSectionsWrapper ref={ref}>
           {inView ? (
-            (width >= 992 && width < 1290) || width < 850 ? (
+            (width > 992 && width < 1290) || width < 850 ? (
               <SliderSectionPriceItem width={310} height={609} items={items} />
             ) : (
               <SectionPriceItem width={310} height={609} items={items} />

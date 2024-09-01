@@ -33,7 +33,6 @@ export default function MobileInfoBar({
   setMenuIsOpen,
 }: MobileInfoBarPropsType) {
   const onBurgerBtnClick = (e: any) => {
-    console.log(e.target.id);
     const clickedInsideCloseBtn = e.target.closest("#closeInfoBtn");
     const clickedOnBlurEffect = e.target.id === "blurEffect";
 
@@ -53,7 +52,7 @@ export default function MobileInfoBar({
         // onBlur={onBurgerBtnClick}
         className="animate__animated animate__backInDown"
       >
-        <BurgerMenu id="closeInfoBtn" onClick={onBurgerBtnClick}>
+        <BurgerMenu id="closeInfoBtn">
           <span></span>
           <span></span>
         </BurgerMenu>

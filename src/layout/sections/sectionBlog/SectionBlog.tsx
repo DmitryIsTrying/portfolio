@@ -7,6 +7,9 @@ import Port3 from "../../../assets/images/Port3-blog.webp";
 import { TitleSections } from "../../../components/titleSections/TitleSections";
 import { SectionBlogItem } from "../../../components/sectionItems/SectionBlogItem";
 import styled from "styled-components";
+import { useInView } from "react-intersection-observer";
+import { useViewport } from "../../../hooks/useViewport";
+import { SliderSectionBlogItem } from "../../../components/sectionItems/sliders/SliderSectionBlogItem";
 
 const itemsBlog = [
   {
@@ -36,6 +39,11 @@ const itemsBlog = [
 ];
 
 export const SectionBlog = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
+  const { width } = useViewport();
   return (
     <StyledSection>
       <FlexWrapper direction="column" align="center">
@@ -43,8 +51,18 @@ export const SectionBlog = () => {
           title="Portfolio"
           description="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum"
         />
-        <FLexSectionsWrapper>
-          <SectionBlogItem items={itemsBlog} width={310} height={474} />
+        <FLexSectionsWrapper ref={ref}>
+          {inView ? (
+            (width > 992 && width < 1290) || width < 850 ? (
+              <SliderSectionBlogItem
+                items={itemsBlog}
+                width={310}
+                height={474}
+              />
+            ) : (
+              <SectionBlogItem items={itemsBlog} width={310} height={474} />
+            )
+          ) : null}
         </FLexSectionsWrapper>
       </FlexWrapper>
     </StyledSection>
