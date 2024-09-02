@@ -1,10 +1,10 @@
 import React from "react";
-import { SectionWrapperItem } from "../SectionWrapperItem";
-import { StyledPrimaryText } from "../PrimaryText.styled";
-import { StyledSecondaryText } from "../SecondaryText.styled";
+import { SectionWrapperItem } from "../../SectionWrapperItem";
+import { StyledPrimaryText } from "../../PrimaryText.styled";
+import { StyledSecondaryText } from "../../SecondaryText.styled";
 import styled from "styled-components";
-import { Stars } from "../stars/Stars";
-import { FlexWrapper } from "../FlexWrapper";
+import { Stars } from "../../stars/Stars";
+import { FlexWrapper } from "../../FlexWrapper";
 import "animate.css";
 
 type RecData = {

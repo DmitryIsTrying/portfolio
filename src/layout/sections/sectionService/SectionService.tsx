@@ -3,8 +3,9 @@ import { FlexWrapper } from "../../../components/FlexWrapper";
 import { FLexSectionsWrapper } from "../../../components/FLexSectionsWrapper";
 import styled from "styled-components";
 import { TitleSections } from "../../../components/titleSections/TitleSections";
-import { SectionServiceItem } from "../../../components/sectionItems/SectionServiceItem";
+import { SectionServiceItem } from "../../../components/sectionItems/defoltSectionItems/SectionServiceItem";
 import { useInView } from "react-intersection-observer";
+import { EmptyDiv } from "../../../components/sectionItems/emptyDiv/EmptyDiv";
 
 const sectionItems = [
   {
@@ -78,7 +79,9 @@ export const SectionService = () => {
               height={225}
               iconData={sectionItems}
             />
-          ) : null}
+          ) : (
+            <EmptyDiv width={310} height={240} elements={sectionItems.length} />
+          )}
         </FLexSectionsWrapper>
       </FlexWrapper>
     </StyledSection>

@@ -1,9 +1,9 @@
 import React from "react";
-import { SectionWrapperItem } from "../SectionWrapperItem";
-import { FlexWrapper } from "../FlexWrapper";
-import { Icon } from "../icon/Icon";
-import { StyledPrimaryText } from "../PrimaryText.styled";
-import { StyledSecondaryText } from "../SecondaryText.styled";
+import { SectionWrapperItem } from "../../SectionWrapperItem";
+import { FlexWrapper } from "../../FlexWrapper";
+import { Icon } from "../../icon/Icon";
+import { StyledPrimaryText } from "../../PrimaryText.styled";
+import { StyledSecondaryText } from "../../SecondaryText.styled";
 import styled from "styled-components";
 
 type ContactsData = {

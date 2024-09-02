@@ -1,8 +1,8 @@
 import React from "react";
-import { SectionWrapperItem } from "../SectionWrapperItem";
-import { StyledPrimaryText } from "../PrimaryText.styled";
-import { StyledSecondaryText } from "../SecondaryText.styled";
-import { Icon } from "../icon/Icon";
+import { SectionWrapperItem } from "../../SectionWrapperItem";
+import { StyledPrimaryText } from "../../PrimaryText.styled";
+import { StyledSecondaryText } from "../../SecondaryText.styled";
+import { Icon } from "../../icon/Icon";
 import styled from "styled-components";
 import { InView } from "react-intersection-observer";
 import "animate.css";

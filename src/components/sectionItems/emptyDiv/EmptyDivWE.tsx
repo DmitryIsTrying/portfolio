@@ -1,8 +1,8 @@
 import React from "react";
-import { SectionWrapperItem } from "../SectionWrapperItem";
-import { StyledPrimaryText } from "../PrimaryText.styled";
-import { StyledSecondaryText } from "../SecondaryText.styled";
-import { FlexWrapper } from "../FlexWrapper";
+import { SectionWrapperItem } from "../../SectionWrapperItem";
+import { StyledPrimaryText } from "../../PrimaryText.styled";
+import { StyledSecondaryText } from "../../SecondaryText.styled";
+import { FlexWrapper } from "../../FlexWrapper";
 import styled from "styled-components";
 import "animate.css";
 
@@ -20,7 +20,7 @@ type SectionItemPropsType = {
   height: number;
 };
 
-export const SectionEducationItem: React.FC<SectionItemPropsType> = ({
+export const EmptyDivWE: React.FC<SectionItemPropsType> = ({
   educationData,
   width,
   height,
@@ -30,7 +30,6 @@ export const SectionEducationItem: React.FC<SectionItemPropsType> = ({
       padding="43px 29px 42px 37px"
       width={width}
       height={height}
-      className="animate__animated animate__fadeInUp"
     >
       {educationData.map((icon, index) => (
         <StyledBorderLine
@@ -84,6 +83,7 @@ const StyledFlexWrapperRightPart = styled(FlexWrapper)`
 `;
 
 const StyledSectionWrapperItem = styled(SectionWrapperItem)`
+  opacity: 0;
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;

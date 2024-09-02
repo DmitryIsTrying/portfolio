@@ -1,11 +1,12 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { StyledPrimaryText } from "../PrimaryText.styled";
 import { StyledBtn } from "../StyledBtn.styled";
 
 export type ChooseTypeWorkPropsType = {
   names: Array<{ title: string }>;
   changePortfolio: (value: string) => void;
+  currentFilterStatus: string;
 };
 
 export const ChooseTypeWork = (props: ChooseTypeWorkPropsType) => {
@@ -21,6 +22,7 @@ export const ChooseTypeWork = (props: ChooseTypeWorkPropsType) => {
             padding="0"
             color="transparent"
             WFit
+            active={props.currentFilterStatus === name.title}
           >
             <StyledPrimaryText>{name.title}</StyledPrimaryText>
           </MenuBtn>
@@ -30,7 +32,10 @@ export const ChooseTypeWork = (props: ChooseTypeWorkPropsType) => {
   );
 };
 
-const MenuBtn = styled(StyledBtn)`
+const MenuBtn = styled(StyledBtn)<{ active: boolean }>`
+  ${StyledPrimaryText} {
+    color: ${(props) => (props.active ? "#ffb400" : "#2b2b2b")};
+  }
   &:hover ${StyledPrimaryText} {
     color: #ffb400;
   }

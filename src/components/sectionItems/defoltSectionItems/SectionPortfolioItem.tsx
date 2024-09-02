@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { SectionWrapperItem } from "../SectionWrapperItem";
+import { SectionWrapperItem } from "../../SectionWrapperItem";
 import styled from "styled-components";
-import { FlexWrapper } from "../FlexWrapper";
-import { StyledBtn } from "../StyledBtn.styled";
-import { Icon } from "../icon/Icon";
+import { FlexWrapper } from "../../FlexWrapper";
+import { StyledBtn } from "../../StyledBtn.styled";
+import { Icon } from "../../icon/Icon";
 
 export type PhotosArrayPropsType = {
   path: string;

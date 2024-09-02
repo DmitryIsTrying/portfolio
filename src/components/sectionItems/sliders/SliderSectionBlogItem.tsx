@@ -62,16 +62,10 @@ export const SliderSectionBlogItem: React.FC<SectionBlogItemPropsType> = ({
           >
             <ImageBlogStyled src={e.path} alt={e.alt} />
             <PaddingWrapper direction="column">
-              <StyledPrimaryText
-                TAlign="center"
-                style={{ marginBottom: "8px" }}
-              >
+              <StyledPrimaryText style={{ marginBottom: "8px" }}>
                 {e.title}
               </StyledPrimaryText>
-              <StyledSecondaryText
-                TAlign="center"
-                style={{ marginBottom: "9px" }}
-              >
+              <StyledSecondaryText style={{ marginBottom: "9px" }}>
                 {e.discription}
               </StyledSecondaryText>
               <StyledLink href={e.link}>

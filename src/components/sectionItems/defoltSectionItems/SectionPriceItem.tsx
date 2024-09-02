@@ -1,12 +1,12 @@
 import React from "react";
-import { FlexWrapper } from "../FlexWrapper";
-import { StyledPrimaryText } from "../PrimaryText.styled";
-import { StyledTitleText } from "../TitleText.styled";
-import { StyledSecondaryText } from "../SecondaryText.styled";
-import { Advantages } from "../advantages/Advantages";
-import { StyledPricePartBtn } from "../StyledPricePartBtn";
+import { FlexWrapper } from "../../FlexWrapper";
+import { StyledPrimaryText } from "../../PrimaryText.styled";
+import { StyledTitleText } from "../../TitleText.styled";
+import { StyledSecondaryText } from "../../SecondaryText.styled";
+import { Advantages } from "../../advantages/Advantages";
+import { StyledPricePartBtn } from "../../StyledPricePartBtn";
 import styled from "styled-components";
-import { SectionWrapperItem } from "../SectionWrapperItem";
+import { SectionWrapperItem } from "../../SectionWrapperItem";
 import "animate.css";
 
 type PriceList = {

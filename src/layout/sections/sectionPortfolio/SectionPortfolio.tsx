@@ -15,9 +15,10 @@ import { TitleSections } from "../../../components/titleSections/TitleSections";
 import {
   PhotosArrayPropsType,
   SectionPortfolioItem,
-} from "../../../components/sectionItems/SectionPortfolioItem";
+} from "../../../components/sectionItems/defoltSectionItems/SectionPortfolioItem";
 import { useInView } from "react-intersection-observer";
 import { ChooseTypeWork } from "../../../components/chooseTypeWork/ChooseTypeWork";
+import { EmptyDiv } from "../../../components/sectionItems/emptyDiv/EmptyDiv";
 
 const nameButtons: Array<{ title: string }> = [
   {
@@ -93,7 +94,11 @@ export const SectionPortfolio = () => {
           title="Portfolio"
           description="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum"
         />
-        <ChooseTypeWork changePortfolio={changePortfolio} names={nameButtons} />
+        <ChooseTypeWork
+          currentFilterStatus={currentFilterStatus}
+          changePortfolio={changePortfolio}
+          names={nameButtons}
+        />
         <FLexSectionsWrapper ref={ref}>
           {inView ? (
             <SectionPortfolioItem
@@ -102,7 +107,9 @@ export const SectionPortfolio = () => {
               height={300}
               photos={photos}
             />
-          ) : null}
+          ) : (
+            <EmptyDiv width={310} height={300} elements={photos.length} />
+          )}
         </FLexSectionsWrapper>
       </FlexWrapper>
     </StyledSection>

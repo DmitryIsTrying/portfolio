@@ -5,11 +5,12 @@ import Port1 from "../../../assets/images/Port1-blog.webp";
 import Port2 from "../../../assets/images/Port2-blog.webp";
 import Port3 from "../../../assets/images/Port3-blog.webp";
 import { TitleSections } from "../../../components/titleSections/TitleSections";
-import { SectionBlogItem } from "../../../components/sectionItems/SectionBlogItem";
+import { SectionBlogItem } from "../../../components/sectionItems/defoltSectionItems/SectionBlogItem";
 import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
 import { useViewport } from "../../../hooks/useViewport";
 import { SliderSectionBlogItem } from "../../../components/sectionItems/sliders/SliderSectionBlogItem";
+import { EmptyDiv } from "../../../components/sectionItems/emptyDiv/EmptyDiv";
 
 const itemsBlog = [
   {
@@ -48,7 +49,7 @@ export const SectionBlog = () => {
     <StyledSection>
       <FlexWrapper direction="column" align="center">
         <TitleSections
-          title="Portfolio"
+          title="Blog"
           description="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum"
         />
         <FLexSectionsWrapper ref={ref}>
@@ -62,7 +63,9 @@ export const SectionBlog = () => {
             ) : (
               <SectionBlogItem items={itemsBlog} width={310} height={474} />
             )
-          ) : null}
+          ) : (
+            <EmptyDiv width={310} height={474} isSlide={529} />
+          )}
         </FLexSectionsWrapper>
       </FlexWrapper>
     </StyledSection>

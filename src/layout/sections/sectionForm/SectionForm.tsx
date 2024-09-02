@@ -4,8 +4,9 @@ import { FlexWrapper } from "../../../components/FlexWrapper";
 import { StyledTitleText } from "../../../components/TitleText.styled";
 import styled from "styled-components";
 import { Form } from "../../../components/form/Form";
-import { SectionFormItem } from "../../../components/sectionItems/SectionFormItem";
+import { SectionFormItem } from "../../../components/sectionItems/defoltSectionItems/SectionFormItem";
 import { useInView } from "react-intersection-observer";
+import { EmptyDiv } from "../../../components/sectionItems/emptyDiv/EmptyDiv";
 
 const items = [
   {

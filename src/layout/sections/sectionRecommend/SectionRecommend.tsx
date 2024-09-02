@@ -6,10 +6,11 @@ import RecPhotoMiddle from "../../../assets/images/Rec-person-middle.webp";
 import RecPhotoRight from "../../../assets/images/Rec-person-right.webp";
 import styled from "styled-components";
 import { TitleSections } from "../../../components/titleSections/TitleSections";
-import { SectionRecomItem } from "../../../components/sectionItems/SectionRecomItem";
+import { SectionRecomItem } from "../../../components/sectionItems/defoltSectionItems/SectionRecomItem";
 import { useInView } from "react-intersection-observer";
 import { SliderSectionRecomItem } from "../../../components/sectionItems/sliders/SliderSectionRecomItem";
 import { useViewport } from "../../../hooks/useViewport";
+import { EmptyDiv } from "../../../components/sectionItems/emptyDiv/EmptyDiv";
 
 const recData = [
   {
@@ -65,30 +66,15 @@ export const SectionRecommend = () => {
             ) : (
               <SectionRecomItem recData={recData} width={310} height={323} />
             )
-          ) : null}
+          ) : (
+            <EmptyDiv width={310} height={323} isSlide={386} />
+          )}
         </FLexSectionsWrapper>
       </FlexWrapper>
-      <WrapperDesignItems justify="center" gap="10px">
-        <OrangeCircle />
-        <OrangeCircle />
-        <OrangeCircle />
-      </WrapperDesignItems>
     </StyledSection>
   );
 };
 
-const WrapperDesignItems = styled(FlexWrapper)`
-  margin-top: 50px;
-`;
-
 const StyledSection = styled.section`
   padding: 35px 0;
-`;
-
-const OrangeCircle = styled.span`
-  display: block;
-  width: 10px;
-  height: 10px;
-  background-color: #ffb400;
-  border-radius: 50%;
 `;

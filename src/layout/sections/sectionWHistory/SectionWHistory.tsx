@@ -1,10 +1,11 @@
 import React from "react";
 import { FlexWrapper } from "../../../components/FlexWrapper";
-import { SectionEducationItem } from "../../../components/sectionItems/SectionEducationItem";
+import { SectionEducationItem } from "../../../components/sectionItems/defoltSectionItems/SectionEducationItem";
 import { FLexSectionsWrapper } from "../../../components/FLexSectionsWrapper";
 import styled from "styled-components";
 import { TitleSections } from "../../../components/titleSections/TitleSections";
 import { useInView } from "react-intersection-observer";
+import { EmptyDivWE } from "../../../components/sectionItems/emptyDiv/EmptyDivWE";
 
 const educationData = [
   {
@@ -53,7 +54,13 @@ export const SectionWHistory = () => {
                 height={632}
                 educationData={educationData}
               />
-            ) : null}
+            ) : (
+              <EmptyDivWE
+                width={970}
+                height={632}
+                educationData={educationData}
+              />
+            )}
           </FLexSectionsWrapper>
         </FlexWrapper>
       </FlexWrapper>

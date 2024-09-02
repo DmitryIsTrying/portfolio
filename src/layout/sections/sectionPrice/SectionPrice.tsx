@@ -3,10 +3,11 @@ import { FlexWrapper } from "../../../components/FlexWrapper";
 import { FLexSectionsWrapper } from "../../../components/FLexSectionsWrapper";
 import styled from "styled-components";
 import { TitleSections } from "../../../components/titleSections/TitleSections";
-import { SectionPriceItem } from "../../../components/sectionItems/SectionPriceItem";
+import { SectionPriceItem } from "../../../components/sectionItems/defoltSectionItems/SectionPriceItem";
 import { useInView } from "react-intersection-observer";
 import { SliderSectionPriceItem } from "../../../components/sectionItems/sliders/SliderSectionPriceItem";
 import { useViewport } from "../../../hooks/useViewport";
+import { EmptyDiv } from "../../../components/sectionItems/emptyDiv/EmptyDiv";
 
 const items = [
   {
@@ -77,7 +78,9 @@ export const SectionPrice = () => {
             ) : (
               <SectionPriceItem width={310} height={609} items={items} />
             )
-          ) : null}
+          ) : (
+            <EmptyDiv width={310} height={609} isSlide={662} />
+          )}
         </FLexSectionsWrapper>
       </FlexWrapper>
     </StyledSection>

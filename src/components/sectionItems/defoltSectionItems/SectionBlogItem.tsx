@@ -1,14 +1,11 @@
-import React from "react";
-import { SectionWrapperItem } from "../SectionWrapperItem";
-import { FlexWrapper } from "../FlexWrapper";
-import {
-  StyledPrimaryText,
-  StyledPrimaryTextPropsType,
-} from "../PrimaryText.styled";
-import { Icon } from "../icon/Icon";
-import { StyledSecondaryText } from "../SecondaryText.styled";
-import styled from "styled-components";
 import "animate.css";
+import React from "react";
+import styled from "styled-components";
+import { FlexWrapper } from "../../FlexWrapper";
+import { Icon } from "../../icon/Icon";
+import { StyledPrimaryText } from "../../PrimaryText.styled";
+import { StyledSecondaryText } from "../../SecondaryText.styled";
+import { SectionWrapperItem } from "../../SectionWrapperItem";
 
 type ItemsPropsType = {
   path: string;
@@ -44,16 +41,10 @@ export const SectionBlogItem: React.FC<SectionBlogItemPropsType> = ({
           >
             <ImageBlogStyled src={e.path} alt={e.alt} />
             <PaddingWrapper direction="column">
-              <StyledPrimaryText
-                TAlign="center"
-                style={{ marginBottom: "8px" }}
-              >
+              <StyledPrimaryText style={{ marginBottom: "8px" }}>
                 {e.title}
               </StyledPrimaryText>
-              <StyledSecondaryText
-                TAlign="center"
-                style={{ marginBottom: "9px" }}
-              >
+              <StyledSecondaryText style={{ marginBottom: "9px" }}>
                 {e.discription}
               </StyledSecondaryText>
               <StyledLink href={e.link}>

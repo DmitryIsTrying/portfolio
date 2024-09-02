@@ -6,6 +6,7 @@ import { StyledBtn } from "../StyledBtn.styled";
 import { StyledTitleText } from "../TitleText.styled";
 import { useInView } from "react-intersection-observer";
 import emailjs from "@emailjs/browser";
+import { EmptyDiv } from "../sectionItems/emptyDiv/EmptyDiv";
 
 export const Form = () => {
   const form = useRef<ElementRef<"form">>(null);
@@ -38,7 +39,7 @@ export const Form = () => {
       <StyledTitleText style={{ marginBottom: "50px" }}>
         Leave us your info
       </StyledTitleText>
-      {inView && (
+      {inView ? (
         <StyledForm
           className="animate__animated animate__fadeInUp"
           style={{ animationDelay: "500ms" }}
@@ -126,7 +127,7 @@ export const Form = () => {
             </StyledPrimaryText>
           </StyledBtn>
         </StyledForm>
-      )}
+      ) : null}
     </MediaWrapper>
   );
 };
