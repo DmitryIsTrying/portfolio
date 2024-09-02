@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useTheme } from "../../hooks/useTheme";
 
 type ProgressBarPropsType = {
   nameSkill: string;
@@ -7,11 +8,14 @@ type ProgressBarPropsType = {
 };
 
 export const ProgressBar = (props: ProgressBarPropsType) => {
+  const { isDark } = useTheme();
   return (
     <StyledWrapperSkill>
       <StyledWrapperText htmlFor={props.nameSkill}>
-        <StyledNameSkill>{props.nameSkill}</StyledNameSkill>
-        <StyledNameSkill as={"p"}>{props.lvlSkill + "%"}</StyledNameSkill>
+        <StyledNameSkill isDark={isDark}>{props.nameSkill}</StyledNameSkill>
+        <StyledNameSkill isDark={isDark} as={"p"}>
+          {props.lvlSkill + "%"}
+        </StyledNameSkill>
       </StyledWrapperText>
       <FullSkillBar>
         <MySkillBar id={props.nameSkill} value={props.lvlSkill} max="100" />
@@ -37,8 +41,11 @@ const StyledWrapperText = styled.label`
   margin-bottom: 5px;
 `;
 
-const StyledNameSkill = styled.h4`
-  color: #767676;
+const StyledNameSkill = styled.h4<{ isDark: boolean }>`
+  color: ${(props) =>
+    props.isDark
+      ? props.theme.theme.dark.smallText
+      : props.theme.theme.light.smallText};
   font-family: Inter;
   font-size: 15px;
   font-weight: 400;

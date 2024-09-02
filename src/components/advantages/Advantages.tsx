@@ -2,6 +2,8 @@ import React, { ReactNode } from "react";
 import { Icon } from "../icon/Icon";
 import { FlexWrapper } from "../FlexWrapper";
 import { StyledSecondaryText } from "../SecondaryText.styled";
+import { useTheme } from "../../hooks/useTheme";
+import { layoutsTheme } from "../../styles/Theme.styled";
 
 interface AdvantagesPropsType {
   children: ReactNode;
@@ -9,6 +11,7 @@ interface AdvantagesPropsType {
 }
 
 export const Advantages = (props: AdvantagesPropsType) => {
+  const { isDark } = useTheme();
   if (!props.isDisabled) {
     return (
       <FlexWrapper gap="18px" align="center">
@@ -18,7 +21,14 @@ export const Advantages = (props: AdvantagesPropsType) => {
           height="13"
           viewBox="0 0 19 13"
         />
-        <StyledSecondaryText color="#2B2B2B">
+        <StyledSecondaryText
+          isDark={isDark}
+          color={
+            isDark
+              ? layoutsTheme.theme.dark.titleText
+              : layoutsTheme.theme.light.titleText
+          }
+        >
           {props.children}
         </StyledSecondaryText>
       </FlexWrapper>
@@ -32,7 +42,9 @@ export const Advantages = (props: AdvantagesPropsType) => {
           height="14"
           viewBox="0 0 15 14"
         />
-        <StyledSecondaryText>{props.children}</StyledSecondaryText>
+        <StyledSecondaryText isDark={isDark}>
+          {props.children}
+        </StyledSecondaryText>
       </FlexWrapper>
     );
   }

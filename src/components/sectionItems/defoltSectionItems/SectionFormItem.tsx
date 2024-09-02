@@ -5,6 +5,8 @@ import { Icon } from "../../icon/Icon";
 import { StyledPrimaryText } from "../../PrimaryText.styled";
 import { StyledSecondaryText } from "../../SecondaryText.styled";
 import styled from "styled-components";
+import { useTheme } from "../../../hooks/useTheme";
+import { layoutsTheme } from "../../../styles/Theme.styled";
 
 type ContactsData = {
   first: string;
@@ -27,12 +29,14 @@ export const SectionFormItem: React.FC<SectionFormItemPropsType> = ({
   height,
 }) => {
   let countDelay = 200;
+  const { isDark } = useTheme();
   return (
     <>
       {items.map((e, i) => {
         const delay = `${countDelay * i}ms`;
         return (
           <StyledSectionWrapperItem
+            isDark={isDark}
             style={{ animationDelay: delay }}
             className="animate__animated animate__fadeInUp"
             width={width}
@@ -59,10 +63,26 @@ export const SectionFormItem: React.FC<SectionFormItemPropsType> = ({
               style={{ marginBottom: "14px" }}
               justify="space-between"
             >
-              <StyledPrimaryText color="#767676" as={"p"}>
+              <StyledPrimaryText
+                isDark={isDark}
+                color={
+                  isDark
+                    ? layoutsTheme.theme.dark.smallText
+                    : layoutsTheme.theme.light.smallText
+                }
+                as={"p"}
+              >
                 {e.first}
               </StyledPrimaryText>
-              <StyledSecondaryText as={"h3"} color="#767676">
+              <StyledSecondaryText
+                isDark={isDark}
+                as={"h3"}
+                color={
+                  isDark
+                    ? layoutsTheme.theme.dark.smallText
+                    : layoutsTheme.theme.light.smallText
+                }
+              >
                 {e.dataFirst}
               </StyledSecondaryText>
             </FlexWrapper>
@@ -70,18 +90,50 @@ export const SectionFormItem: React.FC<SectionFormItemPropsType> = ({
               style={{ marginBottom: "14px" }}
               justify="space-between"
             >
-              <StyledPrimaryText color="#767676" as={"p"}>
+              <StyledPrimaryText
+                isDark={isDark}
+                color={
+                  isDark
+                    ? layoutsTheme.theme.dark.smallText
+                    : layoutsTheme.theme.light.smallText
+                }
+                as={"p"}
+              >
                 {e.second}
               </StyledPrimaryText>
-              <StyledSecondaryText as={"h3"} color="#767676">
+              <StyledSecondaryText
+                isDark={isDark}
+                as={"h3"}
+                color={
+                  isDark
+                    ? layoutsTheme.theme.dark.smallText
+                    : layoutsTheme.theme.light.smallText
+                }
+              >
                 {e.dataSecond}
               </StyledSecondaryText>
             </FlexWrapper>
             <FlexWrapper justify="space-between">
-              <StyledPrimaryText color="#767676" as={"p"}>
+              <StyledPrimaryText
+                isDark={isDark}
+                color={
+                  isDark
+                    ? layoutsTheme.theme.dark.smallText
+                    : layoutsTheme.theme.light.smallText
+                }
+                as={"p"}
+              >
                 {e.third}
               </StyledPrimaryText>
-              <StyledSecondaryText as={"h3"} color="#767676">
+              <StyledSecondaryText
+                isDark={isDark}
+                as={"h3"}
+                color={
+                  isDark
+                    ? layoutsTheme.theme.dark.smallText
+                    : layoutsTheme.theme.light.smallText
+                }
+              >
                 {e.dataThird}
               </StyledSecondaryText>
             </FlexWrapper>

@@ -13,7 +13,23 @@ export function ChangerThemeProvider({ children }: { children: ReactNode }) {
   const [isDark, setIsDark] = useState(false);
 
   const onChangerBtnClick = () => {
-    setIsDark((prev) => !prev);
+    setIsDark((prevIsDark) => {
+      const newIsDark = !prevIsDark;
+
+      const metaThemeColor = document.getElementById("theme-color-meta");
+      const navBar = document.getElementById("NavBar");
+      if (metaThemeColor) {
+        metaThemeColor.setAttribute(
+          "content",
+          newIsDark ? "#333333" : "#ffffff"
+        );
+      }
+      if (navBar) {
+        navBar.style.backgroundColor = newIsDark ? "#333333" : "#fafafa"; // Задайте желаемые цвета
+      }
+
+      return newIsDark;
+    });
   };
 
   const value = { isDark, onChangerBtnClick };

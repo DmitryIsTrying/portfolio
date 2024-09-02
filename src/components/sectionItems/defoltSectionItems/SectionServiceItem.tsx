@@ -6,6 +6,7 @@ import { Icon } from "../../icon/Icon";
 import styled from "styled-components";
 import { InView } from "react-intersection-observer";
 import "animate.css";
+import { useTheme } from "../../../hooks/useTheme";
 
 type IconData = {
   path: string;
@@ -28,7 +29,7 @@ export const SectionServiceItem: React.FC<SectionItemPropsType> = ({
   height,
 }) => {
   let countDelay = 200;
-
+  const { isDark } = useTheme();
   return (
     <>
       {iconData.map((icon, i) => {
@@ -36,6 +37,7 @@ export const SectionServiceItem: React.FC<SectionItemPropsType> = ({
 
         return (
           <HoverSectionWrapperItem
+            isDark={isDark}
             padding="25px 32px 35px 32px"
             width={width}
             height={height}
@@ -49,17 +51,17 @@ export const SectionServiceItem: React.FC<SectionItemPropsType> = ({
               height={icon.height}
               viewBox={icon.vBox}
             />
-            <PaddingText margin="26px 0 15px" TAlign="center">
+            <PaddingText isDark={isDark} margin="26px 0 15px" TAlign="center">
               {icon.title}
             </PaddingText>
-            <StyledSecondaryText TAlign="center">
+            <StyledSecondaryText isDark={isDark} TAlign="center">
               {icon.description}
             </StyledSecondaryText>
-            <Test>
-              <PaddingText margin="0" TAlign="center">
+            <Test isDark={isDark}>
+              <PaddingText isDark={isDark} margin="0" TAlign="center">
                 {icon.title}
               </PaddingText>
-              <StyledSecondaryText TAlign="center">
+              <StyledSecondaryText isDark={isDark} TAlign="center">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
                 nulla diam in ac dictum a urna viverra morbi.
               </StyledSecondaryText>
@@ -92,7 +94,7 @@ const StyledLink = styled.a`
 `;
 
 const StyleTextLink = styled.span`
-  font-family: Roboto;
+  font-family: "Inter";
   font-size: 12px;
   font-weight: 700;
   line-height: 14.06px;
@@ -105,11 +107,14 @@ const PaddingText = styled(StyledPrimaryText)<{ margin: string }>`
   margin: ${(props) => props.margin};
 `;
 
-const Test = styled.div`
+const Test = styled.div<{ isDark: boolean }>`
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: #ffffff;
+  background-color: ${(props) =>
+    props.isDark
+      ? props.theme.theme.dark.primaryColor
+      : props.theme.theme.light.primaryColor};
   top: -250px;
   left: 0;
   transition: top 0.6s ease-in-out;

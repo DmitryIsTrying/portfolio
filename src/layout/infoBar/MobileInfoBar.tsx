@@ -7,6 +7,7 @@ import { Extra } from "../../components/info/extra/Extra";
 import { LoadBtn } from "../../components/info/loadBtn/LoadBtn";
 import "animate.css";
 import { useMenu } from "../../hooks/useMenu";
+import { useTheme } from "../../hooks/useTheme";
 
 const Languages = [
   { nameSkill: "Bangla", lvlSkill: 100 },
@@ -24,10 +25,14 @@ const HardSkills = [
 
 export default function MobileInfoBar() {
   const { menuIsOpen, toggleMenu } = useMenu();
+  const { isDark } = useTheme();
 
   return (
     <EffectWrapper id="blurEffect" onClick={toggleMenu} isOpen={menuIsOpen}>
-      <StyledAside className="animate__animated animate__backInDown">
+      <StyledAside
+        isDark={isDark}
+        className="animate__animated animate__backInDown"
+      >
         <BurgerMenu id="closeInfoBtn">
           <span></span>
           <span></span>
@@ -102,9 +107,12 @@ const EffectWrapper = styled.div<{ isOpen: boolean }>`
   }
 `;
 
-const StyledAside = styled.aside`
+const StyledAside = styled.aside<{ isDark: boolean }>`
   padding: 50px 40px 25px;
-  background-color: #ffffff;
+  background-color: ${(props) =>
+    props.isDark
+      ? props.theme.theme.dark.primaryColor
+      : props.theme.theme.light.primaryColor};
   position: fixed;
   overflow-y: auto;
   height: 100%;

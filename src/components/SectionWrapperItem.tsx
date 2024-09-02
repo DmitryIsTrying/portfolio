@@ -5,6 +5,7 @@ type SectionWrapperItemPropsType = {
   width: number;
   height: number;
   padding?: string;
+  isDark: boolean;
 };
 
 export const SectionWrapperItem = styled.div<SectionWrapperItemPropsType>`
@@ -14,7 +15,10 @@ export const SectionWrapperItem = styled.div<SectionWrapperItemPropsType>`
   flex: 1 1 calc(33.333% - 40px);
   min-width: calc(${(props) => props.width}px - 50px);
   max-width: calc(${(props) => props.width}px + 50px);
-  background-color: #ffffff;
+  background-color: ${(props) =>
+    props.isDark
+      ? props.theme.theme.dark.primaryColor
+      : props.theme.theme.light.primaryColor};
   position: relative;
   padding: ${(props) => props.padding || "0"};
 `;

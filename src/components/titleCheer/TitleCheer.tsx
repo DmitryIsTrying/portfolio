@@ -6,14 +6,24 @@ import { FlexWrapper } from "../FlexWrapper";
 import { StyledBtn } from "../StyledBtn.styled";
 import { StyledPrimaryText } from "../PrimaryText.styled";
 import { Icon } from "../icon/Icon";
+import { useTheme } from "../../hooks/useTheme";
+import { layoutsTheme } from "../../styles/Theme.styled";
 
 export const TitleCheer = () => {
+  const { isDark } = useTheme();
   return (
     <PaddingsWrapper fitWidth direction="column">
-      <StyledTitleText TAlign="left" size="48px" Lheight="59.33px" weight="700">
+      <StyledTitleText
+        isDark={isDark}
+        TAlign="left"
+        size="48px"
+        Lheight="59.33px"
+        weight="700"
+      >
         I’m Rayan Adlrdard
       </StyledTitleText>
       <StyledTitleText
+        isDark={isDark}
         TAlign="left"
         as="h1"
         size="48px"
@@ -22,13 +32,21 @@ export const TitleCheer = () => {
       >
         <span style={{ color: "#FFB400" }}>Front-end</span> Developer
       </StyledTitleText>
-      <StyledTitle size="16px">
+      <StyledTitle isDark={isDark} size="16px">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat
         feugiat placerat lobortis. Natoque rutrum semper sed suspendisse nunc
         lectus.
       </StyledTitle>
-      <StyledBtn as="a" href="#!" gap="9px" padding="16px 32px" WFit tRotate>
-        <StyledPrimaryText as="p" size="16px" Lheight="19.36px">
+      <StyledBtn
+        isDark={isDark}
+        as="a"
+        href="#!"
+        gap="9px"
+        padding="16px 32px"
+        WFit
+        tRotate
+      >
+        <StyledPrimaryText isDark={isDark} as="p" size="16px" Lheight="19.36px">
           HIRE ME
         </StyledPrimaryText>
         <Icon
@@ -36,7 +54,11 @@ export const TitleCheer = () => {
           width="12"
           height="12"
           viewBox="0 0 12 12"
-          fillStart="#2B2B2B"
+          fillStart={
+            isDark
+              ? layoutsTheme.theme.dark.titleText
+              : layoutsTheme.theme.light.titleText
+          }
         />
       </StyledBtn>
     </PaddingsWrapper>

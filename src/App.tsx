@@ -26,9 +26,9 @@ type ContainerPropsType = {
 
 function App() {
   const { width } = useViewport();
-  const { isDark, onChangerBtnClick } = useTheme();
+  const { isDark } = useTheme();
   return (
-    <div className="App">
+    <MainWrapper isDark={isDark} className="App">
       {width > 992 ? <InfoBar /> : <MobileInfoBar />}
       <Main>
         <Container paddingMedia={15}>
@@ -49,11 +49,18 @@ function App() {
         </Container>
       </Main>
       <NavBar />
-    </div>
+    </MainWrapper>
   );
 }
 
 export default App;
+
+const MainWrapper = styled.div<{ isDark: boolean }>`
+  background-color: ${(props) =>
+    props.isDark
+      ? props.theme.theme.dark.bgcColor
+      : props.theme.theme.light.bgcColor};
+`;
 
 const Main = styled.main`
   padding: 0 105px 0 305px;

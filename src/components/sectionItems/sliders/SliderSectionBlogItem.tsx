@@ -11,6 +11,7 @@ import styled from "styled-components";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import "../../../styles/Slider.css";
+import { useTheme } from "../../../hooks/useTheme";
 
 const responsive = {
   0: { items: 1 },
@@ -39,6 +40,7 @@ export const SliderSectionBlogItem: React.FC<SectionBlogItemPropsType> = ({
   height,
 }) => {
   let countDelay = 200;
+  const { isDark } = useTheme();
   return (
     <AliceCarousel
       autoHeight
@@ -54,6 +56,7 @@ export const SliderSectionBlogItem: React.FC<SectionBlogItemPropsType> = ({
         const delay = `${countDelay * i}ms`;
         return (
           <Wrapper
+            isDark={isDark}
             width={width}
             height={height}
             key={i}
@@ -62,15 +65,21 @@ export const SliderSectionBlogItem: React.FC<SectionBlogItemPropsType> = ({
           >
             <ImageBlogStyled src={e.path} alt={e.alt} />
             <PaddingWrapper direction="column">
-              <StyledPrimaryText style={{ marginBottom: "8px" }}>
+              <StyledPrimaryText
+                isDark={isDark}
+                style={{ marginBottom: "8px" }}
+              >
                 {e.title}
               </StyledPrimaryText>
-              <StyledSecondaryText style={{ marginBottom: "9px" }}>
+              <StyledSecondaryText
+                isDark={isDark}
+                style={{ marginBottom: "9px" }}
+              >
                 {e.discription}
               </StyledSecondaryText>
               <StyledLink href={e.link}>
                 <FlexWrapper gap="8px" align="baseline">
-                  <StyledPrimaryText color="#FFB400">
+                  <StyledPrimaryText isDark={isDark} color="#FFB400">
                     Learn more
                   </StyledPrimaryText>
                   <Icon

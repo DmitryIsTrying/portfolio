@@ -2,6 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { StyledPrimaryText } from "../PrimaryText.styled";
 import { StyledBtn } from "../StyledBtn.styled";
+import { useTheme } from "../../hooks/useTheme";
 
 export type ChooseTypeWorkPropsType = {
   names: Array<{ title: string }>;
@@ -10,11 +11,13 @@ export type ChooseTypeWorkPropsType = {
 };
 
 export const ChooseTypeWork = (props: ChooseTypeWorkPropsType) => {
+  const { isDark } = useTheme();
   return (
     <StyledUl>
       {props.names.map((name, i) => (
         <li key={i}>
           <MenuBtn
+            isDark={isDark}
             onClick={() => {
               props.changePortfolio(name.title);
             }}
@@ -24,7 +27,7 @@ export const ChooseTypeWork = (props: ChooseTypeWorkPropsType) => {
             WFit
             active={props.currentFilterStatus === name.title}
           >
-            <StyledPrimaryText>{name.title}</StyledPrimaryText>
+            <StyledPrimaryText isDark={isDark}>{name.title}</StyledPrimaryText>
           </MenuBtn>
         </li>
       ))}
@@ -34,10 +37,21 @@ export const ChooseTypeWork = (props: ChooseTypeWorkPropsType) => {
 
 const MenuBtn = styled(StyledBtn)<{ active: boolean }>`
   ${StyledPrimaryText} {
-    color: ${(props) => (props.active ? "#ffb400" : "#2b2b2b")};
+    color: ${(props) =>
+      props.active
+        ? props.isDark
+          ? props.theme.theme.dark.secondaryColor
+          : props.theme.theme.light.secondaryColor
+        : props.isDark
+        ? props.theme.theme.dark.titleText
+        : props.theme.theme.light.titleText};
   }
+
   &:hover ${StyledPrimaryText} {
-    color: #ffb400;
+    color: ${(props) =>
+      props.isDark
+        ? props.theme.theme.dark.secondaryColor
+        : props.theme.theme.light.secondaryColor};
   }
 `;
 

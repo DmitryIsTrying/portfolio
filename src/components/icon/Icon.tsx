@@ -29,11 +29,18 @@ export const Icon = (props: IconPropsType) => {
 
 const StyledSvg = styled.svg<StyledSvgPropsType>`
   fill: ${(props) => props.fillStart || "#767676"};
+
   @media (hover: hover) {
-    transition: fill 0.5s ease, transform 0.3s ease;
+    transition: 0.5s ease, transform 0.3s ease;
+    use {
+      transition: 0s ease;
+    }
   }
 
   @media (hover: none) {
-    transition: fill 0.1s ease, transform 0.1s ease;
+    transition: 0.1s ease, transform 0.1s ease;
+    use {
+      transition: 0s ease;
+    }
   }
 `;

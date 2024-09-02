@@ -3,6 +3,7 @@ import { FlexWrapper } from "../../FlexWrapper";
 import { StyledPrimaryText } from "../../PrimaryText.styled";
 import { StyleBlogInfo } from "../../StyleBlogInfo";
 import { ExtraMap } from "../../extraMap/ExtraMap";
+import { useTheme } from "../../../hooks/useTheme";
 
 const extraArr = [
   "Bootstrap, Materialize",
@@ -12,10 +13,11 @@ const extraArr = [
 ];
 
 export const Extra = () => {
+  const { isDark } = useTheme();
   return (
-    <StyleBlogInfo>
+    <StyleBlogInfo isDark={isDark}>
       <FlexWrapper gap="15px" direction="column" align="flex-start">
-        <StyledPrimaryText>Extra Skills</StyledPrimaryText>
+        <StyledPrimaryText isDark={isDark}>Extra Skills</StyledPrimaryText>
         <ExtraMap title={extraArr} />
       </FlexWrapper>
     </StyleBlogInfo>

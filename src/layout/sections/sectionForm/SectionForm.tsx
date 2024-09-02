@@ -7,6 +7,7 @@ import { Form } from "../../../components/form/Form";
 import { SectionFormItem } from "../../../components/sectionItems/defoltSectionItems/SectionFormItem";
 import { useInView } from "react-intersection-observer";
 import { EmptyDiv } from "../../../components/sectionItems/emptyDiv/EmptyDiv";
+import { useTheme } from "../../../hooks/useTheme";
 
 const items = [
   {
@@ -40,12 +41,13 @@ export const SectionForm = () => {
     threshold: 0.2,
     triggerOnce: true,
   });
+  const { isDark } = useTheme();
   return (
     <StyledSection id="messageSection">
       <StyledFLexSectionsWrapper>
         <Form />
         <StyledMediaWrapper direction="column">
-          <StyledTitleText style={{ marginBottom: "50px" }}>
+          <StyledTitleText isDark={isDark} style={{ marginBottom: "50px" }}>
             Contact information
           </StyledTitleText>
           <StyledFlexWrapper ref={ref} gap="18px" fitWidth direction="column">

@@ -3,6 +3,7 @@ import styled, { keyframes } from "styled-components";
 
 type StyledPricePartBtnPropsType = {
   bgc?: string;
+  isDark: boolean;
 };
 
 const bounce = keyframes`
@@ -42,7 +43,11 @@ const bounce = keyframes`
 `;
 
 export const StyledPricePartBtn = styled.button<StyledPricePartBtnPropsType>`
-  background-color: ${(props) => props.bgc || "#ffffff"};
+  background-color: ${(props) =>
+    props.bgc ||
+    (props.isDark
+      ? props.theme.theme.dark.primaryColor
+      : props.theme.theme.light.primaryColor)};
   box-shadow: 0px 1px 10px 0px #00000026;
   padding: 11px 41px 10px;
   border-radius: 30px;

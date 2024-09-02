@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { FlexWrapper } from "../../FlexWrapper";
 import { StyledBtn } from "../../StyledBtn.styled";
 import { Icon } from "../../icon/Icon";
+import { useTheme } from "../../../hooks/useTheme";
 
 export type PhotosArrayPropsType = {
   path: string;
@@ -23,6 +24,7 @@ export const SectionPortfolioItem: React.FC<SectionPortfolioItemPropsType> = ({
   height,
   currentFilterStatus,
 }) => {
+  const { isDark } = useTheme();
   let filteredWorks = photos;
   if (currentFilterStatus !== "All categories") {
     filteredWorks = photos.filter(
@@ -41,6 +43,7 @@ export const SectionPortfolioItem: React.FC<SectionPortfolioItemPropsType> = ({
         const delay = `${countDelay * i}ms`;
         return (
           <ImageSectionWrapperItem
+            isDark={isDark}
             style={{ overflow: "hidden", animationDelay: delay }}
             width={width}
             height={height}
@@ -51,6 +54,7 @@ export const SectionPortfolioItem: React.FC<SectionPortfolioItemPropsType> = ({
             }`}
           >
             <StyledBtn
+              isDark={isDark}
               aria-label="More examples"
               padding="0"
               color="transparent"

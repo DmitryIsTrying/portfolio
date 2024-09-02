@@ -3,6 +3,7 @@ import { StyledSecondaryText } from "../SecondaryText.styled";
 import styled, { css } from "styled-components";
 import { StyledTitleText } from "../TitleText.styled";
 import { layoutsTheme } from "../../styles/Theme.styled";
+import { useTheme } from "../../hooks/useTheme";
 
 type TitleSectionsPropsType = {
   title: string;
@@ -17,12 +18,13 @@ export const TitleSections: React.FC<TitleSectionsPropsType> = ({
   pdt,
   first,
 }) => {
+  const { isDark } = useTheme();
   return (
     <>
-      <StyledTitle first={first} pdt={pdt}>
+      <StyledTitle isDark={isDark} first={first} pdt={pdt}>
         {title}
       </StyledTitle>
-      <StyledSecondary Mwidth TAlign="center">
+      <StyledSecondary isDark={isDark} Mwidth TAlign="center">
         {description}
       </StyledSecondary>
     </>

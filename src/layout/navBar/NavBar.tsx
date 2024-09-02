@@ -59,7 +59,7 @@ const anchorLinks = [
 export const NavBar = () => {
   const { isDark, onChangerBtnClick } = useTheme();
   return (
-    <StyledNav>
+    <StyledNav id="NavBar">
       <StyledBtnIcon onClick={onChangerBtnClick} aria-label="Change Site Theme">
         <Icon
           iconSrc={"darkLightNavSvg"}
@@ -71,7 +71,11 @@ export const NavBar = () => {
       <ListItems
         width={40}
         height={40}
-        color="#F0F0F6"
+        color={
+          isDark
+            ? layoutsTheme.theme.dark.bgcColor
+            : layoutsTheme.theme.light.bgcColor
+        }
         Links={anchorLinks}
         direction="column"
         gap={43}

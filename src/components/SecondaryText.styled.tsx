@@ -9,6 +9,7 @@ type StyledSecondaryTextPropsType = {
   fWeight?: string;
   Mwidth?: boolean;
   MWE?: boolean;
+  isDark: boolean;
 };
 
 export const StyledSecondaryText = styled.p<StyledSecondaryTextPropsType>`
@@ -17,7 +18,11 @@ export const StyledSecondaryText = styled.p<StyledSecondaryTextPropsType>`
   font-weight: ${(props) => props.fWeight || "400"};
   line-height: ${(props) => props.lHeight || "24px"};
   text-align: ${(props) => props.TAlign || "left"};
-  color: ${(props) => props.color || "#767676"};
+  color: ${(props) =>
+    props.color ||
+    (props.isDark
+      ? props.theme.theme.dark.smallText
+      : props.theme.theme.light.smallText)};
   transition: 0.5s ease;
   ${(props) =>
     props.Mwidth &&

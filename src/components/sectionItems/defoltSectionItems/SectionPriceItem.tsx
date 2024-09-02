@@ -8,6 +8,8 @@ import { StyledPricePartBtn } from "../../StyledPricePartBtn";
 import styled from "styled-components";
 import { SectionWrapperItem } from "../../SectionWrapperItem";
 import "animate.css";
+import { useTheme } from "../../../hooks/useTheme";
+import { layoutsTheme } from "../../../styles/Theme.styled";
 
 type PriceList = {
   nameList: string;
@@ -45,7 +47,7 @@ export const SectionPriceItem: React.FC<SectionPriceItemPropsType> = ({
   items,
 }) => {
   let countDelay = 200;
-
+  const { isDark } = useTheme();
   return (
     <>
       {items.map((item, i) => {
@@ -53,6 +55,7 @@ export const SectionPriceItem: React.FC<SectionPriceItemPropsType> = ({
 
         return (
           <SectionWrapperItem
+            isDark={isDark}
             padding="54px 31px 25px 31px"
             width={width}
             height={height}
@@ -62,28 +65,64 @@ export const SectionPriceItem: React.FC<SectionPriceItemPropsType> = ({
           >
             {item.mostPopular ? (
               <StyledMP>
-                <StyledSecondaryText TAlign="center" color="#2B2B2B">
+                <StyledSecondaryText
+                  isDark={isDark}
+                  TAlign="center"
+                  color={
+                    isDark
+                      ? layoutsTheme.theme.dark.titleText
+                      : layoutsTheme.theme.light.titleText
+                  }
+                >
                   Most Popular
                 </StyledSecondaryText>
               </StyledMP>
             ) : null}
-            <StyledTitle weight="600" size="24px" Lheight="29.66px">
+            <StyledTitle
+              isDark={isDark}
+              weight="600"
+              size="24px"
+              Lheight="29.66px"
+            >
               {item.nameList}
             </StyledTitle>
             <FlexWrapper align="baseline" justify="center" gap="10px">
-              <StyledTitleText as={"p"}>${item.price}.00</StyledTitleText>
-              <StyledText color="#2B2B2B">/Hour</StyledText>
+              <StyledTitleText isDark={isDark} as={"p"}>
+                ${item.price}.00
+              </StyledTitleText>
+              <StyledText
+                isDark={isDark}
+                color={
+                  isDark
+                    ? layoutsTheme.theme.dark.titleText
+                    : layoutsTheme.theme.light.titleText
+                }
+              >
+                /Hour
+              </StyledText>
             </FlexWrapper>
             <FlexWrapper align="center" gap="21px" direction="column">
-              <StyledSecondaryText TAlign="center">
+              <StyledSecondaryText isDark={isDark} TAlign="center">
                 {item.description}
               </StyledSecondaryText>
               <ItemList itemList={item.itemList} />
               <StyledPricePartBtn
-                bgc={item.mostPopular ? "#FFB400" : "#FFFFFF"}
+                isDark={isDark}
+                bgc={
+                  item.mostPopular
+                    ? "#FFB400"
+                    : isDark
+                    ? layoutsTheme.theme.dark.primaryColor
+                    : layoutsTheme.theme.light.primaryColor
+                }
               >
                 <StyledSecondaryText
-                  color="#2B2B2B"
+                  isDark={isDark}
+                  color={
+                    isDark
+                      ? layoutsTheme.theme.dark.titleText
+                      : layoutsTheme.theme.light.titleText
+                  }
                   size="14px"
                   lHeight="16.94px"
                   fWeight="700"

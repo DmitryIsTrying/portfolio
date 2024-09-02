@@ -6,6 +6,7 @@ import styled from "styled-components";
 import { Stars } from "../../stars/Stars";
 import { FlexWrapper } from "../../FlexWrapper";
 import "animate.css";
+import { useTheme } from "../../../hooks/useTheme";
 
 type RecData = {
   title: string;
@@ -27,6 +28,7 @@ export const SectionRecomItem: React.FC<SectionRecomItemPropsType> = ({
   width,
   height,
 }) => {
+  const { isDark } = useTheme();
   let countDelay = 200;
   return (
     <>
@@ -34,6 +36,7 @@ export const SectionRecomItem: React.FC<SectionRecomItemPropsType> = ({
         const delay = `${countDelay * i}ms`;
         return (
           <SectionWrapperItem
+            isDark={isDark}
             padding="25px"
             width={width}
             height={height}
@@ -43,13 +46,14 @@ export const SectionRecomItem: React.FC<SectionRecomItemPropsType> = ({
           >
             <Stars starsCount={5} />
             <StyledPrimaryText
+              isDark={isDark}
               TAlign="left"
               style={{ width: "100%", margin: "17px 0 18px 0" }}
               as={"p"}
             >
               {icon.title}
             </StyledPrimaryText>
-            <StyledSecondaryText TAlign="left">
+            <StyledSecondaryText isDark={isDark} TAlign="left">
               {icon.comment}
             </StyledSecondaryText>
             <FlexWrapper
@@ -63,10 +67,16 @@ export const SectionRecomItem: React.FC<SectionRecomItemPropsType> = ({
                 alt={icon.altPhoto}
               />
               <FlexWrapper direction="column" justify="center">
-                <StyledPrimaryText style={{ marginBottom: "5px" }} as={"p"}>
+                <StyledPrimaryText
+                  isDark={isDark}
+                  style={{ marginBottom: "5px" }}
+                  as={"p"}
+                >
                   {icon.name}
                 </StyledPrimaryText>
-                <StyledSecondaryText>{icon.job}</StyledSecondaryText>
+                <StyledSecondaryText isDark={isDark}>
+                  {icon.job}
+                </StyledSecondaryText>
               </FlexWrapper>
             </FlexWrapper>
           </SectionWrapperItem>

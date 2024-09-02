@@ -6,6 +6,7 @@ import { SkillsInfo } from "../../components/info/skillsInfo/SkillsInfo";
 import { Extra } from "../../components/info/extra/Extra";
 import { LoadBtn } from "../../components/info/loadBtn/LoadBtn";
 import { layoutsTheme } from "../../styles/Theme.styled";
+import { useTheme } from "../../hooks/useTheme";
 
 const Languages = [
   { nameSkill: "Bangla", lvlSkill: 100 },
@@ -22,8 +23,9 @@ const HardSkills = [
 ];
 
 export default function InfoBar() {
+  const { isDark } = useTheme();
   return (
-    <StyledAside>
+    <StyledAside isDark={isDark}>
       <MainInfo />
       <SecondaryInfo />
       <SkillsInfo title="Languages" skills={Languages} />
@@ -34,9 +36,12 @@ export default function InfoBar() {
   );
 }
 
-const StyledAside = styled.aside`
+const StyledAside = styled.aside<{ isDark: boolean }>`
   padding: 50px 40px 25px;
-  background-color: #ffffff;
+  background-color: ${(props) =>
+    props.isDark
+      ? props.theme.theme.dark.primaryColor
+      : props.theme.theme.light.primaryColor};
   position: fixed;
   overflow-y: auto;
   height: 100%;

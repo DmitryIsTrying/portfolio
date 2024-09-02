@@ -10,7 +10,7 @@ import { useTheme } from "../../../hooks/useTheme";
 
 export const Header = () => {
   const { menuIsOpen, toggleMenu } = useMenu();
-  const { isDark, onChangerBtnClick } = useTheme();
+  const { isDark } = useTheme();
   return (
     <StyledHeader isDark={isDark}>
       <MediaWrapper>
@@ -91,6 +91,9 @@ const StyledHeader = styled.header.attrs(() => ({
 }))<{ isDark: boolean }>`
   position: relative;
   padding: 0 60px;
-  transition: 1s ease;
-  background-color: ${(props) => (props.isDark ? "#000" : "#ffffff")};
+  transition: 1.5s ease;
+  background-color: ${(props) =>
+    props.isDark
+      ? props.theme.theme.dark.primaryColor
+      : props.theme.theme.light.primaryColor};
 `;

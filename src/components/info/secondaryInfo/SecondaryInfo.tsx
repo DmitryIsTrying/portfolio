@@ -3,26 +3,92 @@ import { FlexWrapper } from "../../FlexWrapper";
 import { StyledSecondaryText } from "../../SecondaryText.styled";
 import styled from "styled-components";
 import { StyleBlogInfo } from "../../StyleBlogInfo";
+import { useTheme } from "../../../hooks/useTheme";
+import { layoutsTheme } from "../../../styles/Theme.styled";
 
 export const SecondaryInfo = () => {
+  const { isDark } = useTheme();
   return (
-    <StyleBlogInfo>
+    <StyleBlogInfo isDark={isDark}>
       <FlexWrapper gap="9px" direction="column">
         <FlexWrapper justify="space-between">
-          <BorderClrText color="#2B2B2B">Age:</BorderClrText>
-          <StyledSecondaryText color="#2B2B2B">24</StyledSecondaryText>
+          <BorderClrText
+            isDark={isDark}
+            color={
+              isDark
+                ? layoutsTheme.theme.dark.titleText
+                : layoutsTheme.theme.light.titleText
+            }
+          >
+            Age:
+          </BorderClrText>
+          <StyledSecondaryText
+            isDark={isDark}
+            color={
+              isDark
+                ? layoutsTheme.theme.dark.titleText
+                : layoutsTheme.theme.light.titleText
+            }
+          >
+            24
+          </StyledSecondaryText>
         </FlexWrapper>
         <FlexWrapper justify="space-between">
-          <BorderClrText color="#2B2B2B">Residence:</BorderClrText>
-          <StyledSecondaryText color="#2B2B2B">BD</StyledSecondaryText>
+          <BorderClrText
+            isDark={isDark}
+            color={
+              isDark
+                ? layoutsTheme.theme.dark.titleText
+                : layoutsTheme.theme.light.titleText
+            }
+          >
+            Residence:
+          </BorderClrText>
+          <StyledSecondaryText
+            isDark={isDark}
+            color={
+              isDark
+                ? layoutsTheme.theme.dark.titleText
+                : layoutsTheme.theme.light.titleText
+            }
+          >
+            BD
+          </StyledSecondaryText>
         </FlexWrapper>
         <FlexWrapper justify="space-between">
-          <BorderClrText color="#2B2B2B">Freelance:</BorderClrText>
-          <StyledSecondaryText color="#7EB942">Available</StyledSecondaryText>
+          <BorderClrText
+            isDark={isDark}
+            color={
+              isDark
+                ? layoutsTheme.theme.dark.titleText
+                : layoutsTheme.theme.light.titleText
+            }
+          >
+            Freelance:
+          </BorderClrText>
+          <StyledSecondaryText isDark={isDark} color="#7EB942">
+            Available
+          </StyledSecondaryText>
         </FlexWrapper>
         <FlexWrapper justify="space-between">
-          <BorderClrText color="#2B2B2B">Address:</BorderClrText>
-          <StyledSecondaryText color="#2B2B2B">
+          <BorderClrText
+            isDark={isDark}
+            color={
+              isDark
+                ? layoutsTheme.theme.dark.titleText
+                : layoutsTheme.theme.light.titleText
+            }
+          >
+            Address:
+          </BorderClrText>
+          <StyledSecondaryText
+            isDark={isDark}
+            color={
+              isDark
+                ? layoutsTheme.theme.dark.titleText
+                : layoutsTheme.theme.light.titleText
+            }
+          >
             Dhaka,Bangladesh
           </StyledSecondaryText>
         </FlexWrapper>

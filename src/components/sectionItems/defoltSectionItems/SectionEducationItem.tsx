@@ -5,6 +5,8 @@ import { StyledSecondaryText } from "../../SecondaryText.styled";
 import { FlexWrapper } from "../../FlexWrapper";
 import styled from "styled-components";
 import "animate.css";
+import { layoutsTheme } from "../../../styles/Theme.styled";
+import { useTheme } from "../../../hooks/useTheme";
 
 type educationData = {
   nameUniversity: string;
@@ -25,8 +27,10 @@ export const SectionEducationItem: React.FC<SectionItemPropsType> = ({
   width,
   height,
 }) => {
+  const { isDark } = useTheme();
   return (
     <StyledSectionWrapperItem
+      isDark={isDark}
       padding="43px 29px 42px 37px"
       width={width}
       height={height}
@@ -45,21 +49,41 @@ export const SectionEducationItem: React.FC<SectionItemPropsType> = ({
             align="flex-start"
             direction="column"
           >
-            <StyledTitle as={"h3"}>{icon.nameUniversity}</StyledTitle>
+            <StyledTitle isDark={isDark} as={"h3"}>
+              {icon.nameUniversity}
+            </StyledTitle>
             <FlexWrapper gap="21px" align="flex-start">
-              <StyledSecondary color="#2B2B2B">{icon.whois}</StyledSecondary>
+              <StyledSecondary
+                isDark={isDark}
+                color={
+                  isDark
+                    ? layoutsTheme.theme.dark.titleText
+                    : layoutsTheme.theme.light.titleText
+                }
+              >
+                {icon.whois}
+              </StyledSecondary>
               <StyledSecondaryOrange
+                isDark={isDark}
                 size="10px"
                 lHeight="10.09px"
-                color="#FFFFFF"
+                color={
+                  isDark
+                    ? layoutsTheme.theme.dark.primaryColor
+                    : layoutsTheme.theme.light.primaryColor
+                }
               >
                 {icon.date}
               </StyledSecondaryOrange>
             </FlexWrapper>
           </StyledFlexWrapperLeftPart>
           <StyledFlexWrapperRightPart direction="column">
-            <StyledPrimary as={"h3"}>{icon.nameCertificate}</StyledPrimary>
-            <StyledSecondary>{icon.descriptionCertificate}</StyledSecondary>
+            <StyledPrimary isDark={isDark} as={"h3"}>
+              {icon.nameCertificate}
+            </StyledPrimary>
+            <StyledSecondary isDark={isDark}>
+              {icon.descriptionCertificate}
+            </StyledSecondary>
           </StyledFlexWrapperRightPart>
         </StyledBorderLine>
       ))}

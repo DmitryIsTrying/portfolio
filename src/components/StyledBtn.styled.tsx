@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { StyledPrimaryText } from "./PrimaryText.styled";
+import { useTheme } from "../hooks/useTheme";
 
 type StyledBtnPropsType = {
   gap?: string;
@@ -10,6 +11,7 @@ type StyledBtnPropsType = {
   color?: string;
   noHover?: boolean;
   tRotate?: boolean;
+  isDark: boolean;
 };
 
 export const StyledBtn = styled.button<StyledBtnPropsType>`
@@ -22,7 +24,12 @@ export const StyledBtn = styled.button<StyledBtnPropsType>`
   width: ${(props) => (props.WFit ? "fit-content" : "100%")};
   border: none;
   gap: ${(props) => props.gap || 0};
-  background-color: ${(props) => props.color || "#ffb400"};
+  transition: 1.5s ease;
+  background-color: ${(props) =>
+    props.color ||
+    (props.isDark
+      ? props.theme.theme.dark.secondaryColor
+      : props.theme.theme.light.secondaryColor)};
   cursor: pointer;
 
   ${(props) =>

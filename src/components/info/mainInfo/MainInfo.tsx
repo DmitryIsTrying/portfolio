@@ -7,6 +7,7 @@ import styled from "styled-components";
 import profile from "../../../assets/images/Profile.webp";
 import profile2x from "../../../assets/images/Profile@2x.webp";
 import { ListItems } from "../../listItems/ListItems";
+import { useTheme } from "../../../hooks/useTheme";
 
 const socialLinks = [
   {
@@ -60,6 +61,7 @@ const socialLinks = [
 ];
 
 export const MainInfo = () => {
+  const { isDark } = useTheme();
   return (
     <FlexWrapper direction="column" align="center">
       <PositionElementOnline>
@@ -77,10 +79,10 @@ export const MainInfo = () => {
         />
       </PositionElementOnline>
       <FlexWrapper gap="15px" direction="column">
-        <StyledPrimaryText as={"h2"} TAlign="center">
+        <StyledPrimaryText isDark={isDark} as={"h2"} TAlign="center">
           Rayan Adlardard
         </StyledPrimaryText>
-        <StyledSecondaryText TAlign="center">
+        <StyledSecondaryText isDark={isDark} TAlign="center">
           Font-end Developer
         </StyledSecondaryText>
         <ListItems

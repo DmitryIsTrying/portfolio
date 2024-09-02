@@ -9,6 +9,7 @@ import "animate.css";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import "../../../styles/Slider.css";
+import { useTheme } from "../../../hooks/useTheme";
 
 const responsive = {
   0: { items: 1 },
@@ -38,6 +39,7 @@ export const SliderSectionRecomItem: React.FC<SectionRecomItemPropsType> = ({
   height,
 }) => {
   let countDelay = 200;
+  const { isDark } = useTheme();
   return (
     <AliceCarousel
       autoHeight
@@ -53,6 +55,7 @@ export const SliderSectionRecomItem: React.FC<SectionRecomItemPropsType> = ({
         const delay = `${countDelay * i}ms`;
         return (
           <SlidesSectionWrapperItem
+            isDark={isDark}
             padding="25px"
             width={width}
             height={height}
@@ -62,13 +65,14 @@ export const SliderSectionRecomItem: React.FC<SectionRecomItemPropsType> = ({
           >
             <Stars starsCount={5} />
             <StyledPrimaryText
+              isDark={isDark}
               TAlign="left"
               style={{ width: "100%", margin: "17px 0 18px 0" }}
               as={"p"}
             >
               {icon.title}
             </StyledPrimaryText>
-            <StyledSecondaryText TAlign="left">
+            <StyledSecondaryText isDark={isDark} TAlign="left">
               {icon.comment}
             </StyledSecondaryText>
             <FlexWrapper
@@ -82,10 +86,16 @@ export const SliderSectionRecomItem: React.FC<SectionRecomItemPropsType> = ({
                 alt={icon.altPhoto}
               />
               <FlexWrapper direction="column" justify="center">
-                <StyledPrimaryText style={{ marginBottom: "5px" }} as={"p"}>
+                <StyledPrimaryText
+                  isDark={isDark}
+                  style={{ marginBottom: "5px" }}
+                  as={"p"}
+                >
                   {icon.name}
                 </StyledPrimaryText>
-                <StyledSecondaryText>{icon.job}</StyledSecondaryText>
+                <StyledSecondaryText isDark={isDark}>
+                  {icon.job}
+                </StyledSecondaryText>
               </FlexWrapper>
             </FlexWrapper>
           </SlidesSectionWrapperItem>

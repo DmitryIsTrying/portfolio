@@ -2,12 +2,14 @@ import React from "react";
 import { FlexWrapper } from "../FlexWrapper";
 import { Icon } from "../icon/Icon";
 import { StyledSecondaryText } from "../SecondaryText.styled";
+import { useTheme } from "../../hooks/useTheme";
 
 type ExtraMapPropsType = {
   title: string[];
 };
 
 export const ExtraMap: React.FC<ExtraMapPropsType> = ({ title }) => {
+  const { isDark } = useTheme();
   return (
     <FlexWrapper direction="column" gap="5px">
       {title.map((e, i) => (
@@ -18,7 +20,7 @@ export const ExtraMap: React.FC<ExtraMapPropsType> = ({ title }) => {
             height="15"
             viewBox="0 0 15 15"
           />
-          <StyledSecondaryText>{e}</StyledSecondaryText>
+          <StyledSecondaryText isDark={isDark}>{e}</StyledSecondaryText>
         </FlexWrapper>
       ))}
     </FlexWrapper>
