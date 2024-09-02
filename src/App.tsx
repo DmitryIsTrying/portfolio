@@ -18,6 +18,7 @@ import { layoutsTheme } from "./styles/Theme.styled";
 import MobileInfoBar from "./layout/infoBar/MobileInfoBar";
 import { useMenu } from "./hooks/useMenu";
 import { useViewport } from "./hooks/useViewport";
+import { useTheme } from "./hooks/useTheme";
 
 type ContainerPropsType = {
   paddingMedia: number;
@@ -25,20 +26,13 @@ type ContainerPropsType = {
 
 function App() {
   const { width } = useViewport();
-  const { menuIsOpen, onBurgerBtnClick } = useMenu();
+  const { isDark, onChangerBtnClick } = useTheme();
   return (
     <div className="App">
-      {width > 992 ? (
-        <InfoBar />
-      ) : (
-        <MobileInfoBar
-          menuIsOpen={menuIsOpen}
-          setMenuIsOpen={onBurgerBtnClick}
-        />
-      )}
+      {width > 992 ? <InfoBar /> : <MobileInfoBar />}
       <Main>
         <Container paddingMedia={15}>
-          <Header menuIsOpen={menuIsOpen} setMenuIsOpen={onBurgerBtnClick} />
+          <Header />
           <SectionService />
           <SectionPrice />
           <SectionRecommend />

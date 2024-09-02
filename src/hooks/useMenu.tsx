@@ -1,12 +1,37 @@
-import React from "react";
-import { useState } from "react";
+import React, { createContext, useContext, useState, ReactNode } from "react";
 
-export function useMenu() {
+type MenuContextType = {
+  menuIsOpen: boolean;
+  toggleMenu: (e: React.MouseEvent<HTMLElement>) => void;
+};
+
+const MenuContext = createContext<MenuContextType | undefined>(undefined);
+
+export const MenuProvider = ({ children }: { children: ReactNode }) => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
-  const onBurgerBtnClick = () => {
-    setMenuIsOpen(!menuIsOpen);
+  const toggleMenu = (e: React.MouseEvent<HTMLElement>) => {
+    if (
+      e.target instanceof HTMLElement &&
+      (e.target.id === "burgerMenu" ||
+        e.target.id === "blurEffect" ||
+        e.target.closest("#closeInfoBtn"))
+    ) {
+      setMenuIsOpen((prev) => !prev);
+    }
   };
 
-  return { menuIsOpen, onBurgerBtnClick };
-}
+  return (
+    <MenuContext.Provider value={{ menuIsOpen, toggleMenu }}>
+      {children}
+    </MenuContext.Provider>
+  );
+};
+
+export const useMenu = () => {
+  const context = useContext(MenuContext);
+  if (!context) {
+    throw new Error("useMenu must be used within a MenuProvider");
+  }
+  return context;
+};

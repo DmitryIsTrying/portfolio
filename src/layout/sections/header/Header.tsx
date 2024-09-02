@@ -5,21 +5,14 @@ import { ItemsDesign } from "../../../components/itemsDesign/ItemsDesign";
 import { TitleCheer } from "../../../components/titleCheer/TitleCheer";
 import { layoutsTheme } from "../../../styles/Theme.styled";
 import "animate.css";
+import { useMenu } from "../../../hooks/useMenu";
+import { useTheme } from "../../../hooks/useTheme";
 
-type HeaderPropsType = {
-  menuIsOpen: boolean;
-  setMenuIsOpen: (isOpen: boolean) => void;
-};
-
-export const Header: React.FC<HeaderPropsType> = ({
-  menuIsOpen,
-  setMenuIsOpen,
-}) => {
-  const onBurgerBtnClick = () => {
-    setMenuIsOpen(!menuIsOpen);
-  };
+export const Header = () => {
+  const { menuIsOpen, toggleMenu } = useMenu();
+  const { isDark, onChangerBtnClick } = useTheme();
   return (
-    <StyledHeader>
+    <StyledHeader isDark={isDark}>
       <MediaWrapper>
         <TitleCheer />
         <Image
@@ -27,14 +20,15 @@ export const Header: React.FC<HeaderPropsType> = ({
           src={profileHeader}
           alt="Rayan Adlardard Face"
           width={"325"}
-          height={"427"}
+          height={"460"}
         />
       </MediaWrapper>
       <ItemsDesign />
       <BurgerMenu
+        id="burgerMenu"
         className="animate__animated animate__fadeInLeft"
         isOpen={menuIsOpen}
-        onClick={onBurgerBtnClick}
+        onClick={toggleMenu}
       >
         <span></span>
         <span></span>
@@ -94,8 +88,9 @@ const MediaWrapper = styled.div`
 
 const StyledHeader = styled.header.attrs(() => ({
   id: "homeSection",
-}))`
+}))<{ isDark: boolean }>`
   position: relative;
   padding: 0 60px;
-  background-color: #ffffff;
+  transition: 1s ease;
+  background-color: ${(props) => (props.isDark ? "#000" : "#ffffff")};
 `;

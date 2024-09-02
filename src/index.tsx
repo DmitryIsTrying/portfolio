@@ -5,14 +5,20 @@ import reportWebVitals from "./reportWebVitals";
 import { GlobalStyles } from "./styles/GlobalStyles";
 import { ThemeProvider } from "styled-components";
 import { layoutsTheme } from "./styles/Theme.styled";
+import { MenuProvider } from "./hooks/useMenu";
+import { ChangerThemeProvider } from "./hooks/useTheme";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <ThemeProvider theme={layoutsTheme}>
-    <App />
-    <GlobalStyles />
+    <MenuProvider>
+      <ChangerThemeProvider>
+        <App />
+        <GlobalStyles />
+      </ChangerThemeProvider>
+    </MenuProvider>
   </ThemeProvider>
 );
 

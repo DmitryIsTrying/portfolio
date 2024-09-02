@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Icon } from "../../components/icon/Icon";
 import { ListItems } from "../../components/listItems/ListItems";
 import { layoutsTheme } from "../../styles/Theme.styled";
+import { useTheme } from "../../hooks/useTheme";
 
 const anchorLinks = [
   {
@@ -56,9 +57,10 @@ const anchorLinks = [
 ];
 
 export const NavBar = () => {
+  const { isDark, onChangerBtnClick } = useTheme();
   return (
     <StyledNav>
-      <StyledBtnIcon aria-label="Change Site Theme">
+      <StyledBtnIcon onClick={onChangerBtnClick} aria-label="Change Site Theme">
         <Icon
           iconSrc={"darkLightNavSvg"}
           width="25"

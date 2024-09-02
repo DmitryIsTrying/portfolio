@@ -5,9 +5,8 @@ import { SecondaryInfo } from "../../components/info/secondaryInfo/SecondaryInfo
 import { SkillsInfo } from "../../components/info/skillsInfo/SkillsInfo";
 import { Extra } from "../../components/info/extra/Extra";
 import { LoadBtn } from "../../components/info/loadBtn/LoadBtn";
-import { layoutsTheme } from "../../styles/Theme.styled";
 import "animate.css";
-import { log } from "console";
+import { useMenu } from "../../hooks/useMenu";
 
 const Languages = [
   { nameSkill: "Bangla", lvlSkill: 100 },
@@ -23,35 +22,12 @@ const HardSkills = [
   { nameSkill: "WordPress", lvlSkill: 85 },
 ];
 
-type MobileInfoBarPropsType = {
-  menuIsOpen: boolean;
-  setMenuIsOpen: (isOpen: boolean) => void;
-};
-
-export default function MobileInfoBar({
-  menuIsOpen,
-  setMenuIsOpen,
-}: MobileInfoBarPropsType) {
-  const onBurgerBtnClick = (e: any) => {
-    const clickedInsideCloseBtn = e.target.closest("#closeInfoBtn");
-    const clickedOnBlurEffect = e.target.id === "blurEffect";
-
-    if (clickedInsideCloseBtn || clickedOnBlurEffect) {
-      setMenuIsOpen(!menuIsOpen);
-    }
-  };
+export default function MobileInfoBar() {
+  const { menuIsOpen, toggleMenu } = useMenu();
 
   return (
-    <EffectWrapper
-      id="blurEffect"
-      onClick={onBurgerBtnClick}
-      isOpen={menuIsOpen}
-    >
-      <StyledAside
-        // tabIndex={1}
-        // onBlur={onBurgerBtnClick}
-        className="animate__animated animate__backInDown"
-      >
+    <EffectWrapper id="blurEffect" onClick={toggleMenu} isOpen={menuIsOpen}>
+      <StyledAside className="animate__animated animate__backInDown">
         <BurgerMenu id="closeInfoBtn">
           <span></span>
           <span></span>
