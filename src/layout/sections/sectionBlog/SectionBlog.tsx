@@ -54,7 +54,7 @@ export const SectionBlog = () => {
         />
         <FLexSectionsWrapper ref={ref}>
           {inView ? (
-            (width > 992 && width < 1290) || width < 850 ? (
+            (width > 992 && width < 1380) || width < 940 ? (
               <SliderSectionBlogItem
                 items={itemsBlog}
                 width={310}
