@@ -13,7 +13,7 @@ export const SectionWrapperItem = styled.div<SectionWrapperItemPropsType>`
   flex-direction: column;
   align-items: center;
   flex: 1 1 calc(33.333% - 40px);
-  min-width: calc(${(props) => props.width}px - 20px);
+  min-width: calc(${(props) => props.width}px - 50px);
   max-width: calc(${(props) => props.width}px + 50px);
   background-color: ${(props) =>
     props.isDark

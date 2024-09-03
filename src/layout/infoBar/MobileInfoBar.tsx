@@ -31,7 +31,7 @@ export default function MobileInfoBar() {
     <EffectWrapper id="blurEffect" onClick={toggleMenu} isOpen={menuIsOpen}>
       <StyledAside
         isDark={isDark}
-        className="animate__animated animate__backInDown"
+        className="animate__animated animate__backInLeft"
       >
         <BurgerMenu id="closeInfoBtn">
           <span></span>

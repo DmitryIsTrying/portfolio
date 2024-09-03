@@ -19,8 +19,8 @@ export const Header = () => {
           loading="lazy"
           src={profileHeader}
           alt="Rayan Adlardard Face"
-          width={"325"}
-          height={"460"}
+          width={"326"}
+          height={"459"}
         />
       </MediaWrapper>
       <ItemsDesign />
@@ -73,8 +73,8 @@ const BurgerMenu = styled.button<{ isOpen: boolean }>`
 `;
 
 const Image = styled.img`
-  max-width: 325px;
-  max-height: 460px;
+  max-width: 326px;
+  max-height: 459px;
 `;
 
 const MediaWrapper = styled.div`

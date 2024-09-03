@@ -47,10 +47,10 @@ export const SectionForm = () => {
       <StyledFLexSectionsWrapper>
         <Form />
         <StyledMediaWrapper direction="column">
-          <StyledTitleText isDark={isDark} style={{ marginBottom: "50px" }}>
+          <ContactText isDark={isDark} style={{ marginBottom: "50px" }}>
             Contact information
-          </StyledTitleText>
-          <StyledFlexWrapper ref={ref} gap="18px" fitWidth direction="column">
+          </ContactText>
+          <StyledFlexWrapper align="center" ref={ref} gap="18px">
             {inView ? (
               <SectionFormItem width={370} height={210} items={items} />
             ) : null}
@@ -61,16 +61,25 @@ export const SectionForm = () => {
   );
 };
 
+const ContactText = styled(StyledTitleText)`
+  width: 100%;
+  text-align: left;
+`;
+
 const StyledMediaWrapper = styled(FlexWrapper)`
+  align-items: center;
   flex: 0 1 370px;
   @media screen and (min-width: 993px) and (max-width: 1214px) {
+    flex: 1 1 370px;
+  }
+  @media screen and (max-width: 780px) {
     flex: 1 1 370px;
   }
 `;
 
 const StyledFlexWrapper = styled(FlexWrapper)`
-  width: 100%;
-  align-items: center;
+  flex-wrap: wrap;
+  max-width: 660px;
 `;
 
 const StyledFLexSectionsWrapper = styled(FLexSectionsWrapper)`

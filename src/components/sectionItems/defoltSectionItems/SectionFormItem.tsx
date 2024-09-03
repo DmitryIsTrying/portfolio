@@ -148,6 +148,7 @@ const StyledSectionWrapperItem = styled(SectionWrapperItem)`
   padding: 25px 25px 15px 25px;
   justify-content: flex-start;
   width: 100%;
+  max-width: unset;
 `;
 
 const StyledFlexWrapper = styled(FlexWrapper)`
