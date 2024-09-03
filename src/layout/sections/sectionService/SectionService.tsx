@@ -1,11 +1,11 @@
 import React from "react";
 import { FlexWrapper } from "../../../components/FlexWrapper";
-import { FLexSectionsWrapper } from "../../../components/FLexSectionsWrapper";
 import styled from "styled-components";
 import { TitleSections } from "../../../components/titleSections/TitleSections";
 import { SectionServiceItem } from "../../../components/sectionItems/defoltSectionItems/SectionServiceItem";
 import { useInView } from "react-intersection-observer";
 import { EmptyDiv } from "../../../components/sectionItems/emptyDiv/EmptyDiv";
+import { GridSectionWrapper } from "../../../components/GridSectionWrapper";
 
 const sectionItems = [
   {
@@ -72,7 +72,7 @@ export const SectionService = () => {
           title="My Services"
           description="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum"
         />
-        <FLexSectionsWrapper ref={ref}>
+        <GridSectionWrapper rows={225} ref={ref}>
           {inView ? (
             <SectionServiceItem
               width={310}
@@ -82,7 +82,7 @@ export const SectionService = () => {
           ) : (
             <EmptyDiv width={310} height={240} elements={sectionItems.length} />
           )}
-        </FLexSectionsWrapper>
+        </GridSectionWrapper>
       </FlexWrapper>
     </StyledSection>
   );

@@ -35,17 +35,17 @@ const StyledTitle = styled(StyledTitleText)<{
   pdt: number | undefined;
   first?: boolean;
 }>`
-  padding-top: ${(props) => props.pdt || 0}px;
+  margin-top: ${(props) => props.pdt || 0}px;
 
   @media ${layoutsTheme.media.tablet} {
     ${(props) =>
       props.first &&
       css<{ first?: boolean }>`
-        padding-top: 52px;
+        margin-top: 52px;
       `}
   }
 `;
 
 const StyledSecondary = styled(StyledSecondaryText)`
-  padding: 25px 0 50px;
+  margin: 25px 0 50px;
 `;

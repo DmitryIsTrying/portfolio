@@ -54,9 +54,9 @@ export const SectionServiceItem: React.FC<SectionItemPropsType> = ({
             <PaddingText isDark={isDark} margin="26px 0 15px" TAlign="center">
               {icon.title}
             </PaddingText>
-            <StyledSecondaryText isDark={isDark} TAlign="center">
+            <EllipsisStyledSecondaryText isDark={isDark} TAlign="center">
               {icon.description}
-            </StyledSecondaryText>
+            </EllipsisStyledSecondaryText>
             <Test isDark={isDark}>
               <PaddingText isDark={isDark} margin="0" TAlign="center">
                 {icon.title}
@@ -85,6 +85,13 @@ export const SectionServiceItem: React.FC<SectionItemPropsType> = ({
     </>
   );
 };
+
+const EllipsisStyledSecondaryText = styled(StyledSecondaryText)`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+`;
 
 const StyledLink = styled.a`
   display: flex;

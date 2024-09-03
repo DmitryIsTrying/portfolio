@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { FlexWrapper } from "../../../components/FlexWrapper";
-import { FLexSectionsWrapper } from "../../../components/FLexSectionsWrapper";
 import Port1 from "../../../assets/images/Port1-blog.webp";
 import Port2 from "../../../assets/images/Port2-blog.webp";
 import Port3 from "../../../assets/images/Port3-blog.webp";
@@ -19,6 +18,7 @@ import {
 import { useInView } from "react-intersection-observer";
 import { ChooseTypeWork } from "../../../components/chooseTypeWork/ChooseTypeWork";
 import { EmptyDiv } from "../../../components/sectionItems/emptyDiv/EmptyDiv";
+import { GridSectionWrapper } from "../../../components/GridSectionWrapper";
 
 const nameButtons: Array<{ title: string }> = [
   {
@@ -79,7 +79,7 @@ const photos: PhotosArrayPropsType[] = [
 
 export const SectionPortfolio = () => {
   const { ref, inView } = useInView({
-    threshold: 0.2,
+    threshold: 0.1,
     triggerOnce: true,
   });
   const [currentFilterStatus, setFilterStatus] = useState("All categories");
@@ -99,7 +99,7 @@ export const SectionPortfolio = () => {
           changePortfolio={changePortfolio}
           names={nameButtons}
         />
-        <FLexSectionsWrapper ref={ref}>
+        <GridSectionWrapper ref={ref}>
           {inView ? (
             <SectionPortfolioItem
               currentFilterStatus={currentFilterStatus}
@@ -110,7 +110,7 @@ export const SectionPortfolio = () => {
           ) : (
             <EmptyDiv width={310} height={300} elements={photos.length} />
           )}
-        </FLexSectionsWrapper>
+        </GridSectionWrapper>
       </FlexWrapper>
     </StyledSection>
   );

@@ -40,9 +40,6 @@ export const Footer = () => {
 
 const StyledFooter = styled.footer`
   padding: 35px 0 0 0;
-  @media ${layoutsTheme.media.tablet} {
-    padding-bottom: 80px;
-  }
 `;
 
 const StyledFlexWrapper = styled(FlexWrapper)<{ isDark: boolean }>`
@@ -51,4 +48,7 @@ const StyledFlexWrapper = styled(FlexWrapper)<{ isDark: boolean }>`
       ? props.theme.theme.dark.primaryColor
       : props.theme.theme.light.primaryColor};
   padding: 18px 0;
+  @media ${layoutsTheme.media.tablet} {
+    padding-bottom: 98px;
+  }
 `;

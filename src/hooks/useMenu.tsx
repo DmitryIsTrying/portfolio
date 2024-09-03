@@ -13,7 +13,7 @@ export const MenuProvider = ({ children }: { children: ReactNode }) => {
   const toggleMenu = (e: React.MouseEvent<HTMLElement>) => {
     if (
       e.target instanceof HTMLElement &&
-      (e.target.id === "burgerMenu" ||
+      (e.target.closest("#burgerMenu") ||
         e.target.id === "blurEffect" ||
         e.target.closest("#closeInfoBtn"))
     ) {

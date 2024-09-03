@@ -117,12 +117,24 @@ const StyledLi = styled.li<{
   border-radius: 50%;
   cursor: pointer;
   transition: ease 0.5s;
-  &:hover {
-    transform: scale(1.15);
-    box-shadow: 0px 1px 10px 0px
-      ${(props) =>
-        props.isDark
-          ? props.theme.theme.dark.shadowColor
-          : props.theme.theme.light.shadowColor};
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.15);
+      box-shadow: 0px 1px 10px 0px
+        ${(props) =>
+          props.isDark
+            ? props.theme.theme.dark.shadowColor
+            : props.theme.theme.light.shadowColor};
+    }
+  }
+  @media (hover: none) {
+    &:active {
+      transform: scale(1.15);
+      box-shadow: 0px 1px 10px 0px
+        ${(props) =>
+          props.isDark
+            ? props.theme.theme.dark.shadowColor
+            : props.theme.theme.light.shadowColor};
+    }
   }
 `;

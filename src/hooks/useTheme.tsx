@@ -1,4 +1,10 @@
-import React, { useState, createContext, ReactNode, useContext } from "react";
+import React, {
+  useState,
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+} from "react";
 
 type ThemeContextType = {
   isDark: boolean;
@@ -10,26 +16,32 @@ export const ThemeContext = createContext<ThemeContextType | undefined>(
 );
 
 export function ChangerThemeProvider({ children }: { children: ReactNode }) {
-  const [isDark, setIsDark] = useState(false);
+  const getInitialTheme = () => {
+    if (typeof window !== "undefined") {
+      const darkModeMediaQuery = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      );
+      return darkModeMediaQuery.matches;
+    }
+    return false;
+  };
+
+  const [isDark, setIsDark] = useState(getInitialTheme);
+
+  useEffect(() => {
+    const metaThemeColor = document.getElementById("theme-color-meta");
+    const navBar = document.getElementById("NavBar");
+
+    if (metaThemeColor) {
+      metaThemeColor.setAttribute("content", isDark ? "#1A1A1A" : "#F0F0F6");
+    }
+    if (navBar) {
+      navBar.style.backgroundColor = isDark ? "#333333" : "#fafafa";
+    }
+  }, [isDark]);
 
   const onChangerBtnClick = () => {
-    setIsDark((prevIsDark) => {
-      const newIsDark = !prevIsDark;
-
-      const metaThemeColor = document.getElementById("theme-color-meta");
-      const navBar = document.getElementById("NavBar");
-      if (metaThemeColor) {
-        metaThemeColor.setAttribute(
-          "content",
-          newIsDark ? "#1A1A1A" : "#F0F0F6"
-        );
-      }
-      if (navBar) {
-        navBar.style.backgroundColor = newIsDark ? "#333333" : "#fafafa";
-      }
-
-      return newIsDark;
-    });
+    setIsDark((prevIsDark) => !prevIsDark);
   };
 
   const value = { isDark, onChangerBtnClick };

@@ -7,16 +7,21 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: 1.5s ease;
+    transition: color 1.5s ease, background-color 1.5s ease, fill 1.5s ease;
 }
 
 html {
- /* scrollbar-width: none; */
  scroll-behavior: smooth;
 }
 
 body {
     font-family: "Inter", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-
   }
+
+ @media (prefers-reduced-motion: reduce){
+  *{
+    animation: none !important;
+    transition: none !important;
+  }
+ } 
 `;
