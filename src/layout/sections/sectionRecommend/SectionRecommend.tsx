@@ -57,7 +57,7 @@ export const SectionRecommend = () => {
         />
         <FLexSectionsWrapper ref={ref}>
           {inView ? (
-            (width > 992 && width < 1290) || width < 850 ? (
+            (width > 992 && width < 1380) || width < 940 ? (
               <SliderSectionRecomItem
                 recData={recData}
                 width={310}
