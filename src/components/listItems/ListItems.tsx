@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Icon } from "../icon/Icon";
 import { layoutsTheme } from "../../styles/Theme.styled";
+import { useTheme } from "../../hooks/useTheme";
 
 type Links = {
   ariaLabel: string;
@@ -31,10 +32,17 @@ export const ListItems = ({
   gap,
   justify,
 }: ListItemsProps) => {
+  const { isDark } = useTheme();
   return (
     <StyledUl justify={justify} gap={gap} direction={direction}>
       {Links.map((link, index) => (
-        <StyledLi width={width} height={height} color={color} key={index}>
+        <StyledLi
+          isDark={isDark}
+          width={width}
+          height={height}
+          color={color}
+          key={index}
+        >
           <StyledLink aria-label={link.ariaLabel} href={link.href}>
             <Icon
               iconSrc={link.iconSrc}
@@ -94,7 +102,12 @@ const StyledLink = styled.a`
   }
 `;
 
-const StyledLi = styled.li<{ width: number; height: number; color: string }>`
+const StyledLi = styled.li<{
+  width: number;
+  height: number;
+  color: string;
+  isDark: boolean;
+}>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -106,6 +119,10 @@ const StyledLi = styled.li<{ width: number; height: number; color: string }>`
   transition: ease 0.5s;
   &:hover {
     transform: scale(1.15);
-    box-shadow: 0px 1px 10px 0px #00000026;
+    box-shadow: 0px 1px 10px 0px
+      ${(props) =>
+        props.isDark
+          ? props.theme.theme.dark.shadowColor
+          : props.theme.theme.light.shadowColor};
   }
 `;

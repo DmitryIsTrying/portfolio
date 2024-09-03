@@ -8,6 +8,7 @@ import profile from "../../../assets/images/Profile.webp";
 import profile2x from "../../../assets/images/Profile@2x.webp";
 import { ListItems } from "../../listItems/ListItems";
 import { useTheme } from "../../../hooks/useTheme";
+import { layoutsTheme } from "../../../styles/Theme.styled";
 
 const socialLinks = [
   {
@@ -73,7 +74,11 @@ export const MainInfo = () => {
         />
         <ItemDesign
           bgc="#7eb942"
-          bShadow="0px 4px 10px 0px #00000026"
+          bShadow={`0px 4px 10px 0px ${
+            isDark
+              ? layoutsTheme.theme.dark.shadowColor
+              : layoutsTheme.theme.light.shadowColor
+          }`}
           bot="18px"
           right="10px"
         />

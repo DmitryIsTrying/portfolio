@@ -48,7 +48,11 @@ export const StyledPricePartBtn = styled.button<StyledPricePartBtnPropsType>`
     (props.isDark
       ? props.theme.theme.dark.primaryColor
       : props.theme.theme.light.primaryColor)};
-  box-shadow: 0px 1px 10px 0px #00000026;
+  box-shadow: 0px 1px 10px 0px
+    ${(props) =>
+      props.isDark
+        ? props.theme.theme.dark.shadowColor
+        : props.theme.theme.light.shadowColor};
   padding: 11px 41px 10px;
   border-radius: 30px;
   border: none;

@@ -62,7 +62,7 @@ export const NavBar = () => {
     <StyledNav id="NavBar">
       <StyledBtnIcon onClick={onChangerBtnClick} aria-label="Change Site Theme">
         <Icon
-          iconSrc={"darkLightNavSvg"}
+          iconSrc={isDark ? "lightDarkNavSvg" : "darkLightNavSvg"}
           width="25"
           height="25"
           viewBox="0 0 25 25"

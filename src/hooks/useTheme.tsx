@@ -21,11 +21,11 @@ export function ChangerThemeProvider({ children }: { children: ReactNode }) {
       if (metaThemeColor) {
         metaThemeColor.setAttribute(
           "content",
-          newIsDark ? "#333333" : "#ffffff"
+          newIsDark ? "#1A1A1A" : "#F0F0F6"
         );
       }
       if (navBar) {
-        navBar.style.backgroundColor = newIsDark ? "#333333" : "#fafafa"; // Задайте желаемые цвета
+        navBar.style.backgroundColor = newIsDark ? "#333333" : "#fafafa";
       }
 
       return newIsDark;
