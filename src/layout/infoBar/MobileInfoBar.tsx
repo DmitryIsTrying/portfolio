@@ -90,7 +90,7 @@ const BurgerMenu = styled.button`
 
 const EffectWrapper = styled.div<{ isOpen: boolean }>`
   display: none;
-  justify-content: center;
+  justify-content: flex-start;
   position: fixed;
   z-index: 998;
   width: 100%;
