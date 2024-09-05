@@ -6,7 +6,6 @@ import { StyledBtn } from "../StyledBtn.styled";
 import { StyledTitleText } from "../TitleText.styled";
 import { useInView } from "react-intersection-observer";
 import emailjs from "@emailjs/browser";
-import { EmptyDiv } from "../sectionItems/emptyDiv/EmptyDiv";
 import { useTheme } from "../../hooks/useTheme";
 import { layoutsTheme } from "../../styles/Theme.styled";
 
@@ -25,10 +24,10 @@ export const Form = () => {
       })
       .then(
         () => {
-          console.log("SUCCESS!");
+          console.log(true);
         },
         (error) => {
-          console.log("FAILED...", error.text);
+          console.log(false);
         }
       );
     e.target.reset();

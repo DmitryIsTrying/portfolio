@@ -1,6 +1,5 @@
 import React from "react";
 import { StyledTitleText } from "../TitleText.styled";
-import { StyledSecondaryText } from "../SecondaryText.styled";
 import styled from "styled-components";
 import { FlexWrapper } from "../FlexWrapper";
 import { StyledBtn } from "../StyledBtn.styled";
@@ -8,9 +7,11 @@ import { StyledPrimaryText } from "../PrimaryText.styled";
 import { Icon } from "../icon/Icon";
 import { useTheme } from "../../hooks/useTheme";
 import { layoutsTheme } from "../../styles/Theme.styled";
+import { TitleTextWritter } from "./TitleTextWritter";
 
 export const TitleCheer = () => {
   const { isDark } = useTheme();
+
   return (
     <PaddingsWrapper fitWidth direction="column">
       <StyledTitleText
@@ -32,11 +33,7 @@ export const TitleCheer = () => {
       >
         <span style={{ color: "#FFB400" }}>Front-end</span> Developer
       </StyledTitleText>
-      <StyledTitle isDark={isDark} size="16px">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat
-        feugiat placerat lobortis. Natoque rutrum semper sed suspendisse nunc
-        lectus.
-      </StyledTitle>
+      <TitleTextWritter />
       <StyledBtn
         isDark={isDark}
         as="a"
@@ -67,9 +64,4 @@ export const TitleCheer = () => {
 
 const PaddingsWrapper = styled(FlexWrapper)`
   padding: 93px 25px 51px 0;
-`;
-
-const StyledTitle = styled(StyledSecondaryText)`
-  max-width: 424px;
-  margin: 18px 0 25px 0;
 `;
